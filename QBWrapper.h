@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <fstream>
+#include <sys/types.h>
+#include <sys/socket.h>
 #include "XMLGen.h"
 
 using namespace std;

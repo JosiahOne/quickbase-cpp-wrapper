@@ -77,5 +77,17 @@ string PurgeRecords(string query, int qid, string qname, string ticket, string a
 }
 
 bool _PostWithFile(string file) {
+    // Convert file to stream.
 
+    ifstream file("outputDataStream.xml");
+
+    if (file) {
+        stringstream buffer;
+        buffer << file.rdbuf();
+
+        file.close();
+        const auto str = buffer.str();
+        return (send(00, str.data(), str.size(), NULL) >= str.size());
+    }
+    return false;
 }
