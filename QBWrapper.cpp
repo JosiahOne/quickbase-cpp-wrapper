@@ -1,6 +1,5 @@
 #include "QBWrapper.h"
-#include "XMLHttpRequest2Callback.h"
-#include "XMLHttpRequestPostStream.h"
+
 
 using namespace QBWrapper;
 
@@ -74,5 +73,9 @@ string DeleteRecord(int rid, string ticket, string apptoken, string udata) {
 }
 
 string PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata) {
+
+}
+
+bool _PostWithFile(string file) {
 
 }

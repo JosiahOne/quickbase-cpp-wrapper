@@ -10,5 +10,6 @@ int main(int argc, char** argv) {
     // This is for enabling the features of the backend.
     // This is NOT the wrapper though.
 
+    QBWrapper *qb = new QBWrapper;
 
 }

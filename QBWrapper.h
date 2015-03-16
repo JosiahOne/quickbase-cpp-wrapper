@@ -29,5 +29,5 @@ class QBWrapper {
         string _apptoken;
         string _ticket;
         string _appLocation;
-
+        bool _PostWithFile(string file);
 };
