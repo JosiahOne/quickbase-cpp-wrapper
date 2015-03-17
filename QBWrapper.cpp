@@ -1,93 +1,100 @@
 #include "QBWrapper.h"
 
-
-using namespace QBWrapper;
-
-QBWrapper() {
+QBWrapper::QBWrapper() {
 
 }
 
-~QBWrapper() {
+QBWrapper::~QBWrapper() {
 
 }
 
-void SetAppLocation(string location) {
+void QBWrapper::SetAppLocation(string location) {
     _appLocation = location;
 }
 
-string Authenticate(string username, string password, int hours, string udata) {
+string QBWrapper::Authenticate(string username, string password, int hours, string udata) {
     XMLGen *gen = new XMLGen;
-    SetStandardXMLData(gen);
     gen->SetLocation(_appLocation + "/db/main");
+    gen->SetQBAction("API_Authenticate");
     gen->AddParent("qbapi");
     gen->AddField("username", username);
     gen->AddField("password", password);
-    gen->AddField("hours", hours);
+    gen->AddField("hours", _IntToString(hours));
     gen->AddField("udata", udata);
     gen->CloseParent("qbapi");
     gen->WriteOut();
+
+    return "";
 }
 
-string AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
+string QBWrapper::AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
 
+    return "";
 }
 
-string EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
-
+string QBWrapper::EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
+    return "";
 }
 
-string GetSchema(string ticket, string apptoken, string udata) {
-
+string QBWrapper::GetSchema(string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string GetDBInfo(string ticket, string apptoken, string udata) {
-
+string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata) {
-
+string QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata) {
+    return "";
 }
 
-string DeleteField(int fid, string ticket, string apptoken, string udata) {
-
+string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata) {
-
+string QBWrapper::SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata) {
-
+string QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-int GetNumRecords(string ticket, string apptoken, string udata) {
-
+int QBWrapper::GetNumRecords(string ticket, string apptoken, string udata) {
+    return 0;
 }
 
-string GetRecordInfo(int rid, string ticket, string apptoken, string udata) {
-
+string QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string DeleteRecord(int rid, string ticket, string apptoken, string udata) {
-
+string QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-string PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata) {
-
+string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata) {
+    return "";
 }
 
-bool _PostWithFile(string file) {
+bool QBWrapper::_PostWithFile(string file) {
     // Convert file to stream.
 
-    ifstream file("outputDataStream.xml");
+    ifstream aFile(file.c_str());
 
-    if (file) {
+    if (aFile) {
         stringstream buffer;
-        buffer << file.rdbuf();
+        buffer << aFile.rdbuf();
 
-        file.close();
-        const auto str = buffer.str();
+        aFile.close();
+        const string str = buffer.str();
         return (send(00, str.data(), str.size(), NULL) >= str.size());
     }
     return false;
+}
+
+string QBWrapper::_IntToString(int anInt) {
+    stringstream ss;
+    ss << anInt;
+    string aString = ss.str();
+    return aString;
 }

@@ -1,9 +1,6 @@
 #include "XMLRead.h"
 
-string GetStringBetween(string data, string startDelim, string 
-endDelim);
-
-using namespace XMLRead;
+string GetStringBetween(string data, string startDelim, string endDelim);
 
 XMLRead::XMLRead() {
     _xmlData = "";
@@ -14,7 +11,7 @@ XMLRead::~XMLRead() {
 }
 
 void XMLRead::Load(string xmlData) {
-    if (xmlData) {
+    if (xmlData != "") {
         _xmlData = xmlData;
     }
 }
@@ -28,11 +25,11 @@ string GetStringBetween(string data, string startDelim, string endDelim)
 {
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
-    if (first != npos && last != npos) {
+    if (first != string::npos && last != string::npos) {
         string strNew = data.substr(first, last - first);
         return strNew;
     }
     else {
-        return null;
+        return NULL;
     }
 }

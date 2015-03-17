@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class XMLRead() {
+class XMLRead {
     public:
         XMLRead();
         ~XMLRead();

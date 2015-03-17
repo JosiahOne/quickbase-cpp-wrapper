@@ -54,5 +54,7 @@ bool XMLGen::WriteOut() {
         // Contents
         outFile << _outStream;
         outFile.close();
+        return true;
     }
+    return false;
 }

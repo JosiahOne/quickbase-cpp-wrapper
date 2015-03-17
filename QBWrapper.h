@@ -2,9 +2,10 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include <sys/types.h>
-#include <sys/socket.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "XMLGen.h"
+#include "CURL/curl_easy.h"
 
 using namespace std;
 
@@ -33,4 +34,5 @@ class QBWrapper {
         string _ticket;
         string _appLocation;
         bool _PostWithFile(string file);
+        string _IntToString(int anInt);
 };
