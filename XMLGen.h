@@ -12,6 +12,7 @@ class XMLGen {
         void AddParent(string name);
         void CloseParent(string name);
         void AddField(string name, string data);
+        void AddFieldWithParam(string name, string data, string pName, string pData);
         bool WriteOut();
         void aReset();
     private:
