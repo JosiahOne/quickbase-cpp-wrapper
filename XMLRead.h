@@ -12,5 +12,8 @@ class XMLRead {
         string GetFieldContents(string fieldName);
     private:
         string _xmlData;
+        string _MakeTag(string name, bool open);
+        string _GetStringBetween(string data, string startDelim, string endDelim);
+        bool _VerifyXML(string data);
 };
 

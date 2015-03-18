@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "XMLGen.h"
+#include "XMLRead.h"
 #include <curl/curl.h>
 #include <algorithm>
 
@@ -44,8 +45,5 @@ class QBWrapper {
         string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
         int _CURLSend(string inputStream);
-        string QBWrapper::_GetXMLField(string dataString, string fieldName);
         string _GetStringBetween(string data, string startDelim, string endDelim);
-        bool _VerifyXML(string data);
-        string _MakeTag(string name, bool open);
 };

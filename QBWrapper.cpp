@@ -29,7 +29,10 @@ string QBWrapper::Authenticate(string username, string password, int hours, stri
 
     string result = _PostWithFile("outputDataStream.xml", "API_Authenticate", "main");
     if (result != "" && result != "ERROR") {
-        string ticket = _GetXMLField(result, "ticket");
+        // We need to parse this XML data now.
+        XMLRead *xmlParser = new XMLRead;
+        xmlParser->Load(result);
+        string ticket = xmlParser->GetFieldContents("ticket");
         if (ticket != "" && ticket != "ERROR") {
             return ticket;
         }
@@ -172,40 +175,6 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
     }
     else {
         return "ERROR";
-    }
-}
-
-string QBWrapper::_GetXMLField(string dataString, string fieldName) {
-    // dataStream should be XML data.
-    // To verify, we should find a <qdbapi> tag.
-
-    if (_VerifyXML(dataString)) {
-        string result = _GetStringBetween(dataString, _MakeTag(fieldName, TRUE), _MakeTag(fieldName, FALSE));
-        if (result == "") {
-            abort();
-        }
-        return result;
-    }
-    else {
-        return "ERROR";
-    }
-}
-
-string QBWrapper::_MakeTag(string name, bool open) {
-    if (open) {
-        return '<' + name + '>';
-    }
-    else {
-        return "</" + name + ">";
-    }
-}
-
-bool QBWrapper::_VerifyXML(string data) {
-    if (data.find_last_of("<qdbapi>") != string::npos) {
-        return TRUE;
-    }
-    else {
-        return FALSE;
     }
 }
 
