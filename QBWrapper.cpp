@@ -16,19 +16,10 @@ void QBWrapper::SetAppLocation(string location) {
    Returns "AUTHERROR" if there was an error (i.e. <errcode> > 0)
  */
 string QBWrapper::Authenticate(string username, string password, int hours, string udata) {
-    XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/main");
-    gen->SetQBAction("API_Authenticate");
-    gen->AddParent("qdbapi");
-    gen->AddField("username", username);
-    gen->AddField("password", password);
-    gen->AddField("hours", _IntToString(hours));
-    gen->AddField("udata", udata);
-    gen->CloseParent("qdbapi");
-    gen->WriteOut();
-    delete gen;
+    vector<string> paramVector = { "username", "password", "hours", "udata" };
+    vector<string> valueVector = { username, password, _IntToString(hours), udata };
 
-    string result = _PostWithFile("outputDataStream.xml", "API_Authenticate", "main");
+    string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
         XMLRead *xmlParser = new XMLRead;
@@ -52,18 +43,11 @@ string QBWrapper::EditRecord(int rid, int updateID, string fields[], bool dispre
 }
 
 string QBWrapper::GetSchema(string ticket, string apptoken, string udata, string dbid) {
-    XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/" + dbid);
-    gen->SetQBAction("API_GetSchema");
-    gen->AddParent("qdbapi");
-    gen->AddField("ticket", ticket);
-    gen->AddField("apptoken", apptoken);
-    gen->AddField("udata", udata);
-    gen->CloseParent("qdbapi");
-    gen->WriteOut();
-    delete gen;
+    vector<string> paramVector = { "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { ticket, apptoken, udata };
 
-    string result = _PostWithFile("outputDataStream.xml", "API_GetDBInfo", dbid);
+    string result = _XMLDataPrelim("API_GetSchema", dbid, paramVector, valueVector);
+    
     if (result != "") {
         return result;
     }
@@ -75,18 +59,10 @@ string QBWrapper::GetSchema(string ticket, string apptoken, string udata, string
    Returns nothing ("") if no data was found.
  */
 string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
-    XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/" + dbid);
-    gen->SetQBAction("API_GetDBInfo");
-    gen->AddParent("qdbapi");
-    gen->AddField("ticket", ticket);
-    gen->AddField("apptoken", apptoken);
-    gen->AddField("udata", udata);
-    gen->CloseParent("qdbapi");
-    gen->WriteOut();
-    delete gen;
+    vector<string> paramVector = { "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { ticket, apptoken, udata };
 
-    string result = _PostWithFile("outputDataStream.xml", "API_GetDBInfo", dbid);
+    string result = _XMLDataPrelim("API_GetDBInfo", dbid, paramVector, valueVector);
     if (result != "") {
         return result;
     }
@@ -114,22 +90,10 @@ string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string
              URL	                    url
  */
 string QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
-    XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/" + dbid);
-    gen->SetQBAction("API_AddField");
-    gen->AddParent("qdbapi");
-    gen->AddField("add_to_forms", _BoolToString(addToForms));
-    gen->AddField("apptoken", apptoken);
-    gen->AddField("label", label);
-    gen->AddField("mode", mode);
-    gen->AddField("ticket", ticket);
-    gen->AddField("type", type);
-    gen->AddField("udata", udata);
-    gen->CloseParent("qdbapi");
-    gen->WriteOut();
-    delete gen;
+    vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
+    vector<string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
 
-    string result = _PostWithFile("outputDataStream.xml", "API_AddField", dbid);
+    string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
     if (result != "") {
         return result;
     }
@@ -138,17 +102,14 @@ string QBWrapper::AddField(bool addToForms, string apptoken, string label, strin
 }
 
 string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata, string dbid) {
-    XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/" + dbid);
-    gen->SetQBAction("API_DeleteField");
-    gen->AddParent("qdbapi");
-    gen->AddField("fid", _IntToString(fid));
-    gen->AddField("ticket", ticket);
-    gen->AddField("apptoken", apptoken);
-    gen->AddField("udata", udata);
-    gen->CloseParent("qdbapi");
-    gen->WriteOut();
-    delete gen;
+    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+
+    string result = _XMLDataPrelim("API_DeleteField", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
@@ -156,23 +117,107 @@ string QBWrapper::SetFieldProperties(string properties[], int fid, string ticket
     return "";
 }
 
-string QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata) {
+string QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid) {
+    vector<string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { tname, pnoun, ticket, apptoken, udata };
+
+    string result = _XMLDataPrelim("API_CreateTable", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-int QBWrapper::GetNumRecords(string ticket, string apptoken, string udata) {
-    return 0;
+/* Returns the number of records in a table.
+   Returns -1 if there was an error
+ */
+int QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, string dbid) {
+    vector<string> paramVector = { "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { ticket, apptoken, udata };
+
+    string result = _XMLDataPrelim("API_GetNumRecords", dbid, paramVector, valueVector);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        XMLRead *xmlParser = new XMLRead;
+        xmlParser->Load(result);
+        int numRecords = atoi(xmlParser->GetFieldContents("num_records").c_str());
+        delete xmlParser;
+        if (numRecords != NULL) {
+            return numRecords;
+        }
+    }
+
+    return -1;
 }
 
-string QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata) {
+string QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid) {
+    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+
+    string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-string QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata) {
+string QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid) {
+    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+
+    string result = _XMLDataPrelim("API_DeleteRecord", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata) {
+string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid) {
+    // According to the Quickbase API, attaching an empty query causes every record in a table to be deleted.
+    // You must supply a non-empty query to delete specific things. This is entirely stupid, and so we require a specific "ALL"
+    // param to delete everything, otherwise we leave without purging.
+    if (query == "" && qid == NULL && qname == "") {
+        return "ERROR";
+    }
+
+    vector<string> paramVector(4);
+    vector<string> valueVector(4);
+
+    if (query == "ALL") {
+        paramVector[0] = "query";
+        valueVector[0] = "";
+    }
+    else if (query != "") {
+        paramVector[0] = "query";
+        valueVector[0] = query;
+    }
+    else if (qid != NULL && qid >= 0) {
+        paramVector[0] = "qid";
+        valueVector[0] = qid;
+    }
+    else if (qname != "") {
+        paramVector[0] = "qname";
+        valueVector[0] = qname;
+    }
+    else {
+        return "ERROR";
+    }
+
+    paramVector[1] = "ticket";
+    valueVector[1] = ticket;
+    paramVector[2] = "apptoken";
+    valueVector[2] = apptoken;
+    paramVector[3] = "udata";
+    valueVector[3] = udata;
+    
+    string result = _XMLDataPrelim("API_PurgeRecords", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
@@ -199,6 +244,26 @@ size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s)
     s->len = new_len;
     size_t returnValue = size*nmemb;
     return returnValue;
+}
+
+string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values) {
+    if (params.size() != values.size()) {
+        cout << "params and values are not of equal size";
+        abort();
+    }
+    XMLGen *gen = new XMLGen;
+    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetQBAction(apiAction);
+    gen->AddParent("qdbapi");
+    for (unsigned int i = 0; i < params.size(); i++) {
+        gen->AddField(params[i], values[i]);
+    }
+    gen->CloseParent("qdbapi");
+    gen->WriteOut();
+    delete gen;
+
+    string result = _PostWithFile("outputDataStream.xml", apiAction, dbid);
+    return result;
 }
 
 string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {

@@ -8,6 +8,7 @@
 #include "XMLRead.h"
 #include <curl/curl.h>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -33,15 +34,16 @@ class QBWrapper {
         string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
         string DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
         string SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata);
-        string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata);
-        int GetNumRecords(string ticket, string apptoken, string udata);
-        string GetRecordInfo(int rid, string ticket, string apptoken, string udata);
-        string DeleteRecord(int rid, string ticket, string apptoken, string udata);
-        string PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata);
+        string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
+        int GetNumRecords(string ticket, string apptoken, string udata, string dbid);
+        string GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);
+        string DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid);
+        string PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
     private:
         string _apptoken;
         string _ticket;
         string _appLocation;
+        string _XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values);
         string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
         string _BoolToString(bool aBool);
