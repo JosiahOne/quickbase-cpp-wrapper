@@ -26,6 +26,7 @@ string QBWrapper::Authenticate(string username, string password, int hours, stri
     gen->AddField("udata", udata);
     gen->CloseParent("qdbapi");
     gen->WriteOut();
+    delete gen;
 
     string result = _PostWithFile("outputDataStream.xml", "API_Authenticate", "main");
     if (result != "" && result != "ERROR") {
@@ -33,6 +34,7 @@ string QBWrapper::Authenticate(string username, string password, int hours, stri
         XMLRead *xmlParser = new XMLRead;
         xmlParser->Load(result);
         string ticket = xmlParser->GetFieldContents("ticket");
+        delete xmlParser;
         if (ticket != "" && ticket != "ERROR") {
             return ticket;
         }
@@ -41,7 +43,7 @@ string QBWrapper::Authenticate(string username, string password, int hours, stri
 }
 
 string QBWrapper::AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
-
+    
     return "";
 }
 
@@ -49,19 +51,104 @@ string QBWrapper::EditRecord(int rid, int updateID, string fields[], bool dispre
     return "";
 }
 
-string QBWrapper::GetSchema(string ticket, string apptoken, string udata) {
+string QBWrapper::GetSchema(string ticket, string apptoken, string udata, string dbid) {
+    XMLGen *gen = new XMLGen;
+    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetQBAction("API_GetSchema");
+    gen->AddParent("qdbapi");
+    gen->AddField("ticket", ticket);
+    gen->AddField("apptoken", apptoken);
+    gen->AddField("udata", udata);
+    gen->CloseParent("qdbapi");
+    gen->WriteOut();
+    delete gen;
+
+    string result = _PostWithFile("outputDataStream.xml", "API_GetDBInfo", dbid);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata) {
+/* Returns the XML data if available.
+   Returns nothing ("") if no data was found.
+ */
+string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
+    XMLGen *gen = new XMLGen;
+    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetQBAction("API_GetDBInfo");
+    gen->AddParent("qdbapi");
+    gen->AddField("ticket", ticket);
+    gen->AddField("apptoken", apptoken);
+    gen->AddField("udata", udata);
+    gen->CloseParent("qdbapi");
+    gen->WriteOut();
+    delete gen;
+
+    string result = _PostWithFile("outputDataStream.xml", "API_GetDBInfo", dbid);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-string QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata) {
+/* AddField Params:
+ *   - mode: "virtual" (formula), "lookup", or "" are valid values.
+ *   - type: Field Type         Quickbase API field type
+             Checkbox         	      checkbox
+             Date	                    date
+             Duration	                duration
+             Email Address	          email
+             File Attachment	        file
+             Formula	                (see the “mode” param)
+             Lookup	                  (see the “mode” param)
+             Numeric	                float
+             Numeric - Currency	      currency
+             Numeric - Rating	        rating
+             Phone Number	            phone
+             Report Link	            dblink
+             Text                   	text
+             Time Of Day	            timeofday
+             URL	                    url
+ */
+string QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
+    XMLGen *gen = new XMLGen;
+    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetQBAction("API_AddField");
+    gen->AddParent("qdbapi");
+    gen->AddField("add_to_forms", _BoolToString(addToForms));
+    gen->AddField("apptoken", apptoken);
+    gen->AddField("label", label);
+    gen->AddField("mode", mode);
+    gen->AddField("ticket", ticket);
+    gen->AddField("type", type);
+    gen->AddField("udata", udata);
+    gen->CloseParent("qdbapi");
+    gen->WriteOut();
+    delete gen;
+
+    string result = _PostWithFile("outputDataStream.xml", "API_AddField", dbid);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
-string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata) {
+string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata, string dbid) {
+    XMLGen *gen = new XMLGen;
+    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetQBAction("API_DeleteField");
+    gen->AddParent("qdbapi");
+    gen->AddField("fid", _IntToString(fid));
+    gen->AddField("ticket", ticket);
+    gen->AddField("apptoken", apptoken);
+    gen->AddField("udata", udata);
+    gen->CloseParent("qdbapi");
+    gen->WriteOut();
+    delete gen;
     return "";
 }
 
@@ -183,6 +270,15 @@ string QBWrapper::_IntToString(int anInt) {
     ss << anInt;
     string aString = ss.str();
     return aString;
+}
+
+string QBWrapper::_BoolToString(bool aBool) {
+    if (aBool) {
+        return "1";
+    }
+    else {
+        return "0";
+    }
 }
 
 string QBWrapper::_GetStringBetween(string data, string startDelim, string endDelim) {

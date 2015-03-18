@@ -28,10 +28,10 @@ class QBWrapper {
         string Authenticate(string username, string password, int hours, string udata);
         string AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC);
         string EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC);
-        string GetSchema(string ticket, string apptoken, string udata);
-        string GetDBInfo(string ticket, string apptoken, string udata);
-        string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata);
-        string DeleteField(int fid, string ticket, string apptoken, string udata);
+        string GetSchema(string ticket, string apptoken, string udata, string dbid);
+        string GetDBInfo(string ticket, string apptoken, string udata, string dbid);
+        string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
+        string DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
         string SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata);
         string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata);
         int GetNumRecords(string ticket, string apptoken, string udata);
@@ -44,6 +44,7 @@ class QBWrapper {
         string _appLocation;
         string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
+        string _BoolToString(bool aBool);
         int _CURLSend(string inputStream);
         string _GetStringBetween(string data, string startDelim, string endDelim);
 };
