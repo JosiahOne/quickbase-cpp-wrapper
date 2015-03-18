@@ -5,9 +5,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "XMLGen.h"
-#include "CURL/curl_easy.h"
+#include <curl/curl.h>
+#include <algorithm>
 
 using namespace std;
+
+void init_string(struct curlString *s);
+size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s);
+struct curlString {
+    char *ptr;
+    size_t len;
+};
 
 class QBWrapper {
     public:
@@ -33,6 +41,11 @@ class QBWrapper {
         string _apptoken;
         string _ticket;
         string _appLocation;
-        bool _PostWithFile(string file);
+        string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
+        int _CURLSend(string inputStream);
+        string QBWrapper::_GetXMLField(string dataString, string fieldName);
+        string _GetStringBetween(string data, string startDelim, string endDelim);
+        bool _VerifyXML(string data);
+        string _MakeTag(string name, bool open);
 };

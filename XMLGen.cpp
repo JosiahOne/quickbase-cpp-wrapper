@@ -35,7 +35,7 @@ void XMLGen::AddParent(string name) {
     _outStream = _outStream + '<' + name + ">\n";
 }
 void XMLGen::CloseParent(string name) {
-    _outStream = _outStream + "</" + name + ">\n";
+    _outStream = _outStream + "</" + name + ">";
 }
 void XMLGen::AddField(string name, string data) {
     _outStream = _outStream + '<' + name + '>' + data + "</" + name + ">\n";
@@ -47,10 +47,10 @@ bool XMLGen::WriteOut() {
         ofstream outFile;
         outFile.open(fileName.c_str());
         // Header Information
-        outFile << "POST " << _location << " HTTP/1.0" << endl;
-        outFile << "Content-Type: application/xml" << endl;
-        outFile << "Content-Length:\n";
-        outFile << "QUICKBASE-ACTION: " << _QBAction << endl << endl;
+        //outFile << "<!--POST " << _location << " HTTP/1.0" << endl;
+        //outFile << "Content-Type: application/xml" << endl;
+        //outFile << "Content-Length:\n";
+        //outFile << "QUICKBASE-ACTION: " << _QBAction << "-->" << endl << endl;
         // Contents
         outFile << _outStream;
         outFile.close();

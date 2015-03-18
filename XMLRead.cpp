@@ -21,8 +21,7 @@ string XMLRead::GetFieldContents(string fieldName) {
     return data;
 }
 
-string GetStringBetween(string data, string startDelim, string endDelim) 
-{
+string GetStringBetween(string data, string startDelim, string endDelim) {
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
     if (first != string::npos && last != string::npos) {
