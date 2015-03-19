@@ -33,7 +33,7 @@ class QBWrapper {
         string GetDBInfo(string ticket, string apptoken, string udata, string dbid);
         string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
         string DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
-        string SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata);
+        string SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid);
         string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
         int GetNumRecords(string ticket, string apptoken, string udata, string dbid);
         string GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);

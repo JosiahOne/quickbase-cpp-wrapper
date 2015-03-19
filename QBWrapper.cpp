@@ -135,7 +135,24 @@ string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string ud
     return "";
 }
 
-string QBWrapper::SetFieldProperties(string properties[], int fid, string ticket, string apptoken, string udata) {
+string QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid) {
+    if (propertyParams.size() != propertyValues.size()) {
+        return "ERROR";
+    }
+    
+    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+
+    for (unsigned int i = 0; i < propertyParams.size(); i++) {
+        paramVector.push_back(propertyParams[i]);
+        valueVector.push_back(propertyValues[i]);
+    }
+
+    string result = _XMLDataPrelim("API_SetFieldProperties", dbid, paramVector, valueVector);
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
