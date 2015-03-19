@@ -11,7 +11,6 @@ QBXML::QBXML(XMLRead *read) {
     }
 }
 
-
 QBXML::~QBXML() {
 }
 

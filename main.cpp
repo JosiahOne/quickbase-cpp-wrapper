@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     QBWrapper *qb = new QBWrapper;
     qb->SetAppLocation("https://lathrupindustries.quickbase.com");
     QBXML result = qb->Authenticate("jbruner@lathrupindustries.com", "password123", 12, "test");
-    cout << "TICKET = " << result.GetTicket().text;
+    cout << "\n\nTICKET = " << result.GetTicket().text <<"\n\n";
 
     return 0;
 }
