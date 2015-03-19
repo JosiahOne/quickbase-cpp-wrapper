@@ -16,5 +16,6 @@ int main(int argc, char** argv) {
     qb->SetAppLocation("https://lathrupindustries.quickbase.com");
     string result = qb->Authenticate("jbruner@lathrupindustries.com", "password123", 12, "test");
     cout << "TICKET = " << result;
+
     return 0;
 }

@@ -21,7 +21,7 @@ string XMLRead::GetFieldContents(string fieldName) {
     if (_VerifyXML(_xmlData)) {
         string result = _GetStringBetween(_xmlData, _MakeTag(fieldName, true), _MakeTag(fieldName, false));
         if (result == "") {
-            abort();
+            return "ERROR";
         }
         return result;
     }
