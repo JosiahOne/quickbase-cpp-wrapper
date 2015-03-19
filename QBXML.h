@@ -1,4 +1,3 @@
-#pragma once
 #include "XMLRead.h"
 #include <string>
 #include <iostream>

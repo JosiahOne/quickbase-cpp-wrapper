@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "XMLGen.h"
-#include "XMLRead.h"
 #include <curl/curl.h>
 #include <algorithm>
 #include <vector>
+#include "QBXML.h"
 
 using namespace std;
 
@@ -26,19 +26,19 @@ class QBWrapper {
         void SetAppLocation(string location); // Required.
         void SetAppToken(string token); // Optional
 
-        string Authenticate(string username, string password, int hours, string udata);
-        string AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
-        string EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
-        string GetSchema(string ticket, string apptoken, string udata, string dbid);
-        string GetDBInfo(string ticket, string apptoken, string udata, string dbid);
-        string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
-        string DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
-        string SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid);
-        string CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
-        int GetNumRecords(string ticket, string apptoken, string udata, string dbid);
-        string GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);
-        string DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid);
-        string PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
+        QBXML Authenticate(string username, string password, int hours, string udata);
+        QBXML AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
+        QBXML EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
+        QBXML GetSchema(string ticket, string apptoken, string udata, string dbid);
+        QBXML GetDBInfo(string ticket, string apptoken, string udata, string dbid);
+        QBXML AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
+        QBXML DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
+        QBXML SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid);
+        QBXML CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
+        QBXML GetNumRecords(string ticket, string apptoken, string udata, string dbid);
+        QBXML GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);
+        QBXML DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid);
+        QBXML PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
     private:
         string _apptoken;
         string _ticket;

@@ -2,7 +2,13 @@
 
 
 QBXML::QBXML(XMLRead *read) {
-    _xmlData = read;
+    if (read) {
+        _xmlData = read;
+    }
+    else {
+        _xmlData = new XMLRead;
+        _xmlData->Load("");
+    }
 }
 
 

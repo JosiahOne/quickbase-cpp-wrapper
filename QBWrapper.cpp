@@ -15,26 +15,22 @@ void QBWrapper::SetAppLocation(string location) {
 /* Returns the ticket if the username and password is valid.
    Returns "AUTHERROR" if there was an error (i.e. <errcode> > 0)
  */
-string QBWrapper::Authenticate(string username, string password, int hours, string udata) {
+QBXML QBWrapper::Authenticate(string username, string password, int hours, string udata) {
     vector<string> paramVector = { "username", "password", "hours", "udata" };
     vector<string> valueVector = { username, password, _IntToString(hours), udata };
     string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
-        XMLRead *xmlParser = new XMLRead;
         xmlParser->Load(result);
-        string ticket = xmlParser->GetFieldContents("ticket");
-        delete xmlParser;
-        if (ticket != "" && ticket != "ERROR"){ 
-            return ticket;
-        }
     }
-    return "AUTHERROR";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
     if (fields.size() != fieldContents.size()) {
-        return "ERROR";
+        return NULL;
     }
     
     vector<string> paramVector = { "disprec", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
@@ -50,17 +46,18 @@ string QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents,
     }
 
     string result = _XMLDataPrelim("API_AddRecord", dbid, paramVector, valueVector, altParams, altValues);
+    XMLRead *xmlParser = new XMLRead;
 
-    if (result != "") {
-        return result;
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
     if (fields.size() != contents.size()) {
-        return "ERROR";
+        return NULL;
     }
 
     vector<string> paramVector = { "rid", "update_id", "disprec", "fform", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
@@ -76,40 +73,44 @@ string QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vecto
     }
 
     string result = _XMLDataPrelim("API_EditRecord", dbid, paramVector, valueVector, altParams, altValues);
+    XMLRead *xmlParser = new XMLRead;
 
-    if (result != "") {
-        return result;
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::GetSchema(string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::GetSchema(string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "ticket", "apptoken", "udata" };
     vector<string> valueVector = { ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_GetSchema", dbid, paramVector, valueVector);
-    
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
 /* Returns the XML data if available.
    Returns nothing ("") if no data was found.
  */
-string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "ticket", "apptoken", "udata" };
     vector<string> valueVector = { ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_GetDBInfo", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
 /* AddField Params:
@@ -131,33 +132,37 @@ string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string
              Time Of Day	            timeofday
              URL	                    url
  */
-string QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
+QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
     vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
     vector<string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
 
     string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
     vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_DeleteField", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid) {
     if (propertyParams.size() != propertyValues.size()) {
-        return "ERROR";
+        return NULL;
     }
     
     vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
@@ -169,77 +174,80 @@ string QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string
     }
 
     string result = _XMLDataPrelim("API_SetFieldProperties", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
     vector<string> valueVector = { tname, pnoun, ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_CreateTable", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
 /* Returns the number of records in a table.
    Returns -1 if there was an error
  */
-int QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "ticket", "apptoken", "udata" };
     vector<string> valueVector = { ticket, apptoken, udata };
-
+    XMLRead *xmlParser = new XMLRead;
     string result = _XMLDataPrelim("API_GetNumRecords", dbid, paramVector, valueVector);
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
-        XMLRead *xmlParser = new XMLRead;
         xmlParser->Load(result);
-        int numRecords = atoi(xmlParser->GetFieldContents("num_records").c_str());
-        delete xmlParser;
-        if (numRecords != NULL) {
-            return numRecords;
-        }
     }
 
-    return -1;
+    return QBXML(xmlParser);
+
 }
 
-string QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
     vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
     vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
 
     string result = _XMLDataPrelim("API_DeleteRecord", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
-string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid) {
     // According to the Quickbase API, attaching an empty query causes every record in a table to be deleted.
     // You must supply a non-empty query to delete specific things. This is entirely stupid, and so we require a specific "ALL"
     // param to delete everything, otherwise we leave without purging.
     if (query == "" && qid == NULL && qname == "") {
-        return "ERROR";
+        return NULL;
     }
 
     vector<string> paramVector(4);
@@ -262,7 +270,7 @@ string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticke
         valueVector[0] = qname;
     }
     else {
-        return "ERROR";
+        return NULL;
     }
 
     paramVector[1] = "ticket";
@@ -273,11 +281,13 @@ string QBWrapper::PurgeRecords(string query, int qid, string qname, string ticke
     valueVector[3] = udata;
     
     string result = _XMLDataPrelim("API_PurgeRecords", dbid, paramVector, valueVector);
-    if (result != "") {
-        return result;
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
     }
-
-    return "";
+    return QBXML(xmlParser);
 }
 
 void init_string(struct curlString *s) {
