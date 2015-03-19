@@ -27,7 +27,7 @@ class QBWrapper {
         void SetAppToken(string token); // Optional
 
         string Authenticate(string username, string password, int hours, string udata);
-        string AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC);
+        string AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
         string EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC);
         string GetSchema(string ticket, string apptoken, string udata, string dbid);
         string GetDBInfo(string ticket, string apptoken, string udata, string dbid);
@@ -43,7 +43,7 @@ class QBWrapper {
         string _apptoken;
         string _ticket;
         string _appLocation;
-        string _XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values);
+        string _XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values, vector<string> altParams = vector<string>(), vector<string> altValues = vector<string>());
         string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
         string _BoolToString(bool aBool);

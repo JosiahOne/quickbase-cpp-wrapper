@@ -18,7 +18,6 @@ void QBWrapper::SetAppLocation(string location) {
 string QBWrapper::Authenticate(string username, string password, int hours, string udata) {
     vector<string> paramVector = { "username", "password", "hours", "udata" };
     vector<string> valueVector = { username, password, _IntToString(hours), udata };
-
     string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
@@ -26,19 +25,42 @@ string QBWrapper::Authenticate(string username, string password, int hours, stri
         xmlParser->Load(result);
         string ticket = xmlParser->GetFieldContents("ticket");
         delete xmlParser;
-        if (ticket != "" && ticket != "ERROR") {
+        if (ticket != "" && ticket != "ERROR"){ 
             return ticket;
         }
     }
     return "AUTHERROR";
 }
 
-string QBWrapper::AddRecord(string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
+string QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+    if (fields.size() != fieldContents.size()) {
+        return "ERROR";
+    }
     
+    vector<string> paramVector = { "disprec", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
+    vector<string> valueVector = { _BoolToString(disprec), _BoolToString(ignoreError), ticket, apptoken, udata, _BoolToString(msInUTC) };
+    vector<string> altParams = { "", "", "", "", "", "" };
+    vector<string> altValues = { "", "", "", "", "", "" };
+
+    for (unsigned int i = 0; i < fields.size(); i++) {
+        altParams.push_back("fid");
+        altValues.push_back(fields[i]);
+        paramVector.push_back("field");
+        valueVector.push_back(fieldContents[i]);
+    }
+
+    string result = _XMLDataPrelim("API_AddRecord", dbid, paramVector, valueVector, altParams, altValues);
+
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 
 string QBWrapper::EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
+    
+    
     return "";
 }
 
@@ -78,8 +100,8 @@ string QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string
              Duration	                duration
              Email Address	          email
              File Attachment	        file
-             Formula	                (see the “mode” param)
-             Lookup	                  (see the “mode” param)
+             Formula	                (see the "mode" param)
+             Lookup	                  (see the "mode" param)
              Numeric	                float
              Numeric - Currency	      currency
              Numeric - Rating	        rating
@@ -246,17 +268,27 @@ size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s)
     return returnValue;
 }
 
-string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values) {
-    if (params.size() != values.size()) {
-        cout << "params and values are not of equal size";
+string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values, vector<string> altParams, vector<string> altValues) {
+    if (params.size() != values.size() || altParams.size() != altValues.size()) {
+        cout << "(alt)params and (alt)values are not of equal size";
         abort();
     }
     XMLGen *gen = new XMLGen;
     gen->SetLocation(_appLocation + "/db/" + dbid);
     gen->SetQBAction(apiAction);
     gen->AddParent("qdbapi");
-    for (unsigned int i = 0; i < params.size(); i++) {
-        gen->AddField(params[i], values[i]);
+
+    if (altParams.size() == params.size()) {
+        for (unsigned int i = 0; i < altParams.size(); i++) {
+            if (altParams[i] != "") {
+                gen->AddFieldWithParam(params[i], values[i], altParams[i], altValues[i]);
+            }
+        }
+    }
+    else {
+        for (unsigned int i = 0; i < params.size(); i++) {
+            gen->AddField(params[i], values[i]);
+        }
     }
     gen->CloseParent("qdbapi");
     gen->WriteOut();
