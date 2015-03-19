@@ -58,9 +58,29 @@ string QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents,
     return "";
 }
 
-string QBWrapper::EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC) {
-    
-    
+string QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+    if (fields.size() != contents.size()) {
+        return "ERROR";
+    }
+
+    vector<string> paramVector = { "rid", "update_id", "disprec", "fform", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
+    vector<string> valueVector = { _IntToString(rid), _IntToString(updateID), _BoolToString(disprec), _BoolToString(ignoreError), ticket, apptoken, udata, _BoolToString(msInUTC) };
+    vector<string> altParams = { "", "", "", "", "", "", "", "", "" };
+    vector<string> altValues = { "", "", "", "", "", "", "", "", "" };
+
+    for (unsigned int i = 0; i < fields.size(); i++) {
+        altParams.push_back("fid");
+        altValues.push_back(fields[i]);
+        paramVector.push_back("field");
+        valueVector.push_back(contents[i]);
+    }
+
+    string result = _XMLDataPrelim("API_EditRecord", dbid, paramVector, valueVector, altParams, altValues);
+
+    if (result != "") {
+        return result;
+    }
+
     return "";
 }
 

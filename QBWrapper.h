@@ -28,7 +28,7 @@ class QBWrapper {
 
         string Authenticate(string username, string password, int hours, string udata);
         string AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
-        string EditRecord(int rid, int updateID, string fields[], bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC);
+        string EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
         string GetSchema(string ticket, string apptoken, string udata, string dbid);
         string GetDBInfo(string ticket, string apptoken, string udata, string dbid);
         string AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
