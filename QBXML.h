@@ -25,6 +25,7 @@ class QBXML
         XMLResult GetFID();              // API_AddField.
         XMLResult GetLabel();            // API_AddField.
         XMLResult GetNumFieldsChanged(); // API_EditRecord.
+        XMLResult GetNewDBID();          // API_CreateTable
     private:
         XMLRead *_xmlData;
         XMLResult _GetResult(string);

@@ -115,22 +115,7 @@ QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string 
 
 /* AddField Params:
  *   - mode: "virtual" (formula), "lookup", or "" are valid values.
- *   - type: Field Type         Quickbase API field type
-             Checkbox         	      checkbox
-             Date	                    date
-             Duration	                duration
-             Email Address	          email
-             File Attachment	        file
-             Formula	                (see the "mode" param)
-             Lookup	                  (see the "mode" param)
-             Numeric	                float
-             Numeric - Currency	      currency
-             Numeric - Rating	        rating
-             Phone Number	            phone
-             Report Link	            dblink
-             Text                   	text
-             Time Of Day	            timeofday
-             URL	                    url
+
  */
 QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
     vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };

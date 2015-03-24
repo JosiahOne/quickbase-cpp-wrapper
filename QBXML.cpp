@@ -66,6 +66,10 @@ XMLResult QBXML::GetNumFieldsChanged() {
     return _GetResult("num_fields_changed");
 }
 
+XMLResult QBXML::GetNewDBID() {
+    return _GetResult("newdbid");
+}
+
 XMLResult QBXML::_GetResult(string type) {
     XMLResult xmlRes;
     string result = _xmlData->GetFieldContents(type);
