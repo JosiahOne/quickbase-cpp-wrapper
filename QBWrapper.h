@@ -39,8 +39,8 @@ class QBWrapper {
 
         /* Authenticate -> API_Authenticate
          * Parameters:
-         *   string username: The user’s email address registered with QuickBase or the user name that was selected within QuickBase when the user registered.
-         *   string password: The user’s QuickBase password.
+         *   string username: The user's email address registered with QuickBase or the user name that was selected within QuickBase when the user registered.
+         *   string password: The user's QuickBase password.
          *   int       hours: The number of hours that the ticket will be valid. If you pass NULL, this is equal to 12 hours.
          *   string    udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          */
@@ -111,16 +111,16 @@ class QBWrapper {
          * Notes:
          *   Field Type         Quickbase API field type
               Checkbox         	      checkbox
-              Date	                    date
-              Duration	                duration
+              Date	                  date
+              Duration	              duration
               Email Address	          email
               File Attachment	        file
               Formula	                (see the "mode" param)
-              Lookup	                  (see the "mode" param)
+              Lookup	                (see the "mode" param)
               Numeric	                float
-              Numeric - Currency	      currency
-              Numeric - Rating	        rating
-              Phone Number	            phone
+              Numeric - Currency	    currency
+              Numeric - Rating	      rating
+              Phone Number	          phone
               Report Link	            dblink
               Text                   	text
               Time Of Day	            timeofday

@@ -12,9 +12,6 @@ void QBWrapper::SetAppLocation(string location) {
     _appLocation = location;
 }
 
-/* Returns the ticket if the username and password is valid.
-   Returns "AUTHERROR" if there was an error (i.e. <errcode> > 0)
- */
 QBXML QBWrapper::Authenticate(string username, string password, int hours, string udata) {
     vector<string> paramVector = { "username", "password", "hours", "udata" };
     vector<string> valueVector = { username, password, _IntToString(hours), udata };
@@ -96,9 +93,6 @@ QBXML QBWrapper::GetSchema(string ticket, string apptoken, string udata, string 
     return QBXML(xmlParser);
 }
 
-/* Returns the XML data if available.
-   Returns nothing ("") if no data was found.
- */
 QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
     vector<string> paramVector = { "ticket", "apptoken", "udata" };
     vector<string> valueVector = { ticket, apptoken, udata };
@@ -113,10 +107,6 @@ QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string 
     return QBXML(xmlParser);
 }
 
-/* AddField Params:
- *   - mode: "virtual" (formula), "lookup", or "" are valid values.
-
- */
 QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
     vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
     vector<string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
