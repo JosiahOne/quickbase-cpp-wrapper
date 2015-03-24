@@ -13,19 +13,31 @@ class QBXML
     public:
         QBXML(XMLRead *read);
         ~QBXML();
-        void Dealloc();                  /*   Valid For:   */
-        XMLResult GetAction();           // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
-        XMLResult GetErrCode();          // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
-        XMLResult GetErrText();          // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
-        XMLResult GetUData();            // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
-        XMLResult GetUserID();           // API_Authenticate, API_AddField.
-        XMLResult GetTicket();           // API_Authenticate.
-        XMLResult GetRID();              // API_AddRecord, API_EditRecord.
-        XMLResult GetUpdateID();         // API_AddRecord, API_EditRecord.
-        XMLResult GetFID();              // API_AddField.
-        XMLResult GetLabel();            // API_AddField.
-        XMLResult GetNumFieldsChanged(); // API_EditRecord.
-        XMLResult GetNewDBID();          // API_CreateTable
+        void Dealloc();
+        // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
+        XMLResult GetAction();           
+        // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
+        XMLResult GetErrCode();          
+        // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
+        XMLResult GetErrText();          
+        // API_Authenticate, API_AddRecord, API_AddField, API_EditRecord.
+        XMLResult GetUData();            
+        // API_Authenticate, API_AddField.
+        XMLResult GetUserID();
+        // API_Authenticate.     
+        XMLResult GetTicket();        
+        // API_AddRecord, API_EditRecord.   
+        XMLResult GetRID();          
+        // API_AddRecord, API_EditRecord.    
+        XMLResult GetUpdateID();         
+        // API_AddField.
+        XMLResult GetFID();             
+        // API_AddField.
+        XMLResult GetLabel();            
+        // API_EditRecord.
+        XMLResult GetNumFieldsChanged(); 
+        // API_CreateTable
+        XMLResult GetNewDBID();          
     private:
         XMLRead *_xmlData;
         XMLResult _GetResult(string);

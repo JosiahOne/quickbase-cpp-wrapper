@@ -24,17 +24,17 @@ class QBWrapper {
         QBWrapper();
         ~QBWrapper();
         /* SetAppLocation
-        * Parameters:
-        *   string location: The URL pointing to the root. E.G. https://yourhostname.quickbase.com
-        * Notes:
-        *   USE HTTPS! Not HTTP.
-        */
+         * Parameters:
+         *   string location: The URL pointing to the root. E.G. https://yourhostname.quickbase.com
+         * Notes:
+         *   USE HTTPS! Not HTTP.
+         */
         void SetAppLocation(string location); // Required.
 
         /* SetAppToken
-        * Parameters:
-        *   string token: The app token for your app. You must supply this if your QB app requires application tokens.
-        */
+         * Parameters:
+         *   string token: The app token for your app. You must supply this if your QB app requires application tokens.
+         */
         void SetAppToken(string token); // Optional
 
         /* Authenticate -> API_Authenticate

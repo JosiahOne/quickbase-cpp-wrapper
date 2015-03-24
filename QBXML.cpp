@@ -1,6 +1,5 @@
 #include "QBXML.h"
 
-
 QBXML::QBXML(XMLRead *read) {
     if (read) {
         _xmlData = read;

@@ -305,6 +305,9 @@ string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> p
             if (altParams[i] != "") {
                 gen->AddFieldWithParam(params[i], values[i], altParams[i], altValues[i]);
             }
+            else if (values[i] != "") {
+                gen->AddField(params[i], values[i]);
+            }
         }
     }
     else {
@@ -339,7 +342,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
             abort();
         }
         char *str3 = _strdup(str2);
-        cout << str3;
+        cout << endl << "\n===================\n" << str3 << "\n===================\n";
         CURL *curl;
         CURLcode res;
         curl_slist *list = NULL;

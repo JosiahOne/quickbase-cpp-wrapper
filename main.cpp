@@ -16,6 +16,14 @@ int main(int argc, char** argv) {
     qb->SetAppLocation("https://lathrupindustries.quickbase.com");
     QBXML result = qb->Authenticate("jbruner@lathrupindustries.com", "password123", 12, "test");
     cout << "\n\nTICKET = " << result.GetTicket().text <<"\n\n";
+    string ticket = result.GetTicket().text;
+
+    vector<string> vec1 = { "9" };
+    vector<string> vec2 = { "Test" };
+
+    //QBXML result2 = qb->AddRecord(vec1, vec2, 0, 0, ticket, "", "", false, "bjr9riz52");
+
+    //cout << endl << result2.GetRID().text;
 
     return 0;
 }
