@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <vector>
 #include "QBXML.h"
+#include "UTF-8\utf8.h"
 
 using namespace std;
 

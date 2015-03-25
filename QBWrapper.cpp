@@ -12,6 +12,27 @@ void QBWrapper::SetAppLocation(string location) {
     _appLocation = location;
 }
 
+void fix_utf8_string(std::string& str)
+{
+    cout << str;
+    std::string temp;
+    utf8::replace_invalid(str.begin(), str.end(), back_inserter(temp));
+    str = temp;
+    cout << endl << str;
+}
+
+bool valid_utf8_file(const char* file_name)
+{
+    ifstream ifs(file_name);
+    if (!ifs)
+        return false; // even better, throw here
+
+    istreambuf_iterator<char> it(ifs.rdbuf());
+    istreambuf_iterator<char> eos;
+
+    return utf8::is_valid(it, eos);
+}
+
 QBXML QBWrapper::Authenticate(string username, string password, int hours, string udata) {
     vector<string> paramVector = { "username", "password", "hours", "udata" };
     vector<string> valueVector = { username, password, _IntToString(hours), udata };
@@ -335,7 +356,7 @@ string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> p
 
 string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
     // Convert file to stream.
-
+    cout << "Valid? " << valid_utf8_file(file.c_str());
     ifstream aFile(file.c_str());
     struct curlString returnData;
 
@@ -346,7 +367,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         aFile.close();
         string str = buffer.str();
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
-
+        fix_utf8_string(str);
         const char *str2 = str.c_str();
         if (!str2) {
             cout << "ERROR!";
