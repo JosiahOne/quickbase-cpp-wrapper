@@ -47,7 +47,7 @@ void XMLGen::AddField(string name, string data) {
 }
 
 void XMLGen::AddFieldWithParam(string name, string data, string pName, string pData) {
-    _outStream = _outStream + '<' + name + ' ' + pName + "=\"" + pData + "\">" + data + "</" + name + ">\n";
+    _outStream = _outStream + '<' + name + ' ' + pName + "='" + pData + "'>" + data + "</" + name + ">\n";
 }
 
 bool XMLGen::WriteOut() {

@@ -34,7 +34,7 @@ string XMLRead::_GetStringBetween(string data, string startDelim, string endDeli
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
     if (first != string::npos && last != string::npos) {
-        string strNew = data.substr(first + startDelim.length(), last - endDelim.length() - first);
+        string strNew = data.substr(first + startDelim.length(), last - endDelim.length() - first + 1);
         return strNew;
     }
     else {

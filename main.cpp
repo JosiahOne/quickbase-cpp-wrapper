@@ -19,9 +19,9 @@ int main(int argc, char** argv) {
     string ticket = result.GetTicket().text;
 
     vector<string> vec1 = { "9" };
-    vector<string> vec2 = { "Test" };
+    vector<string> vec2 = { "1" };
 
-    //QBXML result2 = qb->AddRecord(vec1, vec2, 0, 0, ticket, "", "", false, "bjr9riz52");
+    QBXML result2 = qb->AddRecord(vec1, vec2, NULL, NULL, ticket, "", "", NULL, "bjr9riz52");
 
     //cout << endl << result2.GetRID().text;
 

@@ -154,22 +154,22 @@ class QBWrapper {
         QBXML SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid);
         
         /* CreateTable -> API_CreateTable
-        * Parameters:
-        *   int           fid: The fid of the field you want to remove.
-        *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string   apptoken: Specifies a valid application token.
-        *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string       dbid: The DBID of an app.
-        */
+         * Parameters:
+         *   int           fid: The fid of the field you want to remove.
+         *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string   apptoken: Specifies a valid application token.
+         *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string       dbid: The DBID of an app.
+         */
         QBXML CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
         
         /* GetNumRecords -> API_GetNumRecords
-        * Parameters:
-        *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string   apptoken: Specifies a valid application token.
-        *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string       dbid: The DBID of a table.
-        */
+         * Parameters:
+         *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string   apptoken: Specifies a valid application token.
+         *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string       dbid: The DBID of a table.
+         */
         QBXML GetNumRecords(string ticket, string apptoken, string udata, string dbid);
 
         /* GetRecordInfo -> API_GetRecordInfo
@@ -183,27 +183,27 @@ class QBWrapper {
         QBXML GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);
         
         /* DeleteRecord -> API_DeleteRecord
-        * Parameters:
-        *   int           rid: The RID of the record you want information on.
-        *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string   apptoken: Specifies a valid application token.
-        *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string       dbid: The DBID of a table.
-        */
+         * Parameters:
+         *   int           rid: The RID of the record you want information on.
+         *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string   apptoken: Specifies a valid application token.
+         *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string       dbid: The DBID of a table.
+         */
         QBXML DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid);
         
         /* PurgeRecords -> API_PurgeRecords
-        * Parameters:
-        *   string      query: Specificies the query string. E.G. {myfid.operator.value}
-        *   int           qid: The query id of a saved query.
-        *   string      qname: The name of a saved query.
-        *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string   apptoken: Specifies a valid application token.
-        *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string       dbid: The DBID of a table.
-        * Notes:
-        *   The first three parameters are used in order. If one is NULL then the next is used.
-        */
+         * Parameters:
+         *   string      query: Specificies the query string. E.G. {myfid.operator.value}
+         *   int           qid: The query id of a saved query.
+         *   string      qname: The name of a saved query.
+         *   string     ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string   apptoken: Specifies a valid application token.
+         *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string       dbid: The DBID of a table.
+         * Notes:
+         *   The first three parameters are used in order. If one is NULL then the next is used.
+         */
         QBXML PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
     private:
         string _apptoken;

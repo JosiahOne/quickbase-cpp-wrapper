@@ -30,10 +30,20 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
         return NULL;
     }
     
-    vector<string> paramVector = { "disprec", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
-    vector<string> valueVector = { _BoolToString(disprec), _BoolToString(ignoreError), ticket, apptoken, udata, _BoolToString(msInUTC) };
-    vector<string> altParams = { "", "", "", "", "", "" };
-    vector<string> altValues = { "", "", "", "", "", "" };
+    vector<string> paramVector = { "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { ticket, apptoken, udata };
+    vector<string> altParams = { "", "", "" };
+    vector<string> altValues = { "", "", "" };
+    vector<string> optionalParams = { "disprec, ignoreError, msInUTC" };
+    vector<bool> optionalValues = { disprec, ignoreError, msInUTC };
+
+    // Optional Parameters
+    for (int i = 0; i < 3; i++) {
+        if (optionalValues[i] == true) {
+            paramVector.push_back(optionalParams[i]);
+            valueVector.push_back(_BoolToString(optionalValues[i]));
+        }
+    }
 
     for (unsigned int i = 0; i < fields.size(); i++) {
         altParams.push_back("fid");
@@ -302,7 +312,7 @@ string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> p
 
     if (altParams.size() == params.size()) {
         for (unsigned int i = 0; i < altParams.size(); i++) {
-            if (altParams[i] != "") {
+            if (altParams[i] != "" && values[i] != "") {
                 gen->AddFieldWithParam(params[i], values[i], altParams[i], altValues[i]);
             }
             else if (values[i] != "") {
@@ -336,6 +346,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         aFile.close();
         string str = buffer.str();
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
+
         const char *str2 = str.c_str();
         if (!str2) {
             cout << "ERROR!";
@@ -343,6 +354,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         }
         char *str3 = _strdup(str2);
         cout << endl << "\n===================\n" << str3 << "\n===================\n";
+        cout << "API NAME: " << apiName << "\n DBID: " << dbid << endl;
         CURL *curl;
         CURLcode res;
         curl_slist *list = NULL;
@@ -355,9 +367,11 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
             string data = _appLocation + "/db/" + dbid.c_str() + "?act=" + apiName.c_str();
             const char *otherData = data.c_str();
 
+            cout << "DATA: " << otherData << endl;
+
             list = curl_slist_append(list, "Content-Type: application/xml");
 
-            curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
+            curl_easy_setopt(curl, CURLOPT_VERBOSE, 0);
             curl_easy_setopt(curl, CURLOPT_URL, otherData);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -377,6 +391,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         }
 
         curl_global_cleanup();
+        curl_slist_free_all(list);
     }
     if (returnData.ptr) {
         cout << string(returnData.ptr);
