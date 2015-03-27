@@ -57,7 +57,7 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
     vector<string> altValues = { "", "", "" };
 
     paramData optionalData;
-    optionalData.bParams = { "disprec, ignoreError, msInUTC" };
+    optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
     optionalData.bValues = { disprec, ignoreError, msInUTC };
     _AddOptionalParams(paramVector, valueVector, optionalData);
 
@@ -89,7 +89,7 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
     vector<string> altValues = { "", "", "", "" };
 
     paramData optionalData;
-    optionalData.bParams = { "disprec, ignoreError, msInUTC" };
+    optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
     optionalData.bValues = { disprec, ignoreError, msInUTC };
     optionalData.iParams = { "update_id" };
     optionalData.iValues = { updateID };
@@ -144,6 +144,11 @@ QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string 
 QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
     vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
     vector<string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
+
+    paramData optionalData;
+    optionalData.bParams = { "add_to_forms" };
+    optionalData.bValues = { addToForms };
+    _AddOptionalParams(paramVector, valueVector, optionalData);
 
     string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
