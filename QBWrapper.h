@@ -15,9 +15,22 @@ using namespace std;
 
 void init_string(struct curlString *s);
 size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s);
+
 struct curlString {
     char *ptr;
     size_t len;
+};
+
+struct paramData {
+    vector<string> bParams = {};
+    vector<string> iParams = {};
+    vector<string> sParams = {};
+    vector<string> fParams = {};
+    
+    vector<bool> bValues = {};
+    vector<int> iValues = {};
+    vector<string> sValues = {};
+    vector<float> fValues = {};
 };
 
 class QBWrapper {
@@ -213,8 +226,10 @@ class QBWrapper {
         string _XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values, vector<string> altParams = vector<string>(), vector<string> altValues = vector<string>());
         string _PostWithFile(string file, string apiName, string dbid);
         string _IntToString(int anInt);
+        string _FloatToString(float aFloat);
         string _BoolToString(bool aBool);
         int _CURLSend(string inputStream);
         string _GetStringBetween(string data, string startDelim, string endDelim);
         string _SizetToString(size_t aSizeT);
+        void _AddOptionalParams(vector<string>paramArray, vector<string>valueArray, paramData data);
 };

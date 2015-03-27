@@ -55,16 +55,11 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
     vector<string> valueVector = { ticket, apptoken, udata };
     vector<string> altParams = { "", "", "" };
     vector<string> altValues = { "", "", "" };
-    vector<string> optionalParams = { "disprec, ignoreError, msInUTC" };
-    vector<bool> optionalValues = { disprec, ignoreError, msInUTC };
 
-    // Optional Parameters
-    for (int i = 0; i < 3; i++) {
-        if (optionalValues[i] == true) {
-            paramVector.push_back(optionalParams[i]);
-            valueVector.push_back(_BoolToString(optionalValues[i]));
-        }
-    }
+    paramData optionalData;
+    optionalData.bParams = { "disprec, ignoreError, msInUTC" };
+    optionalData.bValues = { disprec, ignoreError, msInUTC };
+    _AddOptionalParams(paramVector, valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
         altParams.push_back("fid");
@@ -88,10 +83,17 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
         return NULL;
     }
 
-    vector<string> paramVector = { "rid", "update_id", "disprec", "fform", "ignoreError", "ticket", "apptoken", "udata", "msInUTC" };
-    vector<string> valueVector = { _IntToString(rid), _IntToString(updateID), _BoolToString(disprec), _BoolToString(ignoreError), ticket, apptoken, udata, _BoolToString(msInUTC) };
-    vector<string> altParams = { "", "", "", "", "", "", "", "", "" };
-    vector<string> altValues = { "", "", "", "", "", "", "", "", "" };
+    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata};
+    vector<string> altParams = { "", "", "", "" };
+    vector<string> altValues = { "", "", "", "" };
+
+    paramData optionalData;
+    optionalData.bParams = { "disprec, ignoreError, msInUTC" };
+    optionalData.bValues = { disprec, ignoreError, msInUTC };
+    optionalData.iParams = { "update_id" };
+    optionalData.iValues = { updateID };
+    _AddOptionalParams(paramVector, valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
         altParams.push_back("fid");
@@ -107,6 +109,7 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
         // We need to parse this XML data now.
         xmlParser->Load(result);
     }
+
     return QBXML(xmlParser);
 }
 
@@ -356,7 +359,6 @@ string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> p
 
 string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
     // Convert file to stream.
-    cout << "Valid? " << valid_utf8_file(file.c_str());
     ifstream aFile(file.c_str());
     struct curlString returnData;
 
@@ -366,7 +368,6 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
 
         aFile.close();
         string str = buffer.str();
-        //string str = "<qdbapi><ticket>7_bjtq8h4ix_b2djnw_erbr_a_fz3cn4dkurq3mcze8dqbbremmc8cgws8jcbjfg3nnbmxtdaqdt78ezn</ticket><field fid='9'>1</field></qdbapi>";
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
         fix_utf8_string(str);
         const char *str2 = str.c_str();
@@ -392,11 +393,8 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
             cout << "DATA: " << otherData << endl;
 
             list = curl_slist_append(list, "Content-Type: application/xml");
-            string lengthString = string("Content-Length:" + _SizetToString(strlen(str3)));
-            cout << "STUIFF" <<  strlen(str3);
-            //list = curl_slist_append(list, lengthString.c_str());
 
-            curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
+            curl_easy_setopt(curl, CURLOPT_VERBOSE, FALSE);
             curl_easy_setopt(curl, CURLOPT_URL, otherData);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -432,6 +430,13 @@ string QBWrapper::_IntToString(int anInt) {
     return aString;
 }
 
+string QBWrapper::_FloatToString(float aFloat) {
+    stringstream ss;
+    ss << aFloat;
+    string aString = ss.str();
+    return aString;
+}
+
 string QBWrapper::_BoolToString(bool aBool) {
     if (aBool) {
         return "1";
@@ -457,5 +462,39 @@ string QBWrapper::_GetStringBetween(string data, string startDelim, string endDe
     }
     else {
         return NULL;
+    }
+}
+
+void QBWrapper::_AddOptionalParams(vector<string>paramArray, vector<string>valueArray, paramData data) {
+    // Booleans
+    for (unsigned i = 0; i < data.bParams.size(); i++) {
+        if (data.bValues[i] == TRUE) {
+            paramArray.push_back(data.bParams[i]);
+            valueArray.push_back(_BoolToString(data.bValues[i]));
+        }
+    }
+
+    // Integers
+    for (unsigned i = 0; i < data.iParams.size(); i++) {
+        if (data.iValues[i] > 0) {
+            paramArray.push_back(data.iParams[i]);
+            valueArray.push_back(_IntToString(data.iValues[i]));
+        }
+    }
+
+    // Strings
+    for (unsigned i = 0; i < data.sParams.size(); i++) {
+        if (data.sParams[i] != "") {
+            paramArray.push_back(data.sParams[i]);
+            valueArray.push_back(data.sValues[i]);
+        }
+    }
+
+    // Floats
+    for (unsigned i = 0; i < data.fParams.size(); i++) {
+        if (data.fParams[i] != "") {
+            paramArray.push_back(data.fParams[i]);
+            valueArray.push_back(_FloatToString(data.fValues[i]));
+        }
     }
 }
