@@ -216,4 +216,5 @@ class QBWrapper {
         string _BoolToString(bool aBool);
         int _CURLSend(string inputStream);
         string _GetStringBetween(string data, string startDelim, string endDelim);
+        string _SizetToString(size_t aSizeT);
 };

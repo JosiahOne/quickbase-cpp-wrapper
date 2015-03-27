@@ -366,6 +366,7 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
 
         aFile.close();
         string str = buffer.str();
+        //string str = "<qdbapi><ticket>7_bjtq8h4ix_b2djnw_erbr_a_fz3cn4dkurq3mcze8dqbbremmc8cgws8jcbjfg3nnbmxtdaqdt78ezn</ticket><field fid='9'>1</field></qdbapi>";
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
         fix_utf8_string(str);
         const char *str2 = str.c_str();
@@ -391,13 +392,15 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
             cout << "DATA: " << otherData << endl;
 
             list = curl_slist_append(list, "Content-Type: application/xml");
+            string lengthString = string("Content-Length:" + _SizetToString(strlen(str3)));
+            cout << "STUIFF" <<  strlen(str3);
+            //list = curl_slist_append(list, lengthString.c_str());
 
-            curl_easy_setopt(curl, CURLOPT_VERBOSE, 0);
+            curl_easy_setopt(curl, CURLOPT_VERBOSE, TRUE);
             curl_easy_setopt(curl, CURLOPT_URL, otherData);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
             curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, FALSE);
             curl_easy_setopt(curl, CURLOPT_HTTPHEADER, list);
-            curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE, 135L);
             curl_easy_setopt(curl, CURLOPT_POSTFIELDS, str3);
             curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeStream);
             curl_easy_setopt(curl, CURLOPT_WRITEDATA, &returnData);
@@ -411,7 +414,6 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
             curl_easy_cleanup(curl);
         }
 
-        curl_global_cleanup();
         curl_slist_free_all(list);
     }
     if (returnData.ptr) {
@@ -437,6 +439,13 @@ string QBWrapper::_BoolToString(bool aBool) {
     else {
         return "0";
     }
+}
+
+string QBWrapper::_SizetToString(size_t aSizeT) {
+    stringstream ss;
+
+    ss << aSizeT;
+    return ss.str();
 }
 
 string QBWrapper::_GetStringBetween(string data, string startDelim, string endDelim) {
