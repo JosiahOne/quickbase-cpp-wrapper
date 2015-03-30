@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "XMLGen.h"
-#include "curl/curl.h"
+#include <curl/curl.h>
 #include <algorithm>
 #include <vector>
 #include "QBXML.h"
