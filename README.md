@@ -11,6 +11,7 @@ You will need to build and install the proper libcurl library for your machine a
 #### VS Setup Data ####
 In your linker settings, make sure Additional Library Directories is set to "custom_libraries\lib_dbg"
 Also make sure Additional Dependencies includes "libcurld.lib".
+Finally, add CURL_STATICLIB to your Preprocessor Definitions.
 
 ### Contribution guidelines ###
 
