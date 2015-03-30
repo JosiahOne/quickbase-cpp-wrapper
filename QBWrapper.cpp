@@ -503,3 +503,9 @@ void QBWrapper::_AddOptionalParams(vector<string>paramArray, vector<string>value
         }
     }
 }
+
+void QBWrapper::Cleanup() {
+    remove("outputDataStream.xml");
+
+    delete this;
+}

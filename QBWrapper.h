@@ -219,6 +219,12 @@ class QBWrapper {
          *   The first three parameters are used in order. If one is NULL then the next is used.
          */
         QBXML PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
+
+        /* Cleanup
+         * Notes:
+         *   Removes the outputDataStream and self-destructs this object.
+         */
+        void Cleanup();
     private:
         string _apptoken;
         string _ticket;
