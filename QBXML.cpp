@@ -70,7 +70,7 @@ XMLResult QBXML::GetNewDBID() {
 }
 
 XMLResult QBXML::GetRecords() {
-    return _GetResult("records");
+    return _GetResult("record");
 }
 
 XMLResult QBXML::_GetResult(string type) {
