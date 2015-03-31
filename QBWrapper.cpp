@@ -44,7 +44,6 @@ QBXML QBWrapper::Authenticate(string username, string password, int hours, strin
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -78,7 +77,6 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -114,7 +112,6 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -145,7 +142,6 @@ QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string 
         // We need to parse this XML data now.
         xmlParser->Load(result);
     }
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -166,7 +162,6 @@ QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -182,7 +177,6 @@ QBXML QBWrapper::DeleteField(int fid, string ticket, string apptoken, string uda
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -207,7 +201,6 @@ QBXML QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -223,7 +216,6 @@ QBXML QBWrapper::CreateTable(string tname, string pnoun, string ticket, string a
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -240,7 +232,6 @@ QBXML QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, str
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -256,7 +247,6 @@ QBXML QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string u
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -272,7 +262,6 @@ QBXML QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string ud
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -322,7 +311,6 @@ QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket
         xmlParser->Load(result);
     }
 
-    delete xmlParser;
     return QBXML(xmlParser);
 }
 
@@ -437,14 +425,9 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
                     curl_easy_strerror(res));
             }
             curl_easy_cleanup(curl);
-            delete otherData;
         }
 
         curl_slist_free_all(list);
-        delete str3;
-        delete curl;
-        delete list;
-        delete curlData;
     }
     if (returnData.ptr) {
         cout << string(returnData.ptr);
