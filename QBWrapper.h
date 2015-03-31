@@ -220,6 +220,33 @@ class QBWrapper {
          */
         QBXML PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
 
+        /* DoQuery -> API_DoQuery
+         * Parameters:
+         *   string             query: Specificies the query string. E.G. {myfid.operator.value}
+         *   int                  qid: The query id of a saved query.
+         *   string             qname: The name of a saved query.
+         *   string             clist: A period-delimited list of field IDs to be returned. QuickBase will return values for these field IDs in the order in which you enter them here.
+         *   string             slist: A period-delimited list of field IDs used to determine sorting.
+         *   bool                 fmt: Set this parameter to structured to specify that the query should return structured data.
+         *   bool    returnPercentage: Specifies whether Numeric - Percent values in the returned data will be percentage format (10% is shown as 10).
+         *   string           options: Specifies return options for the query. You can use any or all of the options, separating the options with a period.
+         *   bool         includeRids: To return record IDs for each record, set this parameter to 1. 
+         *   string            ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string          apptoken: Specifies a valid application token.
+         *   string             udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string              dbid: The DBID of a table.
+         * Notes:
+         *   The first three parameters are used in order. If one is NULL then the next is used.
+         *   options:
+         *     num-n --specifies a maximum of n records in the return
+         *     onlynew --returns only those records marked with new or updated flags
+         *     skp-n --skips the first n records returned by the query
+         *     sortorder-A --specifies an ascending order
+         *     sortorder-D --specifies a descending order
+         *     nosort --returns unsorted records, ignoring the sortorder option, the slist parameter, and the default sort for the table
+         */
+        QBXML DoQuery(string query, int qid, string qname, string clist, string slist, bool fmt, bool returnPercentage, string options, bool includeRids, string ticket, string apptoken, string udata, string dbid);
+
         /* Cleanup
          * Notes:
          *   Removes the outputDataStream and self-destructs this object.

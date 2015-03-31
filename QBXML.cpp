@@ -69,6 +69,10 @@ XMLResult QBXML::GetNewDBID() {
     return _GetResult("newdbid");
 }
 
+XMLResult QBXML::GetRecords() {
+    return _GetResult("records");
+}
+
 XMLResult QBXML::_GetResult(string type) {
     XMLResult xmlRes;
     string result = _xmlData->GetFieldContents(type);

@@ -314,6 +314,43 @@ QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket
     return QBXML(xmlParser);
 }
 
+QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, string slist, bool fmt, bool returnPercentage, string options, bool includeRids, string ticket, string apptoken, string udata, string dbid) {
+    vector<string> paramVector = { "clist", "slist", "options", "ticket", "apptoken", "udata" };
+    vector<string> valueVector = { clist, slist, options, ticket, apptoken, udata };
+
+    paramData optionalData;
+    optionalData.bParams = { "fmt", "returnpercentage", "includeRids" };
+    optionalData.bValues = { fmt, returnPercentage, includeRids };
+    _AddOptionalParams(paramVector, valueVector, optionalData);
+
+    if (query == "ALL") {
+        paramVector.push_back("query");
+        valueVector.push_back("");
+    }
+    else if (query != "") {
+        paramVector.push_back("query");
+        valueVector.push_back(query);
+    }
+    else if (qid != NULL && qid >= 0) {
+        paramVector.push_back("qid");
+        valueVector.push_back(_IntToString(qid));
+    }
+    else if (qname != "") {
+        paramVector.push_back("qname");
+        valueVector.push_back(qname);
+    }
+
+    string result = _XMLDataPrelim("API_DoQuery", dbid, paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
+    }
+
+    return QBXML(xmlParser);
+}
+
 void init_string(struct curlString *s) {
     s->len = 0;
     s->ptr = (char*)malloc(s->len + 1);
