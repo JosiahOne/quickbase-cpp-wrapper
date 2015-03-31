@@ -38,7 +38,7 @@ string XMLRead::_GetStringBetween(string data, string startDelim, string endDeli
         return strNew;
     }
     else {
-        return NULL;
+        return "ERROR";
     }
 }
 
