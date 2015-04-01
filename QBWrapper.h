@@ -247,6 +247,17 @@ class QBWrapper {
          */
         QBXML DoQuery(string query, int qid, string qname, string clist, string slist, bool fmt, bool returnPercentage, string options, bool includeRids, string ticket, string apptoken, string udata, string dbid);
 
+        /* GetFieldContents
+         * Parameters:
+         *   int          fid: The field id of the field you want to obtain contents.
+         *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string  apptoken: Specifies a valid application token.
+         *   string     udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string      dbid: The DBID of a table.
+         *   string       rid: The RID of a record.
+         */
+        string GetFieldContents(int fid, string ticket, string apptoken, string udata, string dbid, int rid);
+
         /* Cleanup
          * Notes:
          *   Removes the outputDataStream and self-destructs this object.

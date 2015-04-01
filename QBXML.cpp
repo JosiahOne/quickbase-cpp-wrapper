@@ -69,8 +69,44 @@ XMLResult QBXML::GetNewDBID() {
     return _GetResult("newdbid");
 }
 
-XMLResult QBXML::GetRecords() {
+XMLResult QBXML::GetRecord() {
     return _GetResult("record");
+}
+
+XMLResult QBXML::GetNumFields() {
+    return _GetResult("num_fields");
+}
+
+XMLResult QBXML::GetValue() {
+    return _GetResult("value");
+}
+
+vector<QBXML> QBXML::GetFields() {
+    vector<QBXML> results = { };
+    string remainingData = _xmlData->GetRawXML();
+
+    bool flag = true;
+    while (flag) {
+        XMLRead *xmlData = new XMLRead;
+        xmlData->Load(remainingData);
+        XMLResult aRes = _GetResult("field");
+        if (aRes.valid) {
+            XMLRead *reducedRead = new XMLRead;
+            reducedRead->Load(aRes.text);
+            QBXML newXML(reducedRead);
+            results.push_back(newXML);
+            delete reducedRead;
+            // Strip remainingData for repeat
+            remainingData = _RemoveSubstring(remainingData, aRes.text);
+        }
+        else {
+            flag = false;
+        }
+
+        delete xmlData;
+    }
+
+    return results;
 }
 
 XMLResult QBXML::_GetResult(string type) {
@@ -86,4 +122,18 @@ XMLResult QBXML::_GetResult(string type) {
     xmlRes.text = result;
 
     return xmlRes;
+}
+
+// Removes first occurance of substring.
+string  QBXML::_RemoveSubstring(string mainString, string subString) {
+    string t = mainString;
+    std::string s = subString;
+
+    std::string::size_type i = t.find(s);
+
+    if (i != std::string::npos){
+        t.erase(i, s.length());
+    }
+
+    return mainString;
 }

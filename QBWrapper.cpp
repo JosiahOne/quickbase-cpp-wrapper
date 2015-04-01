@@ -351,6 +351,27 @@ QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, stri
     return QBXML(xmlParser);
 }
 
+string QBWrapper::GetFieldContents(int fid, string ticket, string apptoken, string udata, string dbid, int rid) {
+    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata", "dbid" };
+    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata, dbid };
+    string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
+
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+
+    QBXML qbxml = QBXML(xmlParser);
+
+    vector<QBXML> results = qbxml.GetFields();
+
+    for (unsigned i = 0; i < results.size(); i++) {
+        if (results[i].GetFID().text == _IntToString(rid)) {
+            return results[i].GetValue().text;
+        }
+    }
+
+    return "ERROR";
+}
+
 void init_string(struct curlString *s) {
     s->len = 0;
     s->ptr = (char*)malloc(s->len + 1);

@@ -1,6 +1,5 @@
 #include "XMLRead.h"
-#include <string>
-#include <iostream>
+#include <vector>
 
 struct XMLResult {
     bool valid;
@@ -39,9 +38,17 @@ class QBXML
         // API_CreateTable.
         XMLResult GetNewDBID();
         // API_DoQuery.    
-        XMLResult GetRecords();
+        XMLResult GetRecord();
+        // API_GetRecordInfo.
+        XMLResult GetNumFields();
+        // API_GetRecordInfo.
+        XMLResult GetValue();
+
+        vector<QBXML> GetFields();
+
     private:
         XMLRead *_xmlData;
         XMLResult _GetResult(string);
+        string _RemoveSubstring(string mainString, string subString);
 };
 

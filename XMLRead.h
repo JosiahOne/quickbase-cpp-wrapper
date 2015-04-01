@@ -10,6 +10,7 @@ class XMLRead {
         ~XMLRead();
         void Load(string xmlData);
         string GetFieldContents(string fieldName);
+        string GetRawXML();
     private:
         string _xmlData;
         string _MakeTag(string name, bool open);

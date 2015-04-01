@@ -30,6 +30,10 @@ string XMLRead::GetFieldContents(string fieldName) {
     }
 }
 
+string XMLRead::GetRawXML() {
+    return _xmlData;
+}
+
 string XMLRead::_GetStringBetween(string data, string startDelim, string endDelim) {
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
