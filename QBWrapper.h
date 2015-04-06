@@ -1,3 +1,6 @@
+/*
+* Copyright Notice : Copyright 2015, Josiah Bruner, All Rights Reserved.
+*/
 #include <iostream>
 #include <string>
 #include <sstream>
