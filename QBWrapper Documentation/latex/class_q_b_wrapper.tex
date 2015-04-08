@@ -1,0 +1,284 @@
+\hypertarget{class_q_b_wrapper}{}\section{Q\+B\+Wrapper Class Reference}
+\label{class_q_b_wrapper}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+
+
+{\ttfamily \#include $<$Q\+B\+Wrapper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_b_wrapper_af53be4336b122a01f5fe4731e1ac612a}{Q\+B\+Wrapper} ()
+\item 
+\hyperlink{class_q_b_wrapper_a68833457b1963e6cb888f39702d9d7df}{$\sim$\+Q\+B\+Wrapper} ()
+\item 
+void \hyperlink{class_q_b_wrapper_acb5c3565b3f0a4a6332b524d5b300b70}{Set\+App\+Location} (string location)
+\item 
+void \hyperlink{class_q_b_wrapper_a306867c866078edb73acd59235f8a417}{Set\+App\+Token} (string token)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_aeac0cd9c9c43c54fa0c965001b8361ac}{Authenticate} (string username, string password, int hours, string udata)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_ae7d56cc01f73dad3fc80871337336a66}{Add\+Record} (vector$<$ string $>$ fields, vector$<$ string $>$ field\+Contents, bool disprec, bool ignore\+Error, string ticket, string apptoken, string udata, bool ms\+In\+U\+T\+C, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a91a75b6d40df547582f8afac5bbc3da8}{Edit\+Record} (int rid, int update\+I\+D, vector$<$ string $>$ fields, vector$<$ string $>$ contents, bool disprec, bool ignore\+Error, string ticket, string apptoken, string udata, bool ms\+In\+U\+T\+C, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a8f525eba166a9ead5b945a4d4a35d0a6}{Get\+Schema} (string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a1b584e685675bc48e1084a84d6db0dd9}{Get\+D\+B\+Info} (string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a411e4f414a4ff74801720da3502c4f33}{Add\+Field} (bool add\+To\+Forms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_aa05817f83b2a60cc31bc5350399e1d89}{Delete\+Field} (int fid, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_adbdd00c2d8e49a47f4f04eed85240068}{Set\+Field\+Properties} (vector$<$ string $>$property\+Params, vector$<$ string $>$property\+Values, int fid, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a2f113126a6be90cf7e6989d88fd552a4}{Create\+Table} (string tname, string pnoun, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_ae2683af81b7d67ed63ba488760506285}{Get\+Num\+Records} (string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a0489d9d624cc4bde429f20facc15d3d6}{Get\+Record\+Info} (int rid, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_affa5d7c3f1a19d0509d2a5c03e7b2c8f}{Delete\+Record} (int rid, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_a563d79fecd24b0ddae2be0a36c27e448}{Purge\+Records} (string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid)
+\item 
+\hyperlink{class_q_b_x_m_l}{Q\+B\+X\+M\+L} \hyperlink{class_q_b_wrapper_ad75e2cd8fe5541a317e0b07e6a130aeb}{Do\+Query} (string query, int qid, string qname, string clist, string slist, bool fmt, bool return\+Percentage, string options, bool include\+Rids, string ticket, string apptoken, string udata, string dbid)
+\item 
+string \hyperlink{class_q_b_wrapper_a31b1f95cf4507b683a584bd9345f025d}{Get\+Field\+Contents} (int fid, string ticket, string apptoken, string udata, string dbid, int rid)
+\item 
+void \hyperlink{class_q_b_wrapper_a23f67ceee52901ab538998f9bfe3b167}{Cleanup} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_b_wrapper_af53be4336b122a01f5fe4731e1ac612a}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Q\+B\+Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}Q\+B\+Wrapper\+::\+Q\+B\+Wrapper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_af53be4336b122a01f5fe4731e1ac612a}
+\hypertarget{class_q_b_wrapper_a68833457b1963e6cb888f39702d9d7df}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!````~Q\+B\+Wrapper@{$\sim$\+Q\+B\+Wrapper}}
+\index{````~Q\+B\+Wrapper@{$\sim$\+Q\+B\+Wrapper}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{$\sim$\+Q\+B\+Wrapper}]{\setlength{\rightskip}{0pt plus 5cm}Q\+B\+Wrapper\+::$\sim$\+Q\+B\+Wrapper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a68833457b1963e6cb888f39702d9d7df}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_b_wrapper_a411e4f414a4ff74801720da3502c4f33}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Add\+Field@{Add\+Field}}
+\index{Add\+Field@{Add\+Field}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Add\+Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Add\+Field (
+\begin{DoxyParamCaption}
+\item[{bool}]{add\+To\+Forms, }
+\item[{string}]{apptoken, }
+\item[{string}]{label, }
+\item[{string}]{mode, }
+\item[{string}]{ticket, }
+\item[{string}]{type, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a411e4f414a4ff74801720da3502c4f33}
+\hypertarget{class_q_b_wrapper_ae7d56cc01f73dad3fc80871337336a66}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Add\+Record@{Add\+Record}}
+\index{Add\+Record@{Add\+Record}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Add\+Record}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Add\+Record (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$}]{fields, }
+\item[{vector$<$ string $>$}]{field\+Contents, }
+\item[{bool}]{disprec, }
+\item[{bool}]{ignore\+Error, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{bool}]{ms\+In\+U\+T\+C, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_ae7d56cc01f73dad3fc80871337336a66}
+\hypertarget{class_q_b_wrapper_aeac0cd9c9c43c54fa0c965001b8361ac}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Authenticate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Authenticate (
+\begin{DoxyParamCaption}
+\item[{string}]{username, }
+\item[{string}]{password, }
+\item[{int}]{hours, }
+\item[{string}]{udata}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_aeac0cd9c9c43c54fa0c965001b8361ac}
+\hypertarget{class_q_b_wrapper_a23f67ceee52901ab538998f9bfe3b167}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+B\+Wrapper\+::\+Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a23f67ceee52901ab538998f9bfe3b167}
+\hypertarget{class_q_b_wrapper_a2f113126a6be90cf7e6989d88fd552a4}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Create\+Table@{Create\+Table}}
+\index{Create\+Table@{Create\+Table}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Create\+Table}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Create\+Table (
+\begin{DoxyParamCaption}
+\item[{string}]{tname, }
+\item[{string}]{pnoun, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a2f113126a6be90cf7e6989d88fd552a4}
+\hypertarget{class_q_b_wrapper_aa05817f83b2a60cc31bc5350399e1d89}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Delete\+Field@{Delete\+Field}}
+\index{Delete\+Field@{Delete\+Field}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Delete\+Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Delete\+Field (
+\begin{DoxyParamCaption}
+\item[{int}]{fid, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_aa05817f83b2a60cc31bc5350399e1d89}
+\hypertarget{class_q_b_wrapper_affa5d7c3f1a19d0509d2a5c03e7b2c8f}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Delete\+Record@{Delete\+Record}}
+\index{Delete\+Record@{Delete\+Record}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Delete\+Record}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Delete\+Record (
+\begin{DoxyParamCaption}
+\item[{int}]{rid, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_affa5d7c3f1a19d0509d2a5c03e7b2c8f}
+\hypertarget{class_q_b_wrapper_ad75e2cd8fe5541a317e0b07e6a130aeb}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Do\+Query@{Do\+Query}}
+\index{Do\+Query@{Do\+Query}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Do\+Query}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Do\+Query (
+\begin{DoxyParamCaption}
+\item[{string}]{query, }
+\item[{int}]{qid, }
+\item[{string}]{qname, }
+\item[{string}]{clist, }
+\item[{string}]{slist, }
+\item[{bool}]{fmt, }
+\item[{bool}]{return\+Percentage, }
+\item[{string}]{options, }
+\item[{bool}]{include\+Rids, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_ad75e2cd8fe5541a317e0b07e6a130aeb}
+\hypertarget{class_q_b_wrapper_a91a75b6d40df547582f8afac5bbc3da8}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Edit\+Record@{Edit\+Record}}
+\index{Edit\+Record@{Edit\+Record}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Edit\+Record}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Edit\+Record (
+\begin{DoxyParamCaption}
+\item[{int}]{rid, }
+\item[{int}]{update\+I\+D, }
+\item[{vector$<$ string $>$}]{fields, }
+\item[{vector$<$ string $>$}]{contents, }
+\item[{bool}]{disprec, }
+\item[{bool}]{ignore\+Error, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{bool}]{ms\+In\+U\+T\+C, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a91a75b6d40df547582f8afac5bbc3da8}
+\hypertarget{class_q_b_wrapper_a1b584e685675bc48e1084a84d6db0dd9}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Get\+D\+B\+Info@{Get\+D\+B\+Info}}
+\index{Get\+D\+B\+Info@{Get\+D\+B\+Info}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Get\+D\+B\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Get\+D\+B\+Info (
+\begin{DoxyParamCaption}
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a1b584e685675bc48e1084a84d6db0dd9}
+\hypertarget{class_q_b_wrapper_a31b1f95cf4507b683a584bd9345f025d}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Get\+Field\+Contents@{Get\+Field\+Contents}}
+\index{Get\+Field\+Contents@{Get\+Field\+Contents}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Get\+Field\+Contents}]{\setlength{\rightskip}{0pt plus 5cm}string Q\+B\+Wrapper\+::\+Get\+Field\+Contents (
+\begin{DoxyParamCaption}
+\item[{int}]{fid, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid, }
+\item[{int}]{rid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a31b1f95cf4507b683a584bd9345f025d}
+\hypertarget{class_q_b_wrapper_ae2683af81b7d67ed63ba488760506285}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Get\+Num\+Records@{Get\+Num\+Records}}
+\index{Get\+Num\+Records@{Get\+Num\+Records}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Get\+Num\+Records}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Get\+Num\+Records (
+\begin{DoxyParamCaption}
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_ae2683af81b7d67ed63ba488760506285}
+\hypertarget{class_q_b_wrapper_a0489d9d624cc4bde429f20facc15d3d6}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Get\+Record\+Info@{Get\+Record\+Info}}
+\index{Get\+Record\+Info@{Get\+Record\+Info}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Get\+Record\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Get\+Record\+Info (
+\begin{DoxyParamCaption}
+\item[{int}]{rid, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a0489d9d624cc4bde429f20facc15d3d6}
+\hypertarget{class_q_b_wrapper_a8f525eba166a9ead5b945a4d4a35d0a6}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Get\+Schema@{Get\+Schema}}
+\index{Get\+Schema@{Get\+Schema}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Get\+Schema}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Get\+Schema (
+\begin{DoxyParamCaption}
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a8f525eba166a9ead5b945a4d4a35d0a6}
+\hypertarget{class_q_b_wrapper_a563d79fecd24b0ddae2be0a36c27e448}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Purge\+Records@{Purge\+Records}}
+\index{Purge\+Records@{Purge\+Records}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Purge\+Records}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Purge\+Records (
+\begin{DoxyParamCaption}
+\item[{string}]{query, }
+\item[{int}]{qid, }
+\item[{string}]{qname, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a563d79fecd24b0ddae2be0a36c27e448}
+\hypertarget{class_q_b_wrapper_acb5c3565b3f0a4a6332b524d5b300b70}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Set\+App\+Location@{Set\+App\+Location}}
+\index{Set\+App\+Location@{Set\+App\+Location}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Set\+App\+Location}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+B\+Wrapper\+::\+Set\+App\+Location (
+\begin{DoxyParamCaption}
+\item[{string}]{location}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_acb5c3565b3f0a4a6332b524d5b300b70}
+\hypertarget{class_q_b_wrapper_a306867c866078edb73acd59235f8a417}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Set\+App\+Token@{Set\+App\+Token}}
+\index{Set\+App\+Token@{Set\+App\+Token}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Set\+App\+Token}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+B\+Wrapper\+::\+Set\+App\+Token (
+\begin{DoxyParamCaption}
+\item[{string}]{token}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_a306867c866078edb73acd59235f8a417}
+\hypertarget{class_q_b_wrapper_adbdd00c2d8e49a47f4f04eed85240068}{}\index{Q\+B\+Wrapper@{Q\+B\+Wrapper}!Set\+Field\+Properties@{Set\+Field\+Properties}}
+\index{Set\+Field\+Properties@{Set\+Field\+Properties}!Q\+B\+Wrapper@{Q\+B\+Wrapper}}
+\subsubsection[{Set\+Field\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+B\+X\+M\+L} Q\+B\+Wrapper\+::\+Set\+Field\+Properties (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$}]{property\+Params, }
+\item[{vector$<$ string $>$}]{property\+Values, }
+\item[{int}]{fid, }
+\item[{string}]{ticket, }
+\item[{string}]{apptoken, }
+\item[{string}]{udata, }
+\item[{string}]{dbid}
+\end{DoxyParamCaption}
+)}\label{class_q_b_wrapper_adbdd00c2d8e49a47f4f04eed85240068}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/cygwin/home/\+Engineer/\+Development/time-\/clock-\/front/\+Q\+B\+Wrapper/\hyperlink{_q_b_wrapper_8h}{Q\+B\+Wrapper.\+h}\item 
+C\+:/cygwin/home/\+Engineer/\+Development/time-\/clock-\/front/\+Q\+B\+Wrapper/\hyperlink{_q_b_wrapper_8cpp}{Q\+B\+Wrapper.\+cpp}\end{DoxyCompactItemize}

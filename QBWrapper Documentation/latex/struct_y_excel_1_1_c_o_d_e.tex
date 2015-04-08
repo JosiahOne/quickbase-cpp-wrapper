@@ -1,0 +1,950 @@
+\hypertarget{struct_y_excel_1_1_c_o_d_e}{}\section{Y\+Excel\+:\+:C\+O\+D\+E Struct Reference}
+\label{struct_y_excel_1_1_c_o_d_e}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}
+
+
+{\ttfamily \#include $<$Basic\+Excel.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{F\+O\+R\+M\+U\+L\+A} =0x0006, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{Y\+E\+O\+F} =0x000\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{C\+A\+L\+C\+C\+O\+U\+N\+T} =0x000\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{C\+A\+L\+C\+M\+O\+D\+E} =0x000\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{P\+R\+E\+C\+I\+S\+I\+O\+N} =0x000\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{R\+E\+F\+M\+O\+D\+E} =0x000\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{D\+E\+L\+T\+A} =0x0010, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{I\+T\+E\+R\+A\+T\+I\+O\+N} =0x0011, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{P\+R\+O\+T\+E\+C\+T} =0x0012, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{P\+A\+S\+S\+W\+O\+R\+D} =0x0013, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{H\+E\+A\+D\+E\+R} =0x0014, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{F\+O\+O\+T\+E\+R} =0x0015, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T} =0x0017, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{N\+A\+M\+E} =0x0018, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T} =0x0019, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{S\+E\+L\+E\+C\+T\+I\+O\+N} =0x001\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{D\+A\+T\+E\+M\+O\+D\+E} =0x0022, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{E\+X\+T\+E\+R\+N\+N\+A\+M\+E} =0x0023, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{L\+E\+F\+T\+M\+A\+R\+G\+I\+N} =0x0026, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N} =0x0027, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{T\+O\+P\+M\+A\+R\+G\+I\+N} =0x0028, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N} =0x0029, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S} =0x002\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S} =0x002\+B, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{F\+I\+L\+E\+P\+A\+S\+S} =0x002\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{F\+O\+N\+T} =0x0031, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{T\+A\+B\+L\+E} =0x0036, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{C\+O\+N\+T\+I\+N\+U\+E} =0x003\+C, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{W\+I\+N\+D\+O\+W1} =0x003\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{B\+A\+C\+K\+U\+P} =0x0040, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{P\+A\+N\+E} =0x0041, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{C\+O\+D\+E\+P\+A\+G\+E} =0x0042, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{D\+C\+O\+N\+R\+E\+F} =0x0051, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H} =0x0055, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{X\+C\+T} =0x0059, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{C\+R\+N} =0x005\+A, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G} =0x005\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S} =0x005\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{U\+N\+C\+A\+L\+C\+E\+D} =0x005\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{S\+A\+V\+E\+R\+E\+C\+A\+L\+C} =0x005\+F, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T} =0x0063, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{C\+O\+L\+I\+N\+F\+O} =0x007\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{G\+U\+T\+S} =0x0080, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{W\+S\+B\+O\+O\+L} =0x0081, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{G\+R\+I\+D\+S\+E\+T} =0x0082, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{H\+C\+E\+N\+T\+E\+R} =0x0083, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{V\+C\+E\+N\+T\+E\+R} =0x0084, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{B\+O\+U\+N\+D\+S\+H\+E\+E\+T} =0x0085, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{W\+R\+I\+T\+E\+P\+R\+O\+T} =0x0086, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{C\+O\+U\+N\+T\+R\+Y} =0x008\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{H\+I\+D\+E\+O\+B\+J} =0x008\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{S\+O\+R\+T} =0x0090, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{P\+A\+L\+E\+T\+T\+E} =0x0092, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{S\+E\+T\+U\+P} =0x00\+A1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{S\+H\+R\+F\+M\+L\+A} =0x00\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{M\+U\+L\+R\+K} =0x00\+B\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{M\+U\+L\+B\+L\+A\+N\+K} =0x00\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{D\+B\+C\+E\+L\+L} =0x00\+D7, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{B\+O\+O\+K\+B\+O\+O\+L} =0x00\+D\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T} =0x00\+D\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{X\+F} =0x00\+E0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{M\+E\+R\+G\+E\+C\+E\+L\+L\+S} =0x00\+E5, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{S\+S\+T} =0x00\+F\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{L\+A\+B\+E\+L\+S\+S\+T} =0x00\+F\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{E\+X\+T\+S\+S\+T} =0x00\+F\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S} =0x015\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{U\+S\+E\+S\+E\+L\+F\+S} =0x0160, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{D\+S\+F} =0x0161, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{S\+U\+P\+B\+O\+O\+K} =0x01\+A\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{C\+O\+N\+D\+F\+M\+T} =0x01\+B0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{C\+F} =0x01\+B1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{D\+V\+A\+L} =0x01\+B2, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{H\+L\+I\+N\+K} =0x01\+B8, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{D\+V} =0x01\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{D\+I\+M\+E\+N\+S\+I\+O\+N\+S} =0x0200, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{B\+L\+A\+N\+K} =0x0201, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{N\+U\+M\+B\+E\+R} =0x0203, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{B\+O\+O\+L\+E\+R\+R} =0x0205, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{S\+T\+R\+I\+N\+G} =0x0207, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{R\+O\+W} =0x0208, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{I\+N\+D\+E\+X} =0x020\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{A\+R\+R\+A\+Y} =0x0221, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{W\+I\+N\+D\+O\+W2} =0x023\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{R\+K} =0x027\+E, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{S\+T\+Y\+L\+E} =0x0293, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{F\+O\+R\+M\+A\+T} =0x041\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{S\+H\+R\+F\+M\+L\+A1} =0x04\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{Q\+U\+I\+C\+K\+T\+I\+P} =0x0800, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{B\+O\+F} =0x0809, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T} =0x0862, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0867, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0868, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{S\+X\+F\+O\+R\+M\+U\+L\+A} =0x0103
+ \}
+\item 
+enum \{ \\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{F\+O\+R\+M\+U\+L\+A} =0x0006, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{Y\+E\+O\+F} =0x000\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{C\+A\+L\+C\+C\+O\+U\+N\+T} =0x000\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{C\+A\+L\+C\+M\+O\+D\+E} =0x000\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{P\+R\+E\+C\+I\+S\+I\+O\+N} =0x000\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{R\+E\+F\+M\+O\+D\+E} =0x000\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{D\+E\+L\+T\+A} =0x0010, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{I\+T\+E\+R\+A\+T\+I\+O\+N} =0x0011, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{P\+R\+O\+T\+E\+C\+T} =0x0012, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{P\+A\+S\+S\+W\+O\+R\+D} =0x0013, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{H\+E\+A\+D\+E\+R} =0x0014, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{F\+O\+O\+T\+E\+R} =0x0015, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T} =0x0017, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{N\+A\+M\+E} =0x0018, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T} =0x0019, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{S\+E\+L\+E\+C\+T\+I\+O\+N} =0x001\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{D\+A\+T\+E\+M\+O\+D\+E} =0x0022, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{E\+X\+T\+E\+R\+N\+N\+A\+M\+E} =0x0023, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{L\+E\+F\+T\+M\+A\+R\+G\+I\+N} =0x0026, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N} =0x0027, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{T\+O\+P\+M\+A\+R\+G\+I\+N} =0x0028, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N} =0x0029, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S} =0x002\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S} =0x002\+B, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{F\+I\+L\+E\+P\+A\+S\+S} =0x002\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{F\+O\+N\+T} =0x0031, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{T\+A\+B\+L\+E} =0x0036, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{C\+O\+N\+T\+I\+N\+U\+E} =0x003\+C, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{W\+I\+N\+D\+O\+W1} =0x003\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{B\+A\+C\+K\+U\+P} =0x0040, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{P\+A\+N\+E} =0x0041, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{C\+O\+D\+E\+P\+A\+G\+E} =0x0042, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{D\+C\+O\+N\+R\+E\+F} =0x0051, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H} =0x0055, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{X\+C\+T} =0x0059, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{C\+R\+N} =0x005\+A, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G} =0x005\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S} =0x005\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{U\+N\+C\+A\+L\+C\+E\+D} =0x005\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{S\+A\+V\+E\+R\+E\+C\+A\+L\+C} =0x005\+F, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T} =0x0063, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{C\+O\+L\+I\+N\+F\+O} =0x007\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{G\+U\+T\+S} =0x0080, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{W\+S\+B\+O\+O\+L} =0x0081, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{G\+R\+I\+D\+S\+E\+T} =0x0082, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{H\+C\+E\+N\+T\+E\+R} =0x0083, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{V\+C\+E\+N\+T\+E\+R} =0x0084, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{B\+O\+U\+N\+D\+S\+H\+E\+E\+T} =0x0085, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{W\+R\+I\+T\+E\+P\+R\+O\+T} =0x0086, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{C\+O\+U\+N\+T\+R\+Y} =0x008\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{H\+I\+D\+E\+O\+B\+J} =0x008\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{S\+O\+R\+T} =0x0090, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{P\+A\+L\+E\+T\+T\+E} =0x0092, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{S\+E\+T\+U\+P} =0x00\+A1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{S\+H\+R\+F\+M\+L\+A} =0x00\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{M\+U\+L\+R\+K} =0x00\+B\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{M\+U\+L\+B\+L\+A\+N\+K} =0x00\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{D\+B\+C\+E\+L\+L} =0x00\+D7, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{B\+O\+O\+K\+B\+O\+O\+L} =0x00\+D\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T} =0x00\+D\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{X\+F} =0x00\+E0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{M\+E\+R\+G\+E\+C\+E\+L\+L\+S} =0x00\+E5, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{S\+S\+T} =0x00\+F\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{L\+A\+B\+E\+L\+S\+S\+T} =0x00\+F\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{E\+X\+T\+S\+S\+T} =0x00\+F\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S} =0x015\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{U\+S\+E\+S\+E\+L\+F\+S} =0x0160, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{D\+S\+F} =0x0161, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{S\+U\+P\+B\+O\+O\+K} =0x01\+A\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{C\+O\+N\+D\+F\+M\+T} =0x01\+B0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{C\+F} =0x01\+B1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{D\+V\+A\+L} =0x01\+B2, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{H\+L\+I\+N\+K} =0x01\+B8, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{D\+V} =0x01\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{D\+I\+M\+E\+N\+S\+I\+O\+N\+S} =0x0200, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{B\+L\+A\+N\+K} =0x0201, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{N\+U\+M\+B\+E\+R} =0x0203, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{B\+O\+O\+L\+E\+R\+R} =0x0205, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{S\+T\+R\+I\+N\+G} =0x0207, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{R\+O\+W} =0x0208, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{I\+N\+D\+E\+X} =0x020\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{A\+R\+R\+A\+Y} =0x0221, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{W\+I\+N\+D\+O\+W2} =0x023\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{R\+K} =0x027\+E, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{S\+T\+Y\+L\+E} =0x0293, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{F\+O\+R\+M\+A\+T} =0x041\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{S\+H\+R\+F\+M\+L\+A1} =0x04\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{Q\+U\+I\+C\+K\+T\+I\+P} =0x0800, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{B\+O\+F} =0x0809, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T} =0x0862, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0867, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0868, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{S\+X\+F\+O\+R\+M\+U\+L\+A} =0x0103
+ \}
+\item 
+enum \{ \\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{F\+O\+R\+M\+U\+L\+A} =0x0006, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{Y\+E\+O\+F} =0x000\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{C\+A\+L\+C\+C\+O\+U\+N\+T} =0x000\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{C\+A\+L\+C\+M\+O\+D\+E} =0x000\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{P\+R\+E\+C\+I\+S\+I\+O\+N} =0x000\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{R\+E\+F\+M\+O\+D\+E} =0x000\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{D\+E\+L\+T\+A} =0x0010, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{I\+T\+E\+R\+A\+T\+I\+O\+N} =0x0011, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{P\+R\+O\+T\+E\+C\+T} =0x0012, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{P\+A\+S\+S\+W\+O\+R\+D} =0x0013, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{H\+E\+A\+D\+E\+R} =0x0014, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{F\+O\+O\+T\+E\+R} =0x0015, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T} =0x0017, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{N\+A\+M\+E} =0x0018, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T} =0x0019, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{S\+E\+L\+E\+C\+T\+I\+O\+N} =0x001\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{D\+A\+T\+E\+M\+O\+D\+E} =0x0022, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{E\+X\+T\+E\+R\+N\+N\+A\+M\+E} =0x0023, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{L\+E\+F\+T\+M\+A\+R\+G\+I\+N} =0x0026, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N} =0x0027, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{T\+O\+P\+M\+A\+R\+G\+I\+N} =0x0028, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N} =0x0029, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S} =0x002\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S} =0x002\+B, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{F\+I\+L\+E\+P\+A\+S\+S} =0x002\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{F\+O\+N\+T} =0x0031, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{T\+A\+B\+L\+E} =0x0036, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{C\+O\+N\+T\+I\+N\+U\+E} =0x003\+C, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{W\+I\+N\+D\+O\+W1} =0x003\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{B\+A\+C\+K\+U\+P} =0x0040, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{P\+A\+N\+E} =0x0041, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{C\+O\+D\+E\+P\+A\+G\+E} =0x0042, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{D\+C\+O\+N\+R\+E\+F} =0x0051, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H} =0x0055, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{X\+C\+T} =0x0059, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{C\+R\+N} =0x005\+A, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G} =0x005\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S} =0x005\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{U\+N\+C\+A\+L\+C\+E\+D} =0x005\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{S\+A\+V\+E\+R\+E\+C\+A\+L\+C} =0x005\+F, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T} =0x0063, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{C\+O\+L\+I\+N\+F\+O} =0x007\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{G\+U\+T\+S} =0x0080, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{W\+S\+B\+O\+O\+L} =0x0081, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{G\+R\+I\+D\+S\+E\+T} =0x0082, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{H\+C\+E\+N\+T\+E\+R} =0x0083, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{V\+C\+E\+N\+T\+E\+R} =0x0084, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{B\+O\+U\+N\+D\+S\+H\+E\+E\+T} =0x0085, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{W\+R\+I\+T\+E\+P\+R\+O\+T} =0x0086, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{C\+O\+U\+N\+T\+R\+Y} =0x008\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{H\+I\+D\+E\+O\+B\+J} =0x008\+D, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{S\+O\+R\+T} =0x0090, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{P\+A\+L\+E\+T\+T\+E} =0x0092, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{S\+E\+T\+U\+P} =0x00\+A1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{S\+H\+R\+F\+M\+L\+A} =0x00\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{M\+U\+L\+R\+K} =0x00\+B\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{M\+U\+L\+B\+L\+A\+N\+K} =0x00\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{D\+B\+C\+E\+L\+L} =0x00\+D7, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{B\+O\+O\+K\+B\+O\+O\+L} =0x00\+D\+A, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T} =0x00\+D\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{X\+F} =0x00\+E0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{M\+E\+R\+G\+E\+C\+E\+L\+L\+S} =0x00\+E5, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{S\+S\+T} =0x00\+F\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{L\+A\+B\+E\+L\+S\+S\+T} =0x00\+F\+D, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{E\+X\+T\+S\+S\+T} =0x00\+F\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S} =0x015\+F, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{U\+S\+E\+S\+E\+L\+F\+S} =0x0160, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{D\+S\+F} =0x0161, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{S\+U\+P\+B\+O\+O\+K} =0x01\+A\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{C\+O\+N\+D\+F\+M\+T} =0x01\+B0, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{C\+F} =0x01\+B1, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{D\+V\+A\+L} =0x01\+B2, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{H\+L\+I\+N\+K} =0x01\+B8, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{D\+V} =0x01\+B\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{D\+I\+M\+E\+N\+S\+I\+O\+N\+S} =0x0200, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{B\+L\+A\+N\+K} =0x0201, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{N\+U\+M\+B\+E\+R} =0x0203, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{B\+O\+O\+L\+E\+R\+R} =0x0205, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{S\+T\+R\+I\+N\+G} =0x0207, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{R\+O\+W} =0x0208, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{I\+N\+D\+E\+X} =0x020\+B, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{A\+R\+R\+A\+Y} =0x0221, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{W\+I\+N\+D\+O\+W2} =0x023\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{R\+K} =0x027\+E, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{S\+T\+Y\+L\+E} =0x0293, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{F\+O\+R\+M\+A\+T} =0x041\+E, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{S\+H\+R\+F\+M\+L\+A1} =0x04\+B\+C, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{Q\+U\+I\+C\+K\+T\+I\+P} =0x0800, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{B\+O\+F} =0x0809, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T} =0x0862, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0867, 
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N} =0x0868, 
+\\*
+\hyperlink{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{S\+X\+F\+O\+R\+M\+U\+L\+A} =0x0103
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{struct_y_excel_1_1_c_o_d_e_a8834687d3f165278c2f846f53a856d82}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{struct_y_excel_1_1_c_o_d_e_a8834687d3f165278c2f846f53a856d82}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{}F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}
+}]\index{Y\+E\+O\+F@{Y\+E\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Y\+E\+O\+F@{Y\+E\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{}Y\+E\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}
+}]\index{C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{}C\+A\+L\+C\+C\+O\+U\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}
+}]\index{C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{}C\+A\+L\+C\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}
+}]\index{P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{}P\+R\+E\+C\+I\+S\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}
+}]\index{R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{}R\+E\+F\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}
+}]\index{D\+E\+L\+T\+A@{D\+E\+L\+T\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+L\+T\+A@{D\+E\+L\+T\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{}D\+E\+L\+T\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}
+}]\index{I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{}I\+T\+E\+R\+A\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}
+}]\index{P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{}P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}
+}]\index{P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{}P\+A\+S\+S\+W\+O\+R\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}
+}]\index{H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{}H\+E\+A\+D\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}
+}]\index{F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{}F\+O\+O\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}
+}]\index{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{}E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}
+}]\index{N\+A\+M\+E@{N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+A\+M\+E@{N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{}N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}
+}]\index{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{}W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}
+}]\index{S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{}S\+E\+L\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}
+}]\index{D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{}D\+A\+T\+E\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}
+}]\index{E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{}E\+X\+T\+E\+R\+N\+N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}
+}]\index{L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{}L\+E\+F\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}
+}]\index{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{}R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}
+}]\index{T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{}T\+O\+P\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}
+}]\index{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{}B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}
+}]\index{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{}P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}
+}]\index{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{}P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}
+}]\index{F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{}F\+I\+L\+E\+P\+A\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}
+}]\index{F\+O\+N\+T@{F\+O\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+N\+T@{F\+O\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{}F\+O\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}
+}]\index{T\+A\+B\+L\+E@{T\+A\+B\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+A\+B\+L\+E@{T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{}T\+A\+B\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}
+}]\index{C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{}C\+O\+N\+T\+I\+N\+U\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}
+}]\index{W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{}W\+I\+N\+D\+O\+W1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}
+}]\index{B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{}B\+A\+C\+K\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}
+}]\index{P\+A\+N\+E@{P\+A\+N\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+N\+E@{P\+A\+N\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{}P\+A\+N\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}
+}]\index{C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{}C\+O\+D\+E\+P\+A\+G\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}
+}]\index{D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{}D\+C\+O\+N\+R\+E\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}
+}]\index{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{}D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}
+}]\index{X\+C\+T@{X\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+C\+T@{X\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{}X\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}
+}]\index{C\+R\+N@{C\+R\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+R\+N@{C\+R\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{}C\+R\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}
+}]\index{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{}F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}
+}]\index{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{}W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}
+}]\index{U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{}U\+N\+C\+A\+L\+C\+E\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}
+}]\index{S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{}S\+A\+V\+E\+R\+E\+C\+A\+L\+C\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}
+}]\index{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{}O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}
+}]\index{C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{}C\+O\+L\+I\+N\+F\+O\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}
+}]\index{G\+U\+T\+S@{G\+U\+T\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+U\+T\+S@{G\+U\+T\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{}G\+U\+T\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}
+}]\index{W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{}W\+S\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}
+}]\index{G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{}G\+R\+I\+D\+S\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}
+}]\index{H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{}H\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}
+}]\index{V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{}V\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}
+}]\index{B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{}B\+O\+U\+N\+D\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}
+}]\index{W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{}W\+R\+I\+T\+E\+P\+R\+O\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}
+}]\index{C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{}C\+O\+U\+N\+T\+R\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}
+}]\index{H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{}H\+I\+D\+E\+O\+B\+J\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}
+}]\index{S\+O\+R\+T@{S\+O\+R\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+O\+R\+T@{S\+O\+R\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{}S\+O\+R\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}
+}]\index{P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{}P\+A\+L\+E\+T\+T\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}
+}]\index{S\+E\+T\+U\+P@{S\+E\+T\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+T\+U\+P@{S\+E\+T\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{}S\+E\+T\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}
+}]\index{S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{}S\+H\+R\+F\+M\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}
+}]\index{M\+U\+L\+R\+K@{M\+U\+L\+R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+R\+K@{M\+U\+L\+R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{}M\+U\+L\+R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}
+}]\index{M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{}M\+U\+L\+B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}
+}]\index{D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{}D\+B\+C\+E\+L\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}
+}]\index{B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{}B\+O\+O\+K\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}
+}]\index{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{}S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}
+}]\index{X\+F@{X\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+F@{X\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{}X\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}
+}]\index{M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{}M\+E\+R\+G\+E\+C\+E\+L\+L\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}
+}]\index{S\+S\+T@{S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+S\+T@{S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{}S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}
+}]\index{L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{}L\+A\+B\+E\+L\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}
+}]\index{E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{}E\+X\+T\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}
+}]\index{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{}L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}
+}]\index{U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{}U\+S\+E\+S\+E\+L\+F\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}
+}]\index{D\+S\+F@{D\+S\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+S\+F@{D\+S\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{}D\+S\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}
+}]\index{S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{}S\+U\+P\+B\+O\+O\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}
+}]\index{C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{}C\+O\+N\+D\+F\+M\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}
+}]\index{C\+F@{C\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+F@{C\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{}C\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}
+}]\index{D\+V\+A\+L@{D\+V\+A\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V\+A\+L@{D\+V\+A\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{}D\+V\+A\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}
+}]\index{H\+L\+I\+N\+K@{H\+L\+I\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+L\+I\+N\+K@{H\+L\+I\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{}H\+L\+I\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}
+}]\index{D\+V@{D\+V}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V@{D\+V}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{}D\+V\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}
+}]\index{D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{}D\+I\+M\+E\+N\+S\+I\+O\+N\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}
+}]\index{B\+L\+A\+N\+K@{B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+L\+A\+N\+K@{B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{}B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}
+}]\index{N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{}N\+U\+M\+B\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}
+}]\index{B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{}B\+O\+O\+L\+E\+R\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}
+}]\index{S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{}S\+T\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}
+}]\index{R\+O\+W@{R\+O\+W}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+O\+W@{R\+O\+W}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{}R\+O\+W\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}
+}]\index{I\+N\+D\+E\+X@{I\+N\+D\+E\+X}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+N\+D\+E\+X@{I\+N\+D\+E\+X}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{}I\+N\+D\+E\+X\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}
+}]\index{A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{}A\+R\+R\+A\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}
+}]\index{W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{}W\+I\+N\+D\+O\+W2\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}
+}]\index{R\+K@{R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+K@{R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{}R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}
+}]\index{S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{}S\+T\+Y\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}
+}]\index{F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{}F\+O\+R\+M\+A\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}
+}]\index{S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{}S\+H\+R\+F\+M\+L\+A1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}
+}]\index{Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{}Q\+U\+I\+C\+K\+T\+I\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}
+}]\index{B\+O\+F@{B\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+F@{B\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{}B\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}
+}]\index{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{}S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}
+}]\index{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{}S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}
+}]\index{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{}R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}
+}]\index{S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{}S\+X\+F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}
+}]\end{description}
+\end{Desc}
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00c}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{}F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}
+}]\index{Y\+E\+O\+F@{Y\+E\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Y\+E\+O\+F@{Y\+E\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{}Y\+E\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}
+}]\index{C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{}C\+A\+L\+C\+C\+O\+U\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}
+}]\index{C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{}C\+A\+L\+C\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}
+}]\index{P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{}P\+R\+E\+C\+I\+S\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}
+}]\index{R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{}R\+E\+F\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}
+}]\index{D\+E\+L\+T\+A@{D\+E\+L\+T\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+L\+T\+A@{D\+E\+L\+T\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{}D\+E\+L\+T\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}
+}]\index{I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{}I\+T\+E\+R\+A\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}
+}]\index{P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{}P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}
+}]\index{P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{}P\+A\+S\+S\+W\+O\+R\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}
+}]\index{H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{}H\+E\+A\+D\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}
+}]\index{F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{}F\+O\+O\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}
+}]\index{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{}E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}
+}]\index{N\+A\+M\+E@{N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+A\+M\+E@{N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{}N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}
+}]\index{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{}W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}
+}]\index{S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{}S\+E\+L\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}
+}]\index{D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{}D\+A\+T\+E\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}
+}]\index{E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{}E\+X\+T\+E\+R\+N\+N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}
+}]\index{L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{}L\+E\+F\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}
+}]\index{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{}R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}
+}]\index{T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{}T\+O\+P\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}
+}]\index{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{}B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}
+}]\index{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{}P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}
+}]\index{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{}P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}
+}]\index{F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{}F\+I\+L\+E\+P\+A\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}
+}]\index{F\+O\+N\+T@{F\+O\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+N\+T@{F\+O\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{}F\+O\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}
+}]\index{T\+A\+B\+L\+E@{T\+A\+B\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+A\+B\+L\+E@{T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{}T\+A\+B\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}
+}]\index{C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{}C\+O\+N\+T\+I\+N\+U\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}
+}]\index{W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{}W\+I\+N\+D\+O\+W1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}
+}]\index{B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{}B\+A\+C\+K\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}
+}]\index{P\+A\+N\+E@{P\+A\+N\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+N\+E@{P\+A\+N\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{}P\+A\+N\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}
+}]\index{C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{}C\+O\+D\+E\+P\+A\+G\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}
+}]\index{D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{}D\+C\+O\+N\+R\+E\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}
+}]\index{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{}D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}
+}]\index{X\+C\+T@{X\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+C\+T@{X\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{}X\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}
+}]\index{C\+R\+N@{C\+R\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+R\+N@{C\+R\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{}C\+R\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}
+}]\index{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{}F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}
+}]\index{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{}W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}
+}]\index{U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{}U\+N\+C\+A\+L\+C\+E\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}
+}]\index{S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{}S\+A\+V\+E\+R\+E\+C\+A\+L\+C\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}
+}]\index{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{}O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}
+}]\index{C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{}C\+O\+L\+I\+N\+F\+O\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}
+}]\index{G\+U\+T\+S@{G\+U\+T\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+U\+T\+S@{G\+U\+T\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{}G\+U\+T\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}
+}]\index{W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{}W\+S\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}
+}]\index{G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{}G\+R\+I\+D\+S\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}
+}]\index{H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{}H\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}
+}]\index{V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{}V\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}
+}]\index{B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{}B\+O\+U\+N\+D\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}
+}]\index{W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{}W\+R\+I\+T\+E\+P\+R\+O\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}
+}]\index{C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{}C\+O\+U\+N\+T\+R\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}
+}]\index{H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{}H\+I\+D\+E\+O\+B\+J\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}
+}]\index{S\+O\+R\+T@{S\+O\+R\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+O\+R\+T@{S\+O\+R\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{}S\+O\+R\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}
+}]\index{P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{}P\+A\+L\+E\+T\+T\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}
+}]\index{S\+E\+T\+U\+P@{S\+E\+T\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+T\+U\+P@{S\+E\+T\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{}S\+E\+T\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}
+}]\index{S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{}S\+H\+R\+F\+M\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}
+}]\index{M\+U\+L\+R\+K@{M\+U\+L\+R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+R\+K@{M\+U\+L\+R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{}M\+U\+L\+R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}
+}]\index{M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{}M\+U\+L\+B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}
+}]\index{D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{}D\+B\+C\+E\+L\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}
+}]\index{B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{}B\+O\+O\+K\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}
+}]\index{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{}S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}
+}]\index{X\+F@{X\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+F@{X\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{}X\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}
+}]\index{M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{}M\+E\+R\+G\+E\+C\+E\+L\+L\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}
+}]\index{S\+S\+T@{S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+S\+T@{S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{}S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}
+}]\index{L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{}L\+A\+B\+E\+L\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}
+}]\index{E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{}E\+X\+T\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}
+}]\index{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{}L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}
+}]\index{U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{}U\+S\+E\+S\+E\+L\+F\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}
+}]\index{D\+S\+F@{D\+S\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+S\+F@{D\+S\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{}D\+S\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}
+}]\index{S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{}S\+U\+P\+B\+O\+O\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}
+}]\index{C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{}C\+O\+N\+D\+F\+M\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}
+}]\index{C\+F@{C\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+F@{C\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{}C\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}
+}]\index{D\+V\+A\+L@{D\+V\+A\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V\+A\+L@{D\+V\+A\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{}D\+V\+A\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}
+}]\index{H\+L\+I\+N\+K@{H\+L\+I\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+L\+I\+N\+K@{H\+L\+I\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{}H\+L\+I\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}
+}]\index{D\+V@{D\+V}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V@{D\+V}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{}D\+V\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}
+}]\index{D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{}D\+I\+M\+E\+N\+S\+I\+O\+N\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}
+}]\index{B\+L\+A\+N\+K@{B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+L\+A\+N\+K@{B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{}B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}
+}]\index{N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{}N\+U\+M\+B\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}
+}]\index{B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{}B\+O\+O\+L\+E\+R\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}
+}]\index{S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{}S\+T\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}
+}]\index{R\+O\+W@{R\+O\+W}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+O\+W@{R\+O\+W}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{}R\+O\+W\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}
+}]\index{I\+N\+D\+E\+X@{I\+N\+D\+E\+X}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+N\+D\+E\+X@{I\+N\+D\+E\+X}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{}I\+N\+D\+E\+X\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}
+}]\index{A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{}A\+R\+R\+A\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}
+}]\index{W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{}W\+I\+N\+D\+O\+W2\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}
+}]\index{R\+K@{R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+K@{R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{}R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}
+}]\index{S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{}S\+T\+Y\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}
+}]\index{F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{}F\+O\+R\+M\+A\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}
+}]\index{S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{}S\+H\+R\+F\+M\+L\+A1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}
+}]\index{Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{}Q\+U\+I\+C\+K\+T\+I\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}
+}]\index{B\+O\+F@{B\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+F@{B\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{}B\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}
+}]\index{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{}S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}
+}]\index{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{}S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}
+}]\index{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{}R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}
+}]\index{S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{}S\+X\+F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}
+}]\end{description}
+\end{Desc}
+\hypertarget{struct_y_excel_1_1_c_o_d_e_a0b1e9758ab605c72a5d112702ed40671}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{struct_y_excel_1_1_c_o_d_e_a0b1e9758ab605c72a5d112702ed40671}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+U\+L\+A@{F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}{}F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab350171cc6990a3289727bf2ceb050f6}
+}]\index{Y\+E\+O\+F@{Y\+E\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Y\+E\+O\+F@{Y\+E\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}{}Y\+E\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa0f0515627add6e0d9c7cc15f8e5aa80}
+}]\index{C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+C\+O\+U\+N\+T@{C\+A\+L\+C\+C\+O\+U\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}{}C\+A\+L\+C\+C\+O\+U\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabee0312e062953c2f4d948ba2feb941e}
+}]\index{C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+A\+L\+C\+M\+O\+D\+E@{C\+A\+L\+C\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}{}C\+A\+L\+C\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae16abef91417753bf3d1b765470bc5ba}
+}]\index{P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+E\+C\+I\+S\+I\+O\+N@{P\+R\+E\+C\+I\+S\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}{}P\+R\+E\+C\+I\+S\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad18be021e63a4dadf61dbb1b9986167b}
+}]\index{R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+E\+F\+M\+O\+D\+E@{R\+E\+F\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}{}R\+E\+F\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5186e9e84c3efedd4e9da17a38549fcb}
+}]\index{D\+E\+L\+T\+A@{D\+E\+L\+T\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+L\+T\+A@{D\+E\+L\+T\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}{}D\+E\+L\+T\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca56fdd0de7efa27243047b47d3cde9e2d}
+}]\index{I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+T\+E\+R\+A\+T\+I\+O\+N@{I\+T\+E\+R\+A\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}{}I\+T\+E\+R\+A\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca40fda8ebdbcc10e438fabbd883c2092a}
+}]\index{P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+O\+T\+E\+C\+T@{P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}{}P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca4878cef34667706d7868587e8896c7a9}
+}]\index{P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+S\+S\+W\+O\+R\+D@{P\+A\+S\+S\+W\+O\+R\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}{}P\+A\+S\+S\+W\+O\+R\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacec6198c8af86bc11174e07eb1052ba0}
+}]\index{H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+E\+A\+D\+E\+R@{H\+E\+A\+D\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}{}H\+E\+A\+D\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7895056ec74d691603ed54869275ffd8}
+}]\index{F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+O\+T\+E\+R@{F\+O\+O\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}{}F\+O\+O\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf1b0dbdd6fdb508c51296f2afc4eba4a}
+}]\index{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T@{E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}{}E\+X\+T\+E\+R\+N\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac096e91cb3f72b1eb76526529de545c8}
+}]\index{N\+A\+M\+E@{N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+A\+M\+E@{N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}{}N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacc34d9224dc350e6de0c4ae852108b5d}
+}]\index{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T@{W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}{}W\+I\+N\+D\+O\+W\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabfb48f735c9221b13b7c6dcb8aebe05c}
+}]\index{S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+L\+E\+C\+T\+I\+O\+N@{S\+E\+L\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}{}S\+E\+L\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caac5038888146515ad6fca804edf32156}
+}]\index{D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+A\+T\+E\+M\+O\+D\+E@{D\+A\+T\+E\+M\+O\+D\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}{}D\+A\+T\+E\+M\+O\+D\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cabf7f00225c919edd8b169bf34a4158fc}
+}]\index{E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+E\+R\+N\+N\+A\+M\+E@{E\+X\+T\+E\+R\+N\+N\+A\+M\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}{}E\+X\+T\+E\+R\+N\+N\+A\+M\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca79d6d332db64a6c542622a3de09209f8}
+}]\index{L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+E\+F\+T\+M\+A\+R\+G\+I\+N@{L\+E\+F\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}{}L\+E\+F\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2b3239d3d517e9ccdc19ff90f68aea2d}
+}]\index{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N@{R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}{}R\+I\+G\+H\+T\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca82538e130d38c546d7d48cfd22b5d2fe}
+}]\index{T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+O\+P\+M\+A\+R\+G\+I\+N@{T\+O\+P\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}{}T\+O\+P\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa784def2305dc18c55acea9d77d0d0f5}
+}]\index{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N@{B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}{}B\+O\+T\+T\+O\+M\+M\+A\+R\+G\+I\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08e0e4d303b5b056e52949f5852c2f15}
+}]\index{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S@{P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}{}P\+R\+I\+N\+T\+H\+E\+A\+D\+E\+R\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa67e265e84efb6430b26e0a8bd596c29}
+}]\index{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S@{P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}{}P\+R\+I\+N\+T\+G\+R\+I\+D\+L\+I\+N\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca21a06db9b6dd2356000a69d1b66dab5e}
+}]\index{F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+P\+A\+S\+S@{F\+I\+L\+E\+P\+A\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}{}F\+I\+L\+E\+P\+A\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6b5e4b49e1b59968bcbb0420f8ef1fbe}
+}]\index{F\+O\+N\+T@{F\+O\+N\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+N\+T@{F\+O\+N\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}{}F\+O\+N\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cad8e43d143c9c105eaf4e075a0f2457ac}
+}]\index{T\+A\+B\+L\+E@{T\+A\+B\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!T\+A\+B\+L\+E@{T\+A\+B\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}{}T\+A\+B\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae941bec184d203dbdcae46b395c48535}
+}]\index{C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+T\+I\+N\+U\+E@{C\+O\+N\+T\+I\+N\+U\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}{}C\+O\+N\+T\+I\+N\+U\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca09f611e2308aa827fb4d3b891a202dfa}
+}]\index{W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W1@{W\+I\+N\+D\+O\+W1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}{}W\+I\+N\+D\+O\+W1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca96339d409f72d9d3eabddb6d6377a407}
+}]\index{B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+A\+C\+K\+U\+P@{B\+A\+C\+K\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}{}B\+A\+C\+K\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cacbc5b782d73ec17fcb0ea7122f04e335}
+}]\index{P\+A\+N\+E@{P\+A\+N\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+N\+E@{P\+A\+N\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}{}P\+A\+N\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf4a1111316f5e90bcb6cc330b8c537ef}
+}]\index{C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+D\+E\+P\+A\+G\+E@{C\+O\+D\+E\+P\+A\+G\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}{}C\+O\+D\+E\+P\+A\+G\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca447f82e3d2bc5801570c80485965c6e1}
+}]\index{D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+C\+O\+N\+R\+E\+F@{D\+C\+O\+N\+R\+E\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}{}D\+C\+O\+N\+R\+E\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf01c8f2a64af1aa2a10fdd131ce4b9a3}
+}]\index{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H@{D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}{}D\+E\+F\+C\+O\+L\+W\+I\+D\+T\+H\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caeb1f03575d9680663cd48e3bce9b9fb8}
+}]\index{X\+C\+T@{X\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+C\+T@{X\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}{}X\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0d233a41af4999c7f14ad9f773330eeb}
+}]\index{C\+R\+N@{C\+R\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+R\+N@{C\+R\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}{}C\+R\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca52805c23abc1c1f52ef82957d8df6c73}
+}]\index{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G@{F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}{}F\+I\+L\+E\+S\+H\+A\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafe5d23a5b73272c2814ca8eb1a863355}
+}]\index{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S@{W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}{}W\+R\+I\+T\+E\+A\+C\+C\+E\+S\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa5c4a3bec7567f48417e2c2faa3670fe}
+}]\index{U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+N\+C\+A\+L\+C\+E\+D@{U\+N\+C\+A\+L\+C\+E\+D}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}{}U\+N\+C\+A\+L\+C\+E\+D\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae2fc379292881d618b39540d764792ea}
+}]\index{S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+A\+V\+E\+R\+E\+C\+A\+L\+C@{S\+A\+V\+E\+R\+E\+C\+A\+L\+C}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}{}S\+A\+V\+E\+R\+E\+C\+A\+L\+C\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7f58f86d292fb768f6e4a0250fc99082}
+}]\index{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T@{O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}{}O\+B\+J\+E\+C\+T\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa2966dfb5979ecd35cb884a0d542c96a}
+}]\index{C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+L\+I\+N\+F\+O@{C\+O\+L\+I\+N\+F\+O}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}{}C\+O\+L\+I\+N\+F\+O\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5025f9a8ab73ee2e69d4611c1b7c1d04}
+}]\index{G\+U\+T\+S@{G\+U\+T\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+U\+T\+S@{G\+U\+T\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}{}G\+U\+T\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cafbac7e9db26bbb252a61891a309e1c67}
+}]\index{W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+S\+B\+O\+O\+L@{W\+S\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}{}W\+S\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca702e66c901e4f7acf4cae6bf5fcc064a}
+}]\index{G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!G\+R\+I\+D\+S\+E\+T@{G\+R\+I\+D\+S\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}{}G\+R\+I\+D\+S\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac5a538e6816adda2da1b84402ee72a8a}
+}]\index{H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+C\+E\+N\+T\+E\+R@{H\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}{}H\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1e397274a4eed57d1db1707a8e2d8d95}
+}]\index{V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!V\+C\+E\+N\+T\+E\+R@{V\+C\+E\+N\+T\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}{}V\+C\+E\+N\+T\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca1ba3e392fe5c374a58f3e0691088c768}
+}]\index{B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+U\+N\+D\+S\+H\+E\+E\+T@{B\+O\+U\+N\+D\+S\+H\+E\+E\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}{}B\+O\+U\+N\+D\+S\+H\+E\+E\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caecbe6f43c958dff0888628e1b1da4b2f}
+}]\index{W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+R\+I\+T\+E\+P\+R\+O\+T@{W\+R\+I\+T\+E\+P\+R\+O\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}{}W\+R\+I\+T\+E\+P\+R\+O\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa894754afcff41326bf38fab6da04631}
+}]\index{C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+U\+N\+T\+R\+Y@{C\+O\+U\+N\+T\+R\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}{}C\+O\+U\+N\+T\+R\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8480d66bc14e882d0ee1cf1693f9683a}
+}]\index{H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+I\+D\+E\+O\+B\+J@{H\+I\+D\+E\+O\+B\+J}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}{}H\+I\+D\+E\+O\+B\+J\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5fc1f63a86de29db246bdd0af85e4692}
+}]\index{S\+O\+R\+T@{S\+O\+R\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+O\+R\+T@{S\+O\+R\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}{}S\+O\+R\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca713b6d3c7c1036de407ee2d7ab51a988}
+}]\index{P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!P\+A\+L\+E\+T\+T\+E@{P\+A\+L\+E\+T\+T\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}{}P\+A\+L\+E\+T\+T\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca08c00c96c235162a1eb65b06bf2482ed}
+}]\index{S\+E\+T\+U\+P@{S\+E\+T\+U\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+E\+T\+U\+P@{S\+E\+T\+U\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}{}S\+E\+T\+U\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca2396020ee4f3c6f6c5fc15fbc609ea04}
+}]\index{S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A@{S\+H\+R\+F\+M\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}{}S\+H\+R\+F\+M\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca0151073f1c1fab8a3e8d5fa569fa74d6}
+}]\index{M\+U\+L\+R\+K@{M\+U\+L\+R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+R\+K@{M\+U\+L\+R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}{}M\+U\+L\+R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa366ce4d38b07725fde372797c25206e}
+}]\index{M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+U\+L\+B\+L\+A\+N\+K@{M\+U\+L\+B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}{}M\+U\+L\+B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca004d8b049f4b86f946c3a0f06e19b133}
+}]\index{D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+B\+C\+E\+L\+L@{D\+B\+C\+E\+L\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}{}D\+B\+C\+E\+L\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca23ddcdc8a56d2fd64cf47475f0dbcc91}
+}]\index{B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+K\+B\+O\+O\+L@{B\+O\+O\+K\+B\+O\+O\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}{}B\+O\+O\+K\+B\+O\+O\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca87ca52fbea6566bd3ef07f3f4c8443d2}
+}]\index{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T@{S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}{}S\+C\+E\+N\+P\+R\+O\+T\+E\+C\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8b119b2f84083c2ef0b6ea77ff4010b7}
+}]\index{X\+F@{X\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!X\+F@{X\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}{}X\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca832f039d349d8b6d4999330c928af7a1}
+}]\index{M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!M\+E\+R\+G\+E\+C\+E\+L\+L\+S@{M\+E\+R\+G\+E\+C\+E\+L\+L\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}{}M\+E\+R\+G\+E\+C\+E\+L\+L\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca38fe6c8221b30d3a95eb715e9fba3bd4}
+}]\index{S\+S\+T@{S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+S\+T@{S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}{}S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab827ab4194018efb7492993a9c7c45f5}
+}]\index{L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+S\+S\+T@{L\+A\+B\+E\+L\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}{}L\+A\+B\+E\+L\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caaf0726da18736dfd69ae056a1869126d}
+}]\index{E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!E\+X\+T\+S\+S\+T@{E\+X\+T\+S\+S\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}{}E\+X\+T\+S\+S\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadc9dc8f028d1f26cd0f9ca8b8fb2a3de}
+}]\index{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S@{L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}{}L\+A\+B\+E\+L\+R\+A\+N\+G\+E\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca078fc42e54b3b72a8bb75f9edb375ace}
+}]\index{U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!U\+S\+E\+S\+E\+L\+F\+S@{U\+S\+E\+S\+E\+L\+F\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}{}U\+S\+E\+S\+E\+L\+F\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca3a06c9cc95e4ee886f08b09386bce8ef}
+}]\index{D\+S\+F@{D\+S\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+S\+F@{D\+S\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}{}D\+S\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cab5cb892744321ab3922324b80f5944e7}
+}]\index{S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+U\+P\+B\+O\+O\+K@{S\+U\+P\+B\+O\+O\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}{}S\+U\+P\+B\+O\+O\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caa1a667842253f8a1695741b451fa72da}
+}]\index{C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+O\+N\+D\+F\+M\+T@{C\+O\+N\+D\+F\+M\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}{}C\+O\+N\+D\+F\+M\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca953cff93bb6fd08f82da4bf31c5a3db5}
+}]\index{C\+F@{C\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!C\+F@{C\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}{}C\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca13fe6395bdbd1a14e0afd1c5e0175754}
+}]\index{D\+V\+A\+L@{D\+V\+A\+L}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V\+A\+L@{D\+V\+A\+L}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}{}D\+V\+A\+L\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca258ede5b60318a2892140e35401c8fac}
+}]\index{H\+L\+I\+N\+K@{H\+L\+I\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!H\+L\+I\+N\+K@{H\+L\+I\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}{}H\+L\+I\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca7df59a4090cf1cddb4baebdf19bee2ce}
+}]\index{D\+V@{D\+V}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+V@{D\+V}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}{}D\+V\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca905ec4fab50a5da724b07b7b92b753f1}
+}]\index{D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!D\+I\+M\+E\+N\+S\+I\+O\+N\+S@{D\+I\+M\+E\+N\+S\+I\+O\+N\+S}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}{}D\+I\+M\+E\+N\+S\+I\+O\+N\+S\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca6dd3f1c7a4f6dee0e485ce617587351e}
+}]\index{B\+L\+A\+N\+K@{B\+L\+A\+N\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+L\+A\+N\+K@{B\+L\+A\+N\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}{}B\+L\+A\+N\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca17d17883e0454b3801d9f904ba455e3e}
+}]\index{N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!N\+U\+M\+B\+E\+R@{N\+U\+M\+B\+E\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}{}N\+U\+M\+B\+E\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caee9a346f9f22f359c66754e53de171c1}
+}]\index{B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+O\+L\+E\+R\+R@{B\+O\+O\+L\+E\+R\+R}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}{}B\+O\+O\+L\+E\+R\+R\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65c8763aa1e603d0e1e97b037b5899fe}
+}]\index{S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+R\+I\+N\+G@{S\+T\+R\+I\+N\+G}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}{}S\+T\+R\+I\+N\+G\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca9adba8872110e027ecc192c8649f9d2a}
+}]\index{R\+O\+W@{R\+O\+W}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+O\+W@{R\+O\+W}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}{}R\+O\+W\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cae3749fae18a6609957488d9f5bb811a6}
+}]\index{I\+N\+D\+E\+X@{I\+N\+D\+E\+X}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!I\+N\+D\+E\+X@{I\+N\+D\+E\+X}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}{}I\+N\+D\+E\+X\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca78791675f8f6ec9469d5b2a1a3ac767a}
+}]\index{A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!A\+R\+R\+A\+Y@{A\+R\+R\+A\+Y}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}{}A\+R\+R\+A\+Y\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf9586c7f3bf6decda07230d055ef90d5}
+}]\index{W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!W\+I\+N\+D\+O\+W2@{W\+I\+N\+D\+O\+W2}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}{}W\+I\+N\+D\+O\+W2\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca65a12c2d54190f1022e5548977eac68a}
+}]\index{R\+K@{R\+K}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+K@{R\+K}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}{}R\+K\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cac538d718b58bdffdc8479af9e231409a}
+}]\index{S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+T\+Y\+L\+E@{S\+T\+Y\+L\+E}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}{}S\+T\+Y\+L\+E\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca5260a4d61993e0abb5578589737f7f32}
+}]\index{F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!F\+O\+R\+M\+A\+T@{F\+O\+R\+M\+A\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}{}F\+O\+R\+M\+A\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca15ea8491c843502c3eee55b6c784dec8}
+}]\index{S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+R\+F\+M\+L\+A1@{S\+H\+R\+F\+M\+L\+A1}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}{}S\+H\+R\+F\+M\+L\+A1\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caf46dd42c69ced5b56c4c693fb4d50659}
+}]\index{Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!Q\+U\+I\+C\+K\+T\+I\+P@{Q\+U\+I\+C\+K\+T\+I\+P}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}{}Q\+U\+I\+C\+K\+T\+I\+P\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca8cd60b97ad88aaedd4651bee72cbe6a7}
+}]\index{B\+O\+F@{B\+O\+F}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!B\+O\+F@{B\+O\+F}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}{}B\+O\+F\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca197c0d73d97ccc67c23a722208cc5b01}
+}]\index{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T@{S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}{}S\+H\+E\+E\+T\+L\+A\+Y\+O\+U\+T\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca313fa5559b366b48e47fac51ec1b8b46}
+}]\index{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}{}S\+H\+E\+E\+T\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00cadbd95510f1808c65f33c0f65df21a35f}
+}]\index{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N@{R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}{}R\+A\+N\+G\+E\+P\+R\+O\+T\+E\+C\+T\+I\+O\+N\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00ca68b772130542ccec7842b758d20435b4}
+}]\index{S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}!Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}}\index{Y\+Excel\+::\+C\+O\+D\+E@{Y\+Excel\+::\+C\+O\+D\+E}!S\+X\+F\+O\+R\+M\+U\+L\+A@{S\+X\+F\+O\+R\+M\+U\+L\+A}}\item[{\em 
+\hypertarget{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}{}S\+X\+F\+O\+R\+M\+U\+L\+A\label{struct_y_excel_1_1_c_o_d_e_ae0c6be2dfa10f19c36be94a85829b00caea9e574c7e2a73003e269b6e5d107a1c}
+}]\end{description}
+\end{Desc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/cygwin/home/\+Engineer/\+Development/cutlist-\/parser/\hyperlink{_basic_excel_8hpp}{Basic\+Excel.\+hpp}\end{DoxyCompactItemize}

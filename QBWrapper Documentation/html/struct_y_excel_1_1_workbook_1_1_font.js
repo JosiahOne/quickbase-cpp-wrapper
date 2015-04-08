@@ -1,0 +1,28 @@
+var struct_y_excel_1_1_workbook_1_1_font =
+[
+    [ "Font", "struct_y_excel_1_1_workbook_1_1_font.html#acb4090cf4dcbb001d52e7fb1bbf1af02", null ],
+    [ "Font", "struct_y_excel_1_1_workbook_1_1_font.html#acb4090cf4dcbb001d52e7fb1bbf1af02", null ],
+    [ "Font", "struct_y_excel_1_1_workbook_1_1_font.html#acb4090cf4dcbb001d52e7fb1bbf1af02", null ],
+    [ "DataSize", "struct_y_excel_1_1_workbook_1_1_font.html#ab484448473812d4bdd0cc626f3ed7aa1", null ],
+    [ "DataSize", "struct_y_excel_1_1_workbook_1_1_font.html#a2f09cd0e2ba46a99cf63b2512b5c9cf2", null ],
+    [ "DataSize", "struct_y_excel_1_1_workbook_1_1_font.html#a2f09cd0e2ba46a99cf63b2512b5c9cf2", null ],
+    [ "Read", "struct_y_excel_1_1_workbook_1_1_font.html#ad69264a5c5eba87d2a975251e71a69b9", null ],
+    [ "Read", "struct_y_excel_1_1_workbook_1_1_font.html#aeae63a307623ea4303e730f9dd555206", null ],
+    [ "Read", "struct_y_excel_1_1_workbook_1_1_font.html#aeae63a307623ea4303e730f9dd555206", null ],
+    [ "RecordSize", "struct_y_excel_1_1_workbook_1_1_font.html#a8307607ca8684367efda68cb95ee7af8", null ],
+    [ "RecordSize", "struct_y_excel_1_1_workbook_1_1_font.html#a7a42ca0185994755c4817cf5c7569435", null ],
+    [ "RecordSize", "struct_y_excel_1_1_workbook_1_1_font.html#a7a42ca0185994755c4817cf5c7569435", null ],
+    [ "Write", "struct_y_excel_1_1_workbook_1_1_font.html#a027455cca5793c3976b0e692f4f5c072", null ],
+    [ "Write", "struct_y_excel_1_1_workbook_1_1_font.html#af07e3d7f198dcdb122c0514c42a54a76", null ],
+    [ "Write", "struct_y_excel_1_1_workbook_1_1_font.html#af07e3d7f198dcdb122c0514c42a54a76", null ],
+    [ "characterSet_", "struct_y_excel_1_1_workbook_1_1_font.html#aac0390588320c702e91bfd231592381d", null ],
+    [ "colourIndex_", "struct_y_excel_1_1_workbook_1_1_font.html#a41dc1b90c700c4da94f0561a1d358393", null ],
+    [ "escapementType_", "struct_y_excel_1_1_workbook_1_1_font.html#af9a5527a74a8914278780e8b1c443a56", null ],
+    [ "family_", "struct_y_excel_1_1_workbook_1_1_font.html#abed912be8d898bc4d7a9f31c7980d59b", null ],
+    [ "height_", "struct_y_excel_1_1_workbook_1_1_font.html#a2ac8587008961db84e956bacfe1e82be", null ],
+    [ "name_", "struct_y_excel_1_1_workbook_1_1_font.html#a4398dba80bce59dc86b4416df2219fd6", null ],
+    [ "options_", "struct_y_excel_1_1_workbook_1_1_font.html#a199b9e53ea280cfc9058230f99ef7938", null ],
+    [ "underlineType_", "struct_y_excel_1_1_workbook_1_1_font.html#a92921629211b08b87e4ffecc339b3828", null ],
+    [ "unused_", "struct_y_excel_1_1_workbook_1_1_font.html#a539f31f576aaf2e7eb80a7f36f8b7019", null ],
+    [ "weight_", "struct_y_excel_1_1_workbook_1_1_font.html#ab3edd2cca8e2827ecf63385d1404bf7c", null ]
+];

@@ -1,0 +1,28 @@
+This is a Quick\+Base A\+P\+I wrapper for use in C++ code. It is still quite rough, but functional. You will want to reference the Quick\+Base A\+P\+I documentation for details on the A\+P\+I calls other than what exists in the wrapper header file. \href{http://www.quickbase.com/api-guide/index.html}{\tt Quickbase A\+P\+I Site}
+
+\subsubsection*{Setup}
+
+\paragraph*{Pre-\/\+Reqs}
+
+You will need to build and install the proper libcurl library for your machine and place the .lib in time-\/clock. Everything else is self-\/contained.
+
+\paragraph*{V\+S Setup Data}
+
+In your linker settings, make sure Additional Library Directories is set to \char`\"{}custom\+\_\+libraries\textbackslash{}lib\+\_\+dbg\char`\"{} Also make sure Additional Dependencies includes \char`\"{}libcurld.\+lib\char`\"{}. Finally, add C\+U\+R\+L\+\_\+\+S\+T\+A\+T\+I\+C\+L\+I\+B to your Preprocessor Definitions.
+
+\paragraph*{Integrating into your project}
+
+Integration is unfortunately semi-\/difficult due to its many library dependencies. For example, if you are integrating to an M\+F\+C application, the Use of M\+F\+C must be set to \char`\"{}\+Use M\+F\+C in a shared D\+L\+L\char`\"{}. Statically linking won\textquotesingle{}t work because the libraries are D\+L\+L-\/built. libcurld is not. You could build your own libcurld and children, if you want a statically linked binary.
+
+Integration is not done through a .lib, simply because I hate using them. Instead, simply clone the repo into your application\textquotesingle{}s source. Doing so comes with the added benefit of being able to modify the A\+P\+I if you so desire.
+
+Note\+: If you modify something that you feel would be beneficial to more than just yourself, please create a issue and attach a patch!
+
+\subsubsection*{Contribution guidelines}
+
+\subsubsection*{Who do I talk to?}
+
+
+\begin{DoxyItemize}
+\item Repo owner or admin (Josiah Bruner) 
+\end{DoxyItemize}

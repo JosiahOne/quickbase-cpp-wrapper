@@ -1,0 +1,163 @@
+\hypertarget{tinydir_8h}{}\section{C\+:/cygwin/home/\+Engineer/\+Development/cutlist-\/parser/tinydir.h File Reference}
+\label{tinydir_8h}\index{C\+:/cygwin/home/\+Engineer/\+Development/cutlist-\/parser/tinydir.\+h@{C\+:/cygwin/home/\+Engineer/\+Development/cutlist-\/parser/tinydir.\+h}}
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$dirent.\+h$>$}\\*
+{\ttfamily \#include $<$libgen.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtinydir__file}{tinydir\+\_\+file}
+\begin{DoxyCompactList}\small\item\em defined(\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C) \end{DoxyCompactList}\item 
+struct \hyperlink{structtinydir__dir}{tinydir\+\_\+dir}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{tinydir_8h_a0851f369d026104769d8a016741f2bc2}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X}~4096
+\item 
+\#define \hyperlink{tinydir_8h_a1466f82a8701044c7804033003d0b180}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A}~0
+\item 
+\#define \hyperlink{tinydir_8h_aa391292d8689f984ca8ce3d70feecdcb}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X}~256
+\item 
+\#define \hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C}~static \+\_\+\+\_\+inline\+\_\+\+\_\+
+\item 
+\#define \hyperlink{tinydir_8h_a96c2756a723c6ef4d7108cded93a0abc}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C}(\+\_\+size)~malloc(\+\_\+size)
+\item 
+\#define \hyperlink{tinydir_8h_a9b3cd15e3e9df4a81baa22a516ee6b11}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E}(\+\_\+ptr)~free(\+\_\+ptr)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a344f085761e41431e24c8c998805ba3f}{tinydir\+\_\+open} (\hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir, const char $\ast$path)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a3e73e8c3eca3a48021a229df6d84670e}{tinydir\+\_\+open\+\_\+sorted} (\hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir, const char $\ast$path)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} void \hyperlink{tinydir_8h_a05c4a9ee5c32f36ed3e5c5c7d00ae714}{tinydir\+\_\+close} (\hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a699d0deef9ffde1d9fa75379d32714f9}{tinydir\+\_\+next} (\hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a61b7dcb5bf8b9d410f8d54e1d2f3e0d4}{tinydir\+\_\+readfile} (const \hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir, \hyperlink{structtinydir__file}{tinydir\+\_\+file} $\ast$file)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a4f943bf19a9a0b2b4dbd94cf956337bb}{tinydir\+\_\+readfile\+\_\+n} (const \hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir, \hyperlink{structtinydir__file}{tinydir\+\_\+file} $\ast$file, size\+\_\+t i)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_acac889a2227f4855963fd543cf9215f8}{tinydir\+\_\+open\+\_\+subdir\+\_\+n} (\hyperlink{structtinydir__dir}{tinydir\+\_\+dir} $\ast$dir, size\+\_\+t i)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} void \hyperlink{tinydir_8h_af0bcd377e6e5712d292d22406b38a656}{\+\_\+tinydir\+\_\+get\+\_\+ext} (\hyperlink{structtinydir__file}{tinydir\+\_\+file} $\ast$file)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a0020634f11c304c23ba2e7cebf6fdfe8}{\+\_\+tinydir\+\_\+file\+\_\+cmp} (const void $\ast$a, const void $\ast$b)
+\item 
+\hyperlink{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \hyperlink{tinydir_8h_a91b0f298d20d3d70f24d9af8ac076854}{tinydir\+\_\+file\+\_\+open} (\hyperlink{structtinydir__file}{tinydir\+\_\+file} $\ast$file, const char $\ast$path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{tinydir_8h_aa391292d8689f984ca8ce3d70feecdcb}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+M\+A\+X~256}\label{tinydir_8h_aa391292d8689f984ca8ce3d70feecdcb}
+\hypertarget{tinydir_8h_a9b3cd15e3e9df4a81baa22a516ee6b11}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+R\+E\+E(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+ptr}
+\end{DoxyParamCaption}
+)~free(\+\_\+ptr)}\label{tinydir_8h_a9b3cd15e3e9df4a81baa22a516ee6b11}
+\hypertarget{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C~static \+\_\+\+\_\+inline\+\_\+\+\_\+}\label{tinydir_8h_abf91aae9fbcefee29cc03d29a0d4625d}
+\hypertarget{tinydir_8h_a96c2756a723c6ef4d7108cded93a0abc}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+M\+A\+L\+L\+O\+C(
+\begin{DoxyParamCaption}
+\item[{}]{\+\_\+size}
+\end{DoxyParamCaption}
+)~malloc(\+\_\+size)}\label{tinydir_8h_a96c2756a723c6ef4d7108cded93a0abc}
+\hypertarget{tinydir_8h_a1466f82a8701044c7804033003d0b180}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+E\+X\+T\+R\+A~0}\label{tinydir_8h_a1466f82a8701044c7804033003d0b180}
+\hypertarget{tinydir_8h_a0851f369d026104769d8a016741f2bc2}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X}}
+\index{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X@{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+P\+A\+T\+H\+\_\+\+M\+A\+X~4096}\label{tinydir_8h_a0851f369d026104769d8a016741f2bc2}
+
+
+\subsection{Function Documentation}
+\hypertarget{tinydir_8h_a0020634f11c304c23ba2e7cebf6fdfe8}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+tinydir\+\_\+file\+\_\+cmp@{\+\_\+tinydir\+\_\+file\+\_\+cmp}}
+\index{\+\_\+tinydir\+\_\+file\+\_\+cmp@{\+\_\+tinydir\+\_\+file\+\_\+cmp}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+tinydir\+\_\+file\+\_\+cmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int \+\_\+tinydir\+\_\+file\+\_\+cmp (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a0020634f11c304c23ba2e7cebf6fdfe8}
+\hypertarget{tinydir_8h_af0bcd377e6e5712d292d22406b38a656}{}\index{tinydir.\+h@{tinydir.\+h}!\+\_\+tinydir\+\_\+get\+\_\+ext@{\+\_\+tinydir\+\_\+get\+\_\+ext}}
+\index{\+\_\+tinydir\+\_\+get\+\_\+ext@{\+\_\+tinydir\+\_\+get\+\_\+ext}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{\+\_\+tinydir\+\_\+get\+\_\+ext}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} void \+\_\+tinydir\+\_\+get\+\_\+ext (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+file} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_af0bcd377e6e5712d292d22406b38a656}
+\hypertarget{tinydir_8h_a05c4a9ee5c32f36ed3e5c5c7d00ae714}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+close@{tinydir\+\_\+close}}
+\index{tinydir\+\_\+close@{tinydir\+\_\+close}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} void tinydir\+\_\+close (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+dir} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a05c4a9ee5c32f36ed3e5c5c7d00ae714}
+\hypertarget{tinydir_8h_a91b0f298d20d3d70f24d9af8ac076854}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+file\+\_\+open@{tinydir\+\_\+file\+\_\+open}}
+\index{tinydir\+\_\+file\+\_\+open@{tinydir\+\_\+file\+\_\+open}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+file\+\_\+open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+file\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+file} $\ast$}]{file, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a91b0f298d20d3d70f24d9af8ac076854}
+\hypertarget{tinydir_8h_a699d0deef9ffde1d9fa75379d32714f9}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+next@{tinydir\+\_\+next}}
+\index{tinydir\+\_\+next@{tinydir\+\_\+next}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+next (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+dir} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a699d0deef9ffde1d9fa75379d32714f9}
+\hypertarget{tinydir_8h_a344f085761e41431e24c8c998805ba3f}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+open@{tinydir\+\_\+open}}
+\index{tinydir\+\_\+open@{tinydir\+\_\+open}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+open (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+dir} $\ast$}]{dir, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a344f085761e41431e24c8c998805ba3f}
+\hypertarget{tinydir_8h_a3e73e8c3eca3a48021a229df6d84670e}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+open\+\_\+sorted@{tinydir\+\_\+open\+\_\+sorted}}
+\index{tinydir\+\_\+open\+\_\+sorted@{tinydir\+\_\+open\+\_\+sorted}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+open\+\_\+sorted}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+open\+\_\+sorted (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+dir} $\ast$}]{dir, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a3e73e8c3eca3a48021a229df6d84670e}
+\hypertarget{tinydir_8h_acac889a2227f4855963fd543cf9215f8}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+open\+\_\+subdir\+\_\+n@{tinydir\+\_\+open\+\_\+subdir\+\_\+n}}
+\index{tinydir\+\_\+open\+\_\+subdir\+\_\+n@{tinydir\+\_\+open\+\_\+subdir\+\_\+n}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+open\+\_\+subdir\+\_\+n}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+open\+\_\+subdir\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{{\bf tinydir\+\_\+dir} $\ast$}]{dir, }
+\item[{size\+\_\+t}]{i}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_acac889a2227f4855963fd543cf9215f8}
+\hypertarget{tinydir_8h_a61b7dcb5bf8b9d410f8d54e1d2f3e0d4}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+readfile@{tinydir\+\_\+readfile}}
+\index{tinydir\+\_\+readfile@{tinydir\+\_\+readfile}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+readfile}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+readfile (
+\begin{DoxyParamCaption}
+\item[{const {\bf tinydir\+\_\+dir} $\ast$}]{dir, }
+\item[{{\bf tinydir\+\_\+file} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a61b7dcb5bf8b9d410f8d54e1d2f3e0d4}
+\hypertarget{tinydir_8h_a4f943bf19a9a0b2b4dbd94cf956337bb}{}\index{tinydir.\+h@{tinydir.\+h}!tinydir\+\_\+readfile\+\_\+n@{tinydir\+\_\+readfile\+\_\+n}}
+\index{tinydir\+\_\+readfile\+\_\+n@{tinydir\+\_\+readfile\+\_\+n}!tinydir.\+h@{tinydir.\+h}}
+\subsubsection[{tinydir\+\_\+readfile\+\_\+n}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \+\_\+\+T\+I\+N\+Y\+D\+I\+R\+\_\+\+F\+U\+N\+C} int tinydir\+\_\+readfile\+\_\+n (
+\begin{DoxyParamCaption}
+\item[{const {\bf tinydir\+\_\+dir} $\ast$}]{dir, }
+\item[{{\bf tinydir\+\_\+file} $\ast$}]{file, }
+\item[{size\+\_\+t}]{i}
+\end{DoxyParamCaption}
+)}\label{tinydir_8h_a4f943bf19a9a0b2b4dbd94cf956337bb}
