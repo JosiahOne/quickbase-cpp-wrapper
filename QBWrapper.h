@@ -278,5 +278,5 @@ class QBWrapper {
         int _CURLSend(string inputStream);
         string _GetStringBetween(string data, string startDelim, string endDelim);
         string _SizetToString(size_t aSizeT);
-        void _AddOptionalParams(vector<string>paramArray, vector<string>valueArray, paramData data);
+        void _AddOptionalParams(vector<string>*paramArray, vector<string>*valueArray, paramData data);
 };

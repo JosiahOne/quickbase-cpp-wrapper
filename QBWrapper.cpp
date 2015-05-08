@@ -63,7 +63,7 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
     paramData optionalData;
     optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
     optionalData.bValues = { disprec, ignoreError, msInUTC };
-    _AddOptionalParams(paramVector, valueVector, optionalData);
+    _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
         altParams.push_back("fid");
@@ -98,7 +98,7 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
     optionalData.bValues = { disprec, ignoreError, msInUTC };
     optionalData.iParams = { "update_id" };
     optionalData.iValues = { updateID };
-    _AddOptionalParams(paramVector, valueVector, optionalData);
+    _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
         altParams.push_back("fid");
@@ -155,7 +155,7 @@ QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string
     paramData optionalData;
     optionalData.bParams = { "add_to_forms" };
     optionalData.bValues = { addToForms };
-    _AddOptionalParams(paramVector, valueVector, optionalData);
+    _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
@@ -324,7 +324,7 @@ QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, stri
     paramData optionalData;
     optionalData.bParams = { "fmt", "returnpercentage", "includeRids" };
     optionalData.bValues = { fmt, returnPercentage, includeRids };
-    _AddOptionalParams(paramVector, valueVector, optionalData);
+    _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     if (query == "ALL") {
         paramVector.push_back("query");
@@ -541,36 +541,36 @@ string QBWrapper::_GetStringBetween(string data, string startDelim, string endDe
     }
 }
 
-void QBWrapper::_AddOptionalParams(vector<string>paramArray, vector<string>valueArray, paramData data) {
+void QBWrapper::_AddOptionalParams(vector<string>*paramArray, vector<string>*valueArray, paramData data) {
     // Booleans
     for (unsigned i = 0; i < data.bParams.size(); i++) {
         if (data.bValues[i] == TRUE) {
-            paramArray.push_back(data.bParams[i]);
-            valueArray.push_back(_BoolToString(data.bValues[i]));
+            paramArray->push_back(data.bParams[i]);
+            valueArray->push_back(_BoolToString(data.bValues[i]));
         }
     }
 
     // Integers
     for (unsigned i = 0; i < data.iParams.size(); i++) {
         if (data.iValues[i] > 0) {
-            paramArray.push_back(data.iParams[i]);
-            valueArray.push_back(_IntToString(data.iValues[i]));
+            paramArray->push_back(data.iParams[i]);
+            valueArray->push_back(_IntToString(data.iValues[i]));
         }
     }
 
     // Strings
     for (unsigned i = 0; i < data.sParams.size(); i++) {
         if (data.sParams[i] != "") {
-            paramArray.push_back(data.sParams[i]);
-            valueArray.push_back(data.sValues[i]);
+            paramArray->push_back(data.sParams[i]);
+            valueArray->push_back(data.sValues[i]);
         }
     }
 
     // Floats
     for (unsigned i = 0; i < data.fParams.size(); i++) {
         if (data.fParams[i] != "") {
-            paramArray.push_back(data.fParams[i]);
-            valueArray.push_back(_FloatToString(data.fValues[i]));
+            paramArray->push_back(data.fParams[i]);
+            valueArray->push_back(_FloatToString(data.fValues[i]));
         }
     }
 }
