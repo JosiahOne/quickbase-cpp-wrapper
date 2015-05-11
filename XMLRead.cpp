@@ -53,8 +53,10 @@ void XMLRead::MoveAttributesIntoChildren(string fieldName) {
             // Loop through each attribute and move it into the field contents
 
             for (unsigned int i = 0; i < attributes.capacity(); i++) {
-                 
+                _CreateChild(attributes[i].name, attributes[i].contents, fieldName);
             }
+
+            _DeleteAttributes(fieldName);
         }
     }
 }
@@ -102,7 +104,6 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
     string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     attribute anAttribute;
     vector<attribute> attributeArray = {};
-    unsigned int index = 0;
     bool collectingContents = false;
     int marksFound = 0;
     if (attributeContents != "") {
@@ -133,7 +134,28 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
                 anAttribute.name += theChar;
             }
 
-            index++;
         }
     }
+
+    return attributeArray;
+}
+
+bool XMLRead::_CreateChild(string name, string content, string parentTagName) {
+    try {
+        unsigned int loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length();
+
+        _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
+    }
+    catch (int e) {
+        return false;
+    }
+
+    return true;
+}
+
+void XMLRead::_DeleteAttributes(string fieldName) {
+    unsigned int loc = _xmlData.find(_MakeTag(fieldName, true)) + fieldName.length();
+    string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+
+    _xmlData.erase(loc, attributeContents.length());
 }

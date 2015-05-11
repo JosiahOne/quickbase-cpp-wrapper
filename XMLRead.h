@@ -9,15 +9,9 @@
 #include <cctype>
 using namespace std;
 
-struct range {
-    unsigned int start_pos;
-    unsigned int length;
-};
-
 struct attribute {
     string name;
     string contents;
-    range rangeValue;
 };
 
 class XMLRead {
@@ -37,5 +31,7 @@ class XMLRead {
         bool _VerifyXML(string data);
         bool _HasAttributes(string fieldName);
         vector<attribute> _GetAttributes(string fieldName);
+        bool _CreateChild(string name, string content, string parentTagName);
+        void _DeleteAttributes(string fieldName);
 };
 
