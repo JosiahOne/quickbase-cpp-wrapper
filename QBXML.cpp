@@ -73,6 +73,11 @@ XMLResult QBXML::GetNewDBID() {
 }
 
 XMLResult QBXML::GetRecord() {
+    // Unfortunately, due to poor API design, <record> tags may or may not possess an rid attribute.
+    // Since these attributes are much harder to parse, we instead move the attribute into an <rid> child.
+
+
+
     return _GetResult("record");
 }
 
@@ -128,13 +133,13 @@ XMLResult QBXML::_GetResult(string type) {
 }
 
 // Removes first occurance of substring.
-string  QBXML::_RemoveSubstring(string mainString, string subString) {
+string QBXML::_RemoveSubstring(string mainString, string subString) {
     string t = mainString;
     std::string s = subString;
 
     std::string::size_type i = t.find(s);
 
-    if (i != std::string::npos){
+    if (i != std::string::npos) {
         t.erase(i, s.length());
     }
 
