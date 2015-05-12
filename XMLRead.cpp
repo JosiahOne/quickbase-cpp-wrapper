@@ -63,7 +63,7 @@ void XMLRead::MoveAttributesIntoChildren(string fieldName) {
 
 string XMLRead::_GetStringBetween(string data, string startDelim, string endDelim) {
     unsigned first = data.find(startDelim);
-    unsigned last = data.find(endDelim);
+    unsigned last = data.find(endDelim, first);
     if (first != string::npos && last != string::npos) {
         string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
         return strNew;
@@ -112,10 +112,11 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
 
             if (collectingContents) {
                 if (theChar == '"') {
-                    if (marksFound != 2) {
+                    if (marksFound != 1) {
                         marksFound++;
                     }
                     else {
+                        cout << "***** FOUND *****";
                         collectingContents = false;
                         marksFound = 0;
                         attributeArray.push_back(anAttribute);
@@ -141,14 +142,9 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
 }
 
 bool XMLRead::_CreateChild(string name, string content, string parentTagName) {
-    try {
-        unsigned int loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length();
-
-        _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
-    }
-    catch (int e) {
-        return false;
-    }
+    cout << "Name = " << name << ", content = " << content << ", parentTagName = " << parentTagName << endl;
+    unsigned int loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length() + 2;
+    _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
 
     return true;
 }
