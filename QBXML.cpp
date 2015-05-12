@@ -90,29 +90,25 @@ XMLResult QBXML::GetValue() {
 
 vector<QBXML> QBXML::GetFields() {
     vector<QBXML> results = { };
-    string remainingData = _xmlData->GetRawXML();
+    string originalData = _xmlData->GetRawXML();
 
     bool flag = true;
     while (flag) {
-        XMLRead *xmlData = new XMLRead;
-        xmlData->Load(remainingData);
         XMLResult aRes = _GetResult("field");
         if (aRes.valid) {
             XMLRead *reducedRead = new XMLRead;
             reducedRead->Load(aRes.text);
             QBXML newXML(reducedRead);
             results.push_back(newXML);
-            delete reducedRead;
             // Strip remainingData for repeat
-            remainingData = _RemoveSubstring(remainingData, aRes.text);
+            _xmlData->Load(_RemoveSubstring(_xmlData->GetRawXML(), "<field>" + aRes.text + "</field>"));
+            cout << "-----------" << _xmlData->GetRawXML() << "-----------";
         }
         else {
             flag = false;
         }
-
-        delete xmlData;
     }
-
+    _xmlData->Load(originalData);
     return results;
 }
 
@@ -136,11 +132,11 @@ string QBXML::_RemoveSubstring(string mainString, string subString) {
     string t = mainString;
     std::string s = subString;
 
-    std::string::size_type i = t.find(s);
+    int i = t.find(s);
 
     if (i != std::string::npos) {
         t.erase(i, s.length());
     }
 
-    return mainString;
+    return t;
 }
