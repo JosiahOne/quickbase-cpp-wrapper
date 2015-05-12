@@ -30,6 +30,8 @@ string XMLRead::GetFieldContents(string fieldName) {
 
     if (_VerifyXML(_xmlData)) {
         string result = _GetStringBetween(_xmlData, _MakeTag(fieldName, true), _MakeTag(fieldName, false));
+        cout << "TICKET = " << result << endl;
+        cout << "XMLData = \n" << _xmlData << endl;
         if (result == "") {
             return "ERROR";
         }
@@ -47,16 +49,14 @@ string XMLRead::GetRawXML() {
 void XMLRead::MoveAttributesIntoChildren(string fieldName) {
     if (_VerifyXML(_xmlData)) {
         if (_HasAttributes(fieldName)) {
-            // First, get attributes
             vector<attribute> attributes = _GetAttributes(fieldName);
-
-            // Loop through each attribute and move it into the field contents
+            
+            _DeleteAttributes(fieldName);
 
             for (unsigned int i = 0; i < attributes.capacity(); i++) {
                 _CreateChild(attributes[i].name, attributes[i].contents, fieldName);
             }
 
-            _DeleteAttributes(fieldName);
         }
     }
 }
@@ -65,7 +65,7 @@ string XMLRead::_GetStringBetween(string data, string startDelim, string endDeli
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
     if (first != string::npos && last != string::npos) {
-        string strNew = data.substr(first + startDelim.length(), last - endDelim.length() - first + 1);
+        string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
         return strNew;
     }
     else {
@@ -154,8 +154,12 @@ bool XMLRead::_CreateChild(string name, string content, string parentTagName) {
 }
 
 void XMLRead::_DeleteAttributes(string fieldName) {
-    unsigned int loc = _xmlData.find(_MakeTag(fieldName, true)) + fieldName.length();
+    unsigned int loc = _xmlData.find("<" + fieldName) + fieldName.length();
     string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+    if (attributeContents.length() > 0) {
+        cout << "ATT LENGTH = " << attributeContents.length() << "|";
+        _xmlData.erase(loc + 1, attributeContents.length());
+    }
 
-    _xmlData.erase(loc, attributeContents.length());
+    cout << endl << endl << _xmlData << endl << endl;
 }

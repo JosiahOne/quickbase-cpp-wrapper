@@ -76,8 +76,7 @@ XMLResult QBXML::GetRecord() {
     // Unfortunately, due to poor API design, <record> tags may or may not possess an rid attribute.
     // Since these attributes are much harder to parse, we instead move the attribute into an <rid> child.
 
-
-
+    //_xmlData->MoveAttributesIntoChildren("record");
     return _GetResult("record");
 }
 
