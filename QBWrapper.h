@@ -14,8 +14,6 @@
 #include "QBXML.h"
 #include "UTF-8\utf8.h"
 
-using namespace std;
-
 void init_string(struct curlString *s);
 size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s);
 
@@ -25,15 +23,15 @@ struct curlString {
 };
 
 struct paramData {
-    vector<string> bParams = {};
-    vector<string> iParams = {};
-    vector<string> sParams = {};
-    vector<string> fParams = {};
+    std::vector<std::string> bParams = {};
+    std::vector<std::string> iParams = {};
+    std::vector<std::string> sParams = {};
+    std::vector<std::string> fParams = {};
     
-    vector<bool> bValues = {};
-    vector<int> iValues = {};
-    vector<string> sValues = {};
-    vector<float> fValues = {};
+    std::vector<bool> bValues = {};
+    std::vector<int> iValues = {};
+    std::vector<std::string> sValues = {};
+    std::vector<float> fValues = {};
 };
 
 class QBWrapper {
@@ -46,13 +44,13 @@ class QBWrapper {
          * Notes:
          *   USE HTTPS! Not HTTP.
          */
-        void SetAppLocation(string location); // Required.
+        void SetAppLocation(std::string location); // Required.
 
         /* SetAppToken
          * Parameters:
          *   string token: The app token for your app. You must supply this if your QB app requires application tokens.
          */
-        void SetAppToken(string token); // Optional
+        void SetAppToken(std::string token); // Optional
 
         /* Authenticate -> API_Authenticate
          * Parameters:
@@ -61,7 +59,7 @@ class QBWrapper {
          *   int       hours: The number of hours that the ticket will be valid. If you pass NULL, this is equal to 12 hours.
          *   string    udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          */
-        QBXML Authenticate(string username, string password, int hours, string udata);
+        QBXML Authenticate(std::string username, std::string password, int hours, std::string udata);
 
         /* AddRecord -> API_AddRecord
          * Parameters:
@@ -77,7 +75,7 @@ class QBWrapper {
          * Notes:
          *   - fields and fieldContents MUST have equal lengths.
          */
-        QBXML AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
+        QBXML AddRecord(std::vector<std::string> fields, std::vector<std::string> fieldContents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid);
         
         /* EditRecord -> API_EditRecord
          * Parameters:
@@ -95,7 +93,7 @@ class QBWrapper {
          * Notes:
          *   - fields and contents MUST have equal lengths.
          */
-        QBXML EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid);
+        QBXML EditRecord(int rid, int updateID, std::vector<std::string> fields, std::vector<std::string> contents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid);
         
         /* GetSchema -> API_GetSchema
          * Parameters:
@@ -104,7 +102,7 @@ class QBWrapper {
          *   string            udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string             dbid: The DBID of a table.
          */
-        QBXML GetSchema(string ticket, string apptoken, string udata, string dbid);
+        QBXML GetSchema(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* GetDBInfo -> API_GetDBInfo
          * Parameters:
@@ -113,7 +111,7 @@ class QBWrapper {
          *   string            udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string             dbid: The DBID of an app or table.
          */
-        QBXML GetDBInfo(string ticket, string apptoken, string udata, string dbid);
+        QBXML GetDBInfo(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* AddField -> API_AddField
          * Parameters:
@@ -143,7 +141,7 @@ class QBWrapper {
               Time Of Day	            timeofday
               URL	                    url
          */
-        QBXML AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid);
+        QBXML AddField(bool addToForms, std::string apptoken, std::string label, std::string mode, std::string ticket, std::string type, std::string udata, std::string dbid);
         
         /* DeleteField -> API_DeleteField
          * Parameters:
@@ -153,7 +151,7 @@ class QBWrapper {
          *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string       dbid: The DBID of an app or table.
          */
-        QBXML DeleteField(int fid, string ticket, string apptoken, string udata, string dbid);
+        QBXML DeleteField(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* SetFieldProperties -> API_SetFieldProperties
          * Parameters:
@@ -168,7 +166,7 @@ class QBWrapper {
          *   propertyParams and propertyValues must have equal length.
          *   See http://www.quickbase.com/api-guide/index.html#setfieldproperties.html for property tags and valid values.
          */
-        QBXML SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid);
+        QBXML SetFieldProperties(std::vector<std::string>propertyParams, std::vector<std::string>propertyValues, int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* CreateTable -> API_CreateTable
          * Parameters:
@@ -178,7 +176,7 @@ class QBWrapper {
          *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string       dbid: The DBID of an app.
          */
-        QBXML CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid);
+        QBXML CreateTable(std::string tname, std::string pnoun, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* GetNumRecords -> API_GetNumRecords
          * Parameters:
@@ -187,7 +185,7 @@ class QBWrapper {
          *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string       dbid: The DBID of a table.
          */
-        QBXML GetNumRecords(string ticket, string apptoken, string udata, string dbid);
+        QBXML GetNumRecords(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* GetRecordInfo -> API_GetRecordInfo
          * Parameters:
@@ -197,7 +195,7 @@ class QBWrapper {
          *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string       dbid: The DBID of a table.
          */
-        QBXML GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid);
+        QBXML GetRecordInfo(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* DeleteRecord -> API_DeleteRecord
          * Parameters:
@@ -207,7 +205,7 @@ class QBWrapper {
          *   string      udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   string       dbid: The DBID of a table.
          */
-        QBXML DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid);
+        QBXML DeleteRecord(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* PurgeRecords -> API_PurgeRecords
          * Parameters:
@@ -221,7 +219,7 @@ class QBWrapper {
          * Notes:
          *   The first three parameters are used in order. If one is NULL then the next is used.
          */
-        QBXML PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid);
+        QBXML PurgeRecords(std::string query, int qid, std::string qname, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* DoQuery -> API_DoQuery
          * Parameters:
@@ -248,7 +246,7 @@ class QBWrapper {
          *     sortorder-D --specifies a descending order
          *     nosort --returns unsorted records, ignoring the sortorder option, the slist parameter, and the default sort for the table
          */
-        QBXML DoQuery(string query, int qid, string qname, string clist, string slist, bool fmt, bool returnPercentage, string options, bool includeRids, string ticket, string apptoken, string udata, string dbid);
+        QBXML DoQuery(std::string query, int qid, std::string qname, std::string clist, std::string slist, bool fmt, bool returnPercentage, std::string options, bool includeRids, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* GetFieldContents
          * Parameters:
@@ -259,7 +257,7 @@ class QBWrapper {
          *   string      dbid: The DBID of a table.
          *   string       rid: The RID of a record.
          */
-        string GetFieldContents(int fid, string ticket, string apptoken, string udata, string dbid, int rid);
+        std::string GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid);
 
         /* Cleanup
          * Notes:
@@ -267,16 +265,16 @@ class QBWrapper {
          */
         void Cleanup();
     private:
-        string _apptoken;
-        string _ticket;
-        string _appLocation;
-        string _XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values, vector<string> altParams = vector<string>(), vector<string> altValues = vector<string>());
-        string _PostWithFile(string file, string apiName, string dbid);
-        string _IntToString(int anInt);
-        string _FloatToString(float aFloat);
-        string _BoolToString(bool aBool);
-        int _CURLSend(string inputStream);
-        string _GetStringBetween(string data, string startDelim, string endDelim);
-        string _SizetToString(size_t aSizeT);
-        void _AddOptionalParams(vector<string>*paramArray, vector<string>*valueArray, paramData data);
+        std::string _apptoken;
+        std::string _ticket;
+        std::string _appLocation;
+        std::string _XMLDataPrelim(std::string apiAction, std::string dbid, std::vector<std::string> params, std::vector<std::string> values, std::vector<std::string> altParams = std::vector<std::string>(), std::vector<std::string> altValues = std::vector<std::string>());
+        std::string _PostWithFile(std::string file, std::string apiName, std::string dbid);
+        std::string _IntToString(int anInt);
+        std::string _FloatToString(float aFloat);
+        std::string _BoolToString(bool aBool);
+        int _CURLSend(std::string inputStream);
+        std::string _GetStringBetween(std::string data, std::string startDelim, std::string endDelim);
+        std::string _SizetToString(size_t aSizeT);
+        void _AddOptionalParams(std::vector<std::string>*paramArray, std::vector<std::string>*valueArray, paramData data);
 };

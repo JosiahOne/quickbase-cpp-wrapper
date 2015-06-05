@@ -4,23 +4,22 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 class XMLGen {
     public:
         XMLGen();
         ~XMLGen();
-        void SetLocation(string location);
-        void SetQBAction(string QBActName);
-        void AddParent(string name);
-        void CloseParent(string name);
-        void AddField(string name, string data);
-        void AddFieldWithParam(string name, string data, string pName, string pData);
+        void SetLocation(std::string location);
+        void SetQBAction(std::string QBActName);
+        void AddParent(std::string name);
+        void CloseParent(std::string name);
+        void AddField(std::string name, std::string data);
+        void AddFieldWithParam(std::string name, std::string data, std::string pName, std::string pData);
         bool WriteOut();
         void aReset();
     private:
-        string _location;
-        string _QBAction;
-        string _outStream;
+        std::string _location;
+        std::string _QBAction;
+        std::string _outStream;
         void _ResetAll();
 };

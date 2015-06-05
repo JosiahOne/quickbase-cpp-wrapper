@@ -6,8 +6,8 @@
 
 struct XMLResult {
     bool valid;
-    string text;
-    string type;
+    std::string text;
+    std::string type;
 };
 
 class QBXML
@@ -47,11 +47,11 @@ class QBXML
         // API_GetRecordInfo.
         XMLResult GetValue();
 
-        vector<QBXML> GetFields();
+        std::vector<QBXML> GetFields();
 
     private:
         XMLRead *_xmlData;
-        XMLResult _GetResult(string);
-        string _RemoveSubstring(string mainString, string subString);
+        XMLResult _GetResult(std::string);
+        std::string _RemoveSubstring(std::string mainString, std::string subString);
 };
 

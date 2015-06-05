@@ -7,31 +7,30 @@
 #include <vector>
 #include <algorithm>
 #include <cctype>
-using namespace std;
 
 struct attribute {
-    string name;
-    string contents;
+    std::string name;
+    std::string contents;
 };
 
 class XMLRead {
     public:
         XMLRead();
         ~XMLRead();
-        void Load(string xmlData);
+        void Load(std::string xmlData);
 
-        string GetFieldContents(string fieldName);
-        string GetRawXML();
+        std::string GetFieldContents(std::string fieldName);
+        std::string GetRawXML();
 
-        void MoveAttributesIntoChildren(string fieldName);
+        void MoveAttributesIntoChildren(std::string fieldName);
     private:
-        string _xmlData;
-        string _MakeTag(string name, bool open);
-        string _GetStringBetween(string data, string startDelim, string endDelim);
-        bool _VerifyXML(string data);
-        bool _HasAttributes(string fieldName);
-        vector<attribute> _GetAttributes(string fieldName);
-        bool _CreateChild(string name, string content, string parentTagName);
-        void _DeleteAttributes(string fieldName);
+        std::string _xmlData;
+        std::string _MakeTag(std::string name, bool open);
+        std::string _GetStringBetween(std::string data, std::string startDelim, std::string endDelim);
+        bool _VerifyXML(std::string data);
+        bool _HasAttributes(std::string fieldName);
+        std::vector<attribute> _GetAttributes(std::string fieldName);
+        bool _CreateChild(std::string name, std::string content, std::string parentTagName);
+        void _DeleteAttributes(std::string fieldName);
 };
 

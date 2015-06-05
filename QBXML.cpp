@@ -88,9 +88,9 @@ XMLResult QBXML::GetValue() {
     return _GetResult("value");
 }
 
-vector<QBXML> QBXML::GetFields() {
-    vector<QBXML> results = { };
-    string originalData = _xmlData->GetRawXML();
+std::vector<QBXML> QBXML::GetFields() {
+    std::vector<QBXML> results = {};
+    std::string originalData = _xmlData->GetRawXML();
 
     bool flag = true;
     while (flag) {
@@ -102,7 +102,7 @@ vector<QBXML> QBXML::GetFields() {
             results.push_back(newXML);
             // Strip remainingData for repeat
             _xmlData->Load(_RemoveSubstring(_xmlData->GetRawXML(), "<field>" + aRes.text + "</field>"));
-            cout << "-----------" << _xmlData->GetRawXML() << "-----------";
+            std::cout << "-----------" << _xmlData->GetRawXML() << "-----------";
         }
         else {
             flag = false;
@@ -112,9 +112,9 @@ vector<QBXML> QBXML::GetFields() {
     return results;
 }
 
-XMLResult QBXML::_GetResult(string type) {
+XMLResult QBXML::_GetResult(std::string type) {
     XMLResult xmlRes;
-    string result = _xmlData->GetFieldContents(type);
+    std::string result = _xmlData->GetFieldContents(type);
     if (result != "ERROR") {
         xmlRes.valid = true;
     }
@@ -128,8 +128,8 @@ XMLResult QBXML::_GetResult(string type) {
 }
 
 // Removes first occurance of substring.
-string QBXML::_RemoveSubstring(string mainString, string subString) {
-    string t = mainString;
+std::string QBXML::_RemoveSubstring(std::string mainString, std::string subString) {
+    std::string t = mainString;
     std::string s = subString;
 
     int i = t.find(s);

@@ -18,20 +18,20 @@ inline std::string trim(const std::string &s)
     return (wsback <= wsfront ? std::string() : std::string(wsfront, wsback));
 }
 
-void XMLRead::Load(string xmlData) {
+void XMLRead::Load(std::string xmlData) {
     if (xmlData != "") {
         _xmlData = xmlData;
     }
 }
 
-string XMLRead::GetFieldContents(string fieldName) {
+std::string XMLRead::GetFieldContents(std::string fieldName) {
     // _xmlData should be valid XML data.
     // To verify, we should find a <qdbapi> tag.
 
     if (_VerifyXML(_xmlData)) {
-        string result = _GetStringBetween(_xmlData, _MakeTag(fieldName, true), _MakeTag(fieldName, false));
-        cout << "TICKET = " << result << endl;
-        cout << "XMLData = \n" << _xmlData << endl;
+        std::string result = _GetStringBetween(_xmlData, _MakeTag(fieldName, true), _MakeTag(fieldName, false));
+        std::cout << "TICKET = " << result << std::endl;
+        std::cout << "XMLData = \n" << _xmlData << std::endl;
         if (result == "") {
             return "ERROR";
         }
@@ -42,14 +42,14 @@ string XMLRead::GetFieldContents(string fieldName) {
     }
 }
 
-string XMLRead::GetRawXML() {
+std::string XMLRead::GetRawXML() {
     return _xmlData;
 }
 
-void XMLRead::MoveAttributesIntoChildren(string fieldName) {
+void XMLRead::MoveAttributesIntoChildren(std::string fieldName) {
     if (_VerifyXML(_xmlData)) {
         if (_HasAttributes(fieldName)) {
-            vector<attribute> attributes = _GetAttributes(fieldName);
+            std::vector<attribute> attributes = _GetAttributes(fieldName);
             
             _DeleteAttributes(fieldName);
 
@@ -61,11 +61,11 @@ void XMLRead::MoveAttributesIntoChildren(string fieldName) {
     }
 }
 
-string XMLRead::_GetStringBetween(string data, string startDelim, string endDelim) {
-    unsigned first = data.find(startDelim);
-    unsigned last = data.find(endDelim, first);
-    if (first != string::npos && last != string::npos) {
-        string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
+std::string XMLRead::_GetStringBetween(std::string data, std::string startDelim, std::string endDelim) {
+    unsigned int first = data.find(startDelim);
+    unsigned int last = data.find(endDelim, first);
+    if (first != std::string::npos && last != std::string::npos) {
+        std::string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
         return strNew;
     }
     else {
@@ -73,7 +73,7 @@ string XMLRead::_GetStringBetween(string data, string startDelim, string endDeli
     }
 }
 
-string XMLRead::_MakeTag(string name, bool open) {
+std::string XMLRead::_MakeTag(std::string name, bool open) {
     if (open) {
         return '<' + name + '>';
     }
@@ -82,8 +82,8 @@ string XMLRead::_MakeTag(string name, bool open) {
     }
 }
 
-bool XMLRead::_VerifyXML(string data) {
-    if (data.find_last_of("<qdbapi>") != string::npos) {
+bool XMLRead::_VerifyXML(std::string data) {
+    if (data.find_last_of("<qdbapi>") != std::string::npos) {
         return true;
     }
     else {
@@ -91,8 +91,8 @@ bool XMLRead::_VerifyXML(string data) {
     }
 }
 
-bool XMLRead::_HasAttributes(string fieldName) {
-    string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+bool XMLRead::_HasAttributes(std::string fieldName) {
+    std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     if (attributeContents != "") {
         return true;
     }
@@ -100,10 +100,10 @@ bool XMLRead::_HasAttributes(string fieldName) {
     return false;
 }
 
-vector<attribute> XMLRead::_GetAttributes(string fieldName) {
-    string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
+    std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     attribute anAttribute;
-    vector<attribute> attributeArray = {};
+    std::vector<attribute> attributeArray = {};
     bool collectingContents = false;
     int marksFound = 0;
     if (attributeContents != "") {
@@ -116,7 +116,7 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
                         marksFound++;
                     }
                     else {
-                        cout << "***** FOUND *****";
+                        std::cout << "***** FOUND *****";
                         collectingContents = false;
                         marksFound = 0;
                         attributeArray.push_back(anAttribute);
@@ -141,21 +141,21 @@ vector<attribute> XMLRead::_GetAttributes(string fieldName) {
     return attributeArray;
 }
 
-bool XMLRead::_CreateChild(string name, string content, string parentTagName) {
-    cout << "Name = " << name << ", content = " << content << ", parentTagName = " << parentTagName << endl;
+bool XMLRead::_CreateChild(std::string name, std::string content, std::string parentTagName) {
+    std::cout << "Name = " << name << ", content = " << content << ", parentTagName = " << parentTagName << std::endl;
     unsigned int loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length() + 2;
     _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
 
     return true;
 }
 
-void XMLRead::_DeleteAttributes(string fieldName) {
+void XMLRead::_DeleteAttributes(std::string fieldName) {
     unsigned int loc = _xmlData.find("<" + fieldName) + fieldName.length();
-    string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+    std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     if (attributeContents.length() > 0) {
-        cout << "ATT LENGTH = " << attributeContents.length() << "|";
+        std::cout << "ATT LENGTH = " << attributeContents.length() << "|";
         _xmlData.erase(loc + 1, attributeContents.length());
     }
 
-    cout << endl << endl << _xmlData << endl << endl;
+    std::cout << std::endl << std::endl << _xmlData << std::endl << std::endl;
 }

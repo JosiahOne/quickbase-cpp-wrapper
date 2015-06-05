@@ -11,35 +11,35 @@ QBWrapper::~QBWrapper() {
 
 }
 
-void QBWrapper::SetAppLocation(string location) {
+void QBWrapper::SetAppLocation(std::string location) {
     _appLocation = location;
 }
 
 void fix_utf8_string(std::string& str)
 {
-    cout << str;
+    std::cout << str;
     std::string temp;
     utf8::replace_invalid(str.begin(), str.end(), back_inserter(temp));
     str = temp;
-    cout << endl << str;
+    std::cout << std::endl << str;
 }
 
 bool valid_utf8_file(const char* file_name)
 {
-    ifstream ifs(file_name);
+    std::ifstream ifs(file_name);
     if (!ifs)
         return false; // even better, throw here
 
-    istreambuf_iterator<char> it(ifs.rdbuf());
-    istreambuf_iterator<char> eos;
+    std::istreambuf_iterator<char> it(ifs.rdbuf());
+    std::istreambuf_iterator<char> eos;
 
     return utf8::is_valid(it, eos);
 }
 
-QBXML QBWrapper::Authenticate(string username, string password, int hours, string udata) {
-    vector<string> paramVector = { "username", "password", "hours", "udata" };
-    vector<string> valueVector = { username, password, _IntToString(hours), udata };
-    string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
+QBXML QBWrapper::Authenticate(std::string username, std::string password, int hours, std::string udata) {
+    std::vector<std::string> paramVector = { "username", "password", "hours", "udata" };
+    std::vector<std::string> valueVector = { username, password, _IntToString(hours), udata };
+    std::string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
 
     if (result != "" && result != "ERROR") {
@@ -50,15 +50,15 @@ QBXML QBWrapper::Authenticate(string username, string password, int hours, strin
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+QBXML QBWrapper::AddRecord(std::vector<std::string> fields, std::vector<std::string> fieldContents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid) {
     if (fields.size() != fieldContents.size()) {
         return NULL;
     }
     
-    vector<string> paramVector = { "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { ticket, apptoken, udata };
-    vector<string> altParams = { "", "", "" };
-    vector<string> altValues = { "", "", "" };
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> altParams = { "", "", "" };
+    std::vector<std::string> altValues = { "", "", "" };
 
     paramData optionalData;
     optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
@@ -72,7 +72,7 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
         valueVector.push_back(fieldContents[i]);
     }
 
-    string result = _XMLDataPrelim("API_AddRecord", dbid, paramVector, valueVector, altParams, altValues);
+    std::string result = _XMLDataPrelim("API_AddRecord", dbid, paramVector, valueVector, altParams, altValues);
     XMLRead *xmlParser = new XMLRead;
 
     if (result != "" && result != "ERROR") {
@@ -83,15 +83,15 @@ QBXML QBWrapper::AddRecord(vector<string> fields, vector<string> fieldContents, 
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector<string> contents, bool disprec, bool ignoreError, string ticket, string apptoken, string udata, bool msInUTC, string dbid) {
+QBXML QBWrapper::EditRecord(int rid, int updateID, std::vector<std::string> fields, std::vector<std::string> contents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid) {
     if (fields.size() != contents.size()) {
         return NULL;
     }
 
-    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata};
-    vector<string> altParams = { "", "", "", "" };
-    vector<string> altValues = { "", "", "", "" };
+    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata};
+    std::vector<std::string> altParams = { "", "", "", "" };
+    std::vector<std::string> altValues = { "", "", "", "" };
 
     paramData optionalData;
     optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
@@ -107,7 +107,7 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
         valueVector.push_back(contents[i]);
     }
 
-    string result = _XMLDataPrelim("API_EditRecord", dbid, paramVector, valueVector, altParams, altValues);
+    std::string result = _XMLDataPrelim("API_EditRecord", dbid, paramVector, valueVector, altParams, altValues);
     XMLRead *xmlParser = new XMLRead;
 
     if (result != "" && result != "ERROR") {
@@ -118,11 +118,11 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, vector<string> fields, vector
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::GetSchema(string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { ticket, apptoken, udata };
+QBXML QBWrapper::GetSchema(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
 
-    string result = _XMLDataPrelim("API_GetSchema", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_GetSchema", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -134,11 +134,11 @@ QBXML QBWrapper::GetSchema(string ticket, string apptoken, string udata, string 
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { ticket, apptoken, udata };
+QBXML QBWrapper::GetDBInfo(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
 
-    string result = _XMLDataPrelim("API_GetDBInfo", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_GetDBInfo", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -148,16 +148,16 @@ QBXML QBWrapper::GetDBInfo(string ticket, string apptoken, string udata, string 
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string mode, string ticket, string type, string udata, string dbid) {
-    vector<string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
-    vector<string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
+QBXML QBWrapper::AddField(bool addToForms, std::string apptoken, std::string label, std::string mode, std::string ticket, std::string type, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
+    std::vector<std::string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
 
     paramData optionalData;
     optionalData.bParams = { "add_to_forms" };
     optionalData.bValues = { addToForms };
     _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
-    string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -168,11 +168,11 @@ QBXML QBWrapper::AddField(bool addToForms, string apptoken, string label, string
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::DeleteField(int fid, string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+QBXML QBWrapper::DeleteField(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
 
-    string result = _XMLDataPrelim("API_DeleteField", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_DeleteField", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -183,20 +183,20 @@ QBXML QBWrapper::DeleteField(int fid, string ticket, string apptoken, string uda
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>propertyValues, int fid, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::SetFieldProperties(std::vector<std::string>propertyParams, std::vector<std::string>propertyValues, int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     if (propertyParams.size() != propertyValues.size()) {
         return NULL;
     }
     
-    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
 
     for (unsigned int i = 0; i < propertyParams.size(); i++) {
         paramVector.push_back(propertyParams[i]);
         valueVector.push_back(propertyValues[i]);
     }
 
-    string result = _XMLDataPrelim("API_SetFieldProperties", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_SetFieldProperties", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -207,11 +207,11 @@ QBXML QBWrapper::SetFieldProperties(vector<string>propertyParams, vector<string>
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::CreateTable(string tname, string pnoun, string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { tname, pnoun, ticket, apptoken, udata };
+QBXML QBWrapper::CreateTable(std::string tname, std::string pnoun, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { tname, pnoun, ticket, apptoken, udata };
 
-    string result = _XMLDataPrelim("API_CreateTable", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_CreateTable", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -225,11 +225,11 @@ QBXML QBWrapper::CreateTable(string tname, string pnoun, string ticket, string a
 /* Returns the number of records in a table.
    Returns -1 if there was an error
  */
-QBXML QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { ticket, apptoken, udata };
+QBXML QBWrapper::GetNumRecords(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
     XMLRead *xmlParser = new XMLRead;
-    string result = _XMLDataPrelim("API_GetNumRecords", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_GetNumRecords", dbid, paramVector, valueVector);
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
         xmlParser->Load(result);
@@ -238,26 +238,11 @@ QBXML QBWrapper::GetNumRecords(string ticket, string apptoken, string udata, str
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::GetRecordInfo(int rid, string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+QBXML QBWrapper::GetRecordInfo(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
 
-    string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
-}
-
-QBXML QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
-
-    string result = _XMLDataPrelim("API_DeleteRecord", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -268,7 +253,22 @@ QBXML QBWrapper::DeleteRecord(int rid, string ticket, string apptoken, string ud
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket, string apptoken, string udata, string dbid) {
+QBXML QBWrapper::DeleteRecord(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+
+    std::string result = _XMLDataPrelim("API_DeleteRecord", dbid, paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
+    }
+
+    return QBXML(xmlParser);
+}
+
+QBXML QBWrapper::PurgeRecords(std::string query, int qid, std::string qname, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     // According to the Quickbase API, attaching an empty query causes every record in a table to be deleted.
     // You must supply a non-empty query to delete specific things. This is entirely stupid, and so we require a specific "ALL"
     // param to delete everything, otherwise we leave without purging.
@@ -276,8 +276,8 @@ QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket
         return NULL;
     }
 
-    vector<string> paramVector(4);
-    vector<string> valueVector(4);
+    std::vector<std::string> paramVector(4);
+    std::vector<std::string> valueVector(4);
 
     if (query == "ALL") {
         paramVector[0] = "query";
@@ -306,7 +306,7 @@ QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket
     paramVector[3] = "udata";
     valueVector[3] = udata;
     
-    string result = _XMLDataPrelim("API_PurgeRecords", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_PurgeRecords", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -317,9 +317,9 @@ QBXML QBWrapper::PurgeRecords(string query, int qid, string qname, string ticket
     return QBXML(xmlParser);
 }
 
-QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, string slist, bool fmt, bool returnPercentage, string options, bool includeRids, string ticket, string apptoken, string udata, string dbid) {
-    vector<string> paramVector = { "clist", "slist", "options", "ticket", "apptoken", "udata" };
-    vector<string> valueVector = { clist, slist, options, ticket, apptoken, udata };
+QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::string clist, std::string slist, bool fmt, bool returnPercentage, std::string options, bool includeRids, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "clist", "slist", "options", "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { clist, slist, options, ticket, apptoken, udata };
 
     paramData optionalData;
     optionalData.bParams = { "fmt", "returnpercentage", "includeRids" };
@@ -343,7 +343,7 @@ QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, stri
         valueVector.push_back(qname);
     }
 
-    string result = _XMLDataPrelim("API_DoQuery", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_DoQuery", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
@@ -354,17 +354,17 @@ QBXML QBWrapper::DoQuery(string query, int qid, string qname, string clist, stri
     return QBXML(xmlParser);
 }
 
-string QBWrapper::GetFieldContents(int fid, string ticket, string apptoken, string udata, string dbid, int rid) {
-    vector<string> paramVector = { "fid", "ticket", "apptoken", "udata", "dbid", "rid" };
-    vector<string> valueVector = { _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid) };
-    string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
+std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid) {
+    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata", "dbid", "rid" };
+    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid) };
+    std::string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
 
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
 
     QBXML qbxml = QBXML(xmlParser);
 
-    vector<QBXML> results = qbxml.GetFields();
+    std::vector<QBXML> results = qbxml.GetFields();
 
     for (unsigned i = 0; i < results.size(); i++) {
         if (results[i].GetFID().text == _IntToString(fid)) {
@@ -400,9 +400,9 @@ size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s)
     return returnValue;
 }
 
-string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> params, vector<string> values, vector<string> altParams, vector<string> altValues) {
+std::string QBWrapper::_XMLDataPrelim(std::string apiAction, std::string dbid, std::vector<std::string> params, std::vector<std::string> values, std::vector<std::string> altParams, std::vector<std::string> altValues) {
     if (params.size() != values.size() || altParams.size() != altValues.size()) {
-        cout << "(alt)params and (alt)values are not of equal size";
+        std::cout << "(alt)params and (alt)values are not of equal size";
         abort();
     }
     XMLGen *gen = new XMLGen;
@@ -429,31 +429,31 @@ string QBWrapper::_XMLDataPrelim(string apiAction, string dbid, vector<string> p
     gen->WriteOut();
     delete gen;
 
-    string result = _PostWithFile("outputDataStream.xml", apiAction, dbid);
+    std::string result = _PostWithFile("outputDataStream.xml", apiAction, dbid);
     return result;
 }
 
-string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
+std::string QBWrapper::_PostWithFile(std::string file, std::string apiName, std::string dbid) {
     // Convert file to stream.
-    ifstream aFile(file.c_str());
+    std::ifstream aFile(file.c_str());
     struct curlString returnData;
 
     if (aFile) {
-        stringstream buffer;
+        std::stringstream buffer;
         buffer << aFile.rdbuf();
 
         aFile.close();
-        string str = buffer.str();
+        std::string str = buffer.str();
         str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
         fix_utf8_string(str);
         const char *str2 = str.c_str();
         if (!str2) {
-            cout << "ERROR!";
+            std::cout << "ERROR!";
             abort();
         }
         char *str3 = _strdup(str2);
-        cout << endl << "\n===================\n" << str3 << "\n===================\n";
-        cout << "API NAME: " << apiName << "\n DBID: " << dbid << endl;
+        std::cout << std::endl << "\n===================\n" << str3 << "\n===================\n";
+        std::cout << "API NAME: " << apiName << "\n DBID: " << dbid << std::endl;
         CURL *curl;
         CURLcode res;
         curl_slist *list = NULL;
@@ -463,10 +463,10 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         curl = curl_easy_init();
         if (curl) {
             init_string(&returnData);
-            string data = _appLocation + "/db/" + dbid.c_str() + "?act=" + apiName.c_str();
+            std::string data = _appLocation + "/db/" + dbid.c_str() + "?act=" + apiName.c_str();
             const char *otherData = data.c_str();
 
-            cout << "DATA: " << otherData << endl;
+            std::cout << "DATA: " << otherData << std::endl;
 
             list = curl_slist_append(list, "Content-Type: application/xml");
 
@@ -491,29 +491,29 @@ string QBWrapper::_PostWithFile(string file, string apiName, string dbid) {
         curl_slist_free_all(list);
     }
     if (returnData.ptr) {
-        cout << string(returnData.ptr);
-        return string(returnData.ptr);
+        std::cout << std::string(returnData.ptr);
+        return std::string(returnData.ptr);
     }
     else {
         return "ERROR";
     }
 }
 
-string QBWrapper::_IntToString(int anInt) {
-    stringstream ss;
+std::string QBWrapper::_IntToString(int anInt) {
+    std::stringstream ss;
     ss << anInt;
-    string aString = ss.str();
+    std::string aString = ss.str();
     return aString;
 }
 
-string QBWrapper::_FloatToString(float aFloat) {
-    stringstream ss;
+std::string QBWrapper::_FloatToString(float aFloat) {
+    std::stringstream ss;
     ss << aFloat;
-    string aString = ss.str();
+    std::string aString = ss.str();
     return aString;
 }
 
-string QBWrapper::_BoolToString(bool aBool) {
+std::string QBWrapper::_BoolToString(bool aBool) {
     if (aBool) {
         return "1";
     }
@@ -522,18 +522,18 @@ string QBWrapper::_BoolToString(bool aBool) {
     }
 }
 
-string QBWrapper::_SizetToString(size_t aSizeT) {
-    stringstream ss;
+std::string QBWrapper::_SizetToString(size_t aSizeT) {
+    std::stringstream ss;
 
     ss << aSizeT;
     return ss.str();
 }
 
-string QBWrapper::_GetStringBetween(string data, string startDelim, string endDelim) {
+std::string QBWrapper::_GetStringBetween(std::string data, std::string startDelim, std::string endDelim) {
     unsigned first = data.find(startDelim);
     unsigned last = data.find(endDelim);
-    if (first != string::npos && last != string::npos) {
-        string strNew = data.substr(first + startDelim.length(), last - first);
+    if (first != std::string::npos && last != std::string::npos) {
+        std::string strNew = data.substr(first + startDelim.length(), last - first);
         return strNew;
     }
     else {
@@ -541,7 +541,7 @@ string QBWrapper::_GetStringBetween(string data, string startDelim, string endDe
     }
 }
 
-void QBWrapper::_AddOptionalParams(vector<string>*paramArray, vector<string>*valueArray, paramData data) {
+void QBWrapper::_AddOptionalParams(std::vector<std::string>*paramArray, std::vector<std::string>*valueArray, paramData data) {
     // Booleans
     for (unsigned i = 0; i < data.bParams.size(); i++) {
         if (data.bValues[i] == TRUE) {
