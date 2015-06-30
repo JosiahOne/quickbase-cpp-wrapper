@@ -375,6 +375,21 @@ std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string
     return "ERROR";
 }
 
+QBXML QBWrapper::SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+
+    std::string result = _XMLDataPrelim("API_SignOut", dbid, paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
+    }
+
+    return QBXML(xmlParser);
+}
+
 void init_string(struct curlString *s) {
     s->len = 0;
     s->ptr = (char*)malloc(s->len + 1);

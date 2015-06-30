@@ -90,7 +90,7 @@ class QBWrapper {
          *   string            udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
          *   bool            msInUTC: Set this parameter to 1 if you want to use Coordinated Universal Time.
          *   string             dbid: The DBID of a table.
-         * Notes:
+         * Notes: 
          *   - fields and contents MUST have equal lengths.
          */
         QBXML EditRecord(int rid, int updateID, std::vector<std::string> fields, std::vector<std::string> contents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid);
@@ -258,6 +258,15 @@ class QBWrapper {
          *   string       rid: The RID of a record.
          */
         std::string GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid);
+       
+       /* SignOut
+        * Parameters:
+        *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
+        *   string  apptoken: Specifies a valid application token.
+        *   string     udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+        *   string      dbid: The DBID of a table.
+        */
+        QBXML SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* Cleanup
          * Notes:
