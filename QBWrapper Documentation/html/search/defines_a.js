@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['make_5fborderstyle',['MAKE_BORDERSTYLE',['../_c_lto_q_b_2_excel_format_8h.html#af4bbd8b9623f39db43a092ad1b6d6f1a',1,'MAKE_BORDERSTYLE():&#160;ExcelFormat.h'],['../_excel_format_8h.html#af4bbd8b9623f39db43a092ad1b6d6f1a',1,'MAKE_BORDERSTYLE():&#160;ExcelFormat.h'],['../_p_lto_q_b_2_excel_format_8h.html#af4bbd8b9623f39db43a092ad1b6d6f1a',1,'MAKE_BORDERSTYLE():&#160;ExcelFormat.h']]],
-  ['make_5fcolor1',['MAKE_COLOR1',['../_c_lto_q_b_2_excel_format_8h.html#a0ca9ea290470c488c8733209c30e518f',1,'MAKE_COLOR1():&#160;ExcelFormat.h'],['../_excel_format_8h.html#a0ca9ea290470c488c8733209c30e518f',1,'MAKE_COLOR1():&#160;ExcelFormat.h'],['../_p_lto_q_b_2_excel_format_8h.html#a0ca9ea290470c488c8733209c30e518f',1,'MAKE_COLOR1():&#160;ExcelFormat.h']]],
-  ['make_5fcolor2',['MAKE_COLOR2',['../_c_lto_q_b_2_excel_format_8h.html#ab26ed0c97bd807bf4b41c066ceb24160',1,'MAKE_COLOR2():&#160;ExcelFormat.h'],['../_excel_format_8h.html#ab26ed0c97bd807bf4b41c066ceb24160',1,'MAKE_COLOR2():&#160;ExcelFormat.h'],['../_p_lto_q_b_2_excel_format_8h.html#ab26ed0c97bd807bf4b41c066ceb24160',1,'MAKE_COLOR2():&#160;ExcelFormat.h']]],
-  ['make_5ftext_5fprops',['MAKE_TEXT_PROPS',['../_c_lto_q_b_2_excel_format_8h.html#af6c776b17db80fa96c98759b18ccf6fb',1,'MAKE_TEXT_PROPS():&#160;ExcelFormat.h'],['../_excel_format_8h.html#af6c776b17db80fa96c98759b18ccf6fb',1,'MAKE_TEXT_PROPS():&#160;ExcelFormat.h'],['../_p_lto_q_b_2_excel_format_8h.html#af6c776b17db80fa96c98759b18ccf6fb',1,'MAKE_TEXT_PROPS():&#160;ExcelFormat.h']]]
-];
