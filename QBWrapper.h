@@ -267,6 +267,14 @@ class QBWrapper {
         *   string      dbid: The DBID of a table.
         */
         QBXML SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
+        
+        /* GetAncestorInfo
+        * Parameters:
+        *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
+        *   string  apptoken: Specifies a valid application token.
+        *   string      dbid: The DBID of an [app].
+        */
+        QBXML GetAncestorInfo(std::string ticket, std::string apptoken, std::string dbid);
 
         /* Cleanup
          * Notes:

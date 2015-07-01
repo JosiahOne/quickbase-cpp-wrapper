@@ -390,6 +390,21 @@ QBXML QBWrapper::SignOut(std::string ticket, std::string apptoken, std::string u
     return QBXML(xmlParser);
 }
 
+QBXML QBWrapper::GetAncestorInfo(std::string ticket, std::string apptoken, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken" };
+    std::vector<std::string> valueVector = { ticket, apptoken };
+
+    std::string result = _XMLDataPrelim("GetAncestorInfo", dbid, paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
+    }
+
+    return QBXML(xmlParser);
+}
+
 void init_string(struct curlString *s) {
     s->len = 0;
     s->ptr = (char*)malloc(s->len + 1);
