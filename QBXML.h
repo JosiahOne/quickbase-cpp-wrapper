@@ -46,6 +46,12 @@ class QBXML
         XMLResult GetNumFields();
         // API_GetRecordInfo.
         XMLResult GetValue();
+        // API_GetAncestorInfo
+        XMLResult GetAncestorAppId();
+        // API_GetAncestorInfo
+        XMLResult GetOldEstancestorAppId();
+        // API_UserRoles
+        XMLResult GetUsers();
 
         std::vector<QBXML> GetFields();
 

@@ -394,7 +394,22 @@ QBXML QBWrapper::GetAncestorInfo(std::string ticket, std::string apptoken, std::
     std::vector<std::string> paramVector = { "ticket", "apptoken" };
     std::vector<std::string> valueVector = { ticket, apptoken };
 
-    std::string result = _XMLDataPrelim("GetAncestorInfo", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_GetAncestorInfo", dbid, paramVector, valueVector);
+    XMLRead *xmlParser = new XMLRead;
+    xmlParser->Load(result);
+    if (result != "" && result != "ERROR") {
+        // We need to parse this XML data now.
+        xmlParser->Load(result);
+    }
+
+    return QBXML(xmlParser);
+}
+
+QBXML QBWrapper::UserRoles(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
+    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+
+    std::string result = _XMLDataPrelim("API_UserRoles", dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {

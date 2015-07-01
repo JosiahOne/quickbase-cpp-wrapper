@@ -88,6 +88,18 @@ XMLResult QBXML::GetValue() {
     return _GetResult("value");
 }
 
+XMLResult QBXML::GetAncestorAppId() {
+    return _GetResult("ancestorappid");
+}
+
+XMLResult QBXML::GetOldEstancestorAppId() {
+    return _GetResult("oldestancestorappid");
+}
+
+XMLResult QBXML::GetUsers() {
+    return _GetResult("users");
+}
+
 std::vector<QBXML> QBXML::GetFields() {
     std::vector<QBXML> results = {};
     std::string originalData = _xmlData->GetRawXML();
