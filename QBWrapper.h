@@ -12,7 +12,7 @@
 #include <algorithm>
 #include <vector>
 #include "QBXML.h"
-#include "UTF-8\utf8.h"
+#include "UTF-8/utf8.h"
 
 void init_string(struct curlString *s);
 size_t _WriteStream(void *ptr, size_t size, size_t nmemb, struct curlString *s);
