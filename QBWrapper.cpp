@@ -39,15 +39,8 @@ bool valid_utf8_file(const char* file_name)
 QBXML QBWrapper::Authenticate(std::string username, std::string password, int hours, std::string udata) {
     std::vector<std::string> paramVector = { "username", "password", "hours", "udata" };
     std::vector<std::string> valueVector = { username, password, _IntToString(hours), udata };
-    std::string result = _XMLDataPrelim("API_Authenticate", "main", paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
 
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, "main", "API_Authenticate");
 }
 
 QBXML QBWrapper::AddRecord(std::vector<std::string> fields, std::vector<std::string> fieldContents, bool disprec, bool ignoreError, std::string ticket, std::string apptoken, std::string udata, bool msInUTC, std::string dbid) {
@@ -121,31 +114,14 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, std::vector<std::string> fiel
 QBXML QBWrapper::GetSchema(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { ticket, apptoken, udata };
-
-    std::string result = _XMLDataPrelim("API_GetSchema", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    delete xmlParser;
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetSchema");
 }
 
 QBXML QBWrapper::GetDBInfo(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_GetDBInfo", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetDBInfo");
 }
 
 QBXML QBWrapper::AddField(bool addToForms, std::string apptoken, std::string label, std::string mode, std::string ticket, std::string type, std::string udata, std::string dbid) {
@@ -172,15 +148,7 @@ QBXML QBWrapper::DeleteField(int fid, std::string ticket, std::string apptoken, 
     std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_DeleteField", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_DeleteField");
 }
 
 QBXML QBWrapper::SetFieldProperties(std::vector<std::string>propertyParams, std::vector<std::string>propertyValues, int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
@@ -211,15 +179,7 @@ QBXML QBWrapper::CreateTable(std::string tname, std::string pnoun, std::string t
     std::vector<std::string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { tname, pnoun, ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_CreateTable", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_CreateTable");
 }
 
 /* Returns the number of records in a table.
@@ -228,44 +188,22 @@ QBXML QBWrapper::CreateTable(std::string tname, std::string pnoun, std::string t
 QBXML QBWrapper::GetNumRecords(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { ticket, apptoken, udata };
-    XMLRead *xmlParser = new XMLRead;
-    std::string result = _XMLDataPrelim("API_GetNumRecords", dbid, paramVector, valueVector);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
 
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetNumRecords");
 }
 
 QBXML QBWrapper::GetRecordInfo(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetRecordInfo");
 }
 
 QBXML QBWrapper::DeleteRecord(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_DeleteRecord", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_DeleteRecord");
 }
 
 QBXML QBWrapper::PurgeRecords(std::string query, int qid, std::string qname, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
@@ -357,13 +295,8 @@ QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::str
 std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid) {
     std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata", "dbid", "rid" };
     std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid) };
-    std::string result = _XMLDataPrelim("API_GetRecordInfo", dbid, paramVector, valueVector);
 
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-
-    QBXML qbxml = QBXML(xmlParser);
-
+    QBXML qbxml = _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetRecordInfo");
     std::vector<QBXML> results = qbxml.GetFields();
 
     for (unsigned i = 0; i < results.size(); i++) {
@@ -378,53 +311,35 @@ std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string
 QBXML QBWrapper::SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { ticket, apptoken, udata };
-
-    std::string result = _XMLDataPrelim("API_SignOut", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_SignOut");
 }
 
 QBXML QBWrapper::GetAncestorInfo(std::string ticket, std::string apptoken, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken" };
     std::vector<std::string> valueVector = { ticket, apptoken };
 
-    std::string result = _XMLDataPrelim("API_GetAncestorInfo", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetAncestorInfo");
 }
 
 QBXML QBWrapper::UserRoles(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_UserRoles", dbid, paramVector, valueVector);
-    XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
-    if (result != "" && result != "ERROR") {
-        // We need to parse this XML data now.
-        xmlParser->Load(result);
-    }
-
-    return QBXML(xmlParser);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_UserRoles");
 }
 
 QBXML QBWrapper::RenameApp(std::string newappname, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
     std::vector<std::string> paramVector = { "newappname", "ticket", "apptoken", "udata" };
     std::vector<std::string> valueVector = { newappname, ticket, apptoken, udata };
 
-    std::string result = _XMLDataPrelim("API_RenameApp", dbid, paramVector, valueVector);
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_RenameApp");
+}
+
+QBXML QBWrapper::_DoGenericAPICall(std::vector<std::string>aParamVector, std::vector<std::string>aValueVector, std::string dbid, std::string APIName) {
+    std::vector<std::string> paramVector = aParamVector;
+    std::vector<std::string> valueVector = aValueVector;
+
+    std::string result = _XMLDataPrelim(APIName, dbid, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
     xmlParser->Load(result);
     if (result != "" && result != "ERROR") {

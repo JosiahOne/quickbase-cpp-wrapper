@@ -313,4 +313,5 @@ class QBWrapper {
         std::string _GetStringBetween(std::string data, std::string startDelim, std::string endDelim);
         std::string _SizetToString(size_t aSizeT);
         void _AddOptionalParams(std::vector<std::string>*paramArray, std::vector<std::string>*valueArray, paramData data);
+        QBXML _DoGenericAPICall(std::vector<std::string>aParamVector, std::vector<std::string>aValueVector, std::string dbid, std::string APIName);
 };
