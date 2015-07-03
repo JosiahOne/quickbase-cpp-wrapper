@@ -294,6 +294,12 @@ class QBWrapper {
         *   string          dbid: The DBID of an appliication.
         */
         QBXML RenameApp(std::string newappname, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
+        
+        /* GetAppDTMInfo
+        * Parameters:
+        *   string          dbid: The DBID of an appliication.
+        */
+        QBXML GetAppDTMInfo(std::string dbid);
 
         /* Cleanup
          * Notes:

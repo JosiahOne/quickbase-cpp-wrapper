@@ -335,6 +335,12 @@ QBXML QBWrapper::RenameApp(std::string newappname, std::string ticket, std::stri
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_RenameApp");
 }
 
+QBXML QBWrapper::GetAppDTMInfo(std::string dbid) {
+    std::vector<std::string> paramVector = { "" };
+    std::vector<std::string> valueVector = { "" };
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetAppDTMInfo");
+}
+
 QBXML QBWrapper::_DoGenericAPICall(std::vector<std::string>aParamVector, std::vector<std::string>aValueVector, std::string dbid, std::string APIName) {
     std::vector<std::string> paramVector = aParamVector;
     std::vector<std::string> valueVector = aValueVector;
