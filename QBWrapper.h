@@ -285,6 +285,16 @@ class QBWrapper {
         */
         QBXML UserRoles(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
+        /* RenameApp
+        * Parameters:
+        *   string    newappname: The name you want to assign to the application
+        *   string        ticket: Specifies the auth ticket you have obtained from Authenticate().
+        *   string      apptoken: Specifies a valid application token.
+        *   string         udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+        *   string          dbid: The DBID of an appliication.
+        */
+        QBXML RenameApp(std::string newappname, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
+
         /* Cleanup
          * Notes:
          *   Removes the outputDataStream and self-destructs this object.
