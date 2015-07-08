@@ -338,8 +338,17 @@ QBXML QBWrapper::RenameApp(std::string newappname, std::string ticket, std::stri
 QBXML QBWrapper::GetAppDTMInfo(std::string dbid) {
     std::vector<std::string> paramVector = { "" };
     std::vector<std::string> valueVector = { "" };
+    
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetAppDTMInfo");
 }
+
+QBXML QBWrapper::CloneDatabase(std::string ticket, std::string apptoken, std::string udata, std::string dbid, std::string newDBName, std::string newDBDesc, bool keepData, bool excludeFiles, bool usersAndRoles) {
+    std::vector<std::string> paramVector = {  "ticket", "apptoken", "udata", "newdbname", "newdbdesc", "keepData", "excludefiles", "usersandroles" };
+    std::vector<std::string> valueVector = { ticket, apptoken, udata, newDBName, newDBDesc, _BoolToString(keepData), _BoolToString(excludeFiles), _BoolToString(usersAndRoles) };
+    
+    return _DoGenericAPICall(paramVector, valueVector, dbid, "API_CloneDatabase");
+}
+
 
 QBXML QBWrapper::_DoGenericAPICall(std::vector<std::string>aParamVector, std::vector<std::string>aValueVector, std::string dbid, std::string APIName) {
     std::vector<std::string> paramVector = aParamVector;

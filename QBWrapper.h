@@ -269,37 +269,51 @@ class QBWrapper {
         QBXML SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* GetAncestorInfo
-        * Parameters:
-        *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string  apptoken: Specifies a valid application token.
-        *   string      dbid: The DBID of an [app].
-        */
+         * Parameters:
+         *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string  apptoken: Specifies a valid application token.
+         *   string      dbid: The DBID of an [app].
+         */
         QBXML GetAncestorInfo(std::string ticket, std::string apptoken, std::string dbid);
 
         /* UserRoles
-        * Parameters:
-        *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string  apptoken: Specifies a valid application token.
-        *   string     udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string      dbid: The DBID of a table.
-        */
+         * Parameters:
+         *   string    ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string  apptoken: Specifies a valid application token.
+         *   string     udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string      dbid: The DBID of a table.
+         */
         QBXML UserRoles(std::string ticket, std::string apptoken, std::string udata, std::string dbid);
 
         /* RenameApp
-        * Parameters:
-        *   string    newappname: The name you want to assign to the application
-        *   string        ticket: Specifies the auth ticket you have obtained from Authenticate().
-        *   string      apptoken: Specifies a valid application token.
-        *   string         udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
-        *   string          dbid: The DBID of an appliication.
-        */
+         * Parameters:
+         *   string    newappname: The name you want to assign to the application
+         *   string        ticket: Specifies the auth ticket you have obtained from Authenticate().
+         *   string      apptoken: Specifies a valid application token.
+         *   string         udata: A string value that you want returned. It will not be handled by QuickBase but it will be returned in the response.
+         *   string          dbid: The DBID of an application.
+         */
         QBXML RenameApp(std::string newappname, std::string ticket, std::string apptoken, std::string udata, std::string dbid);
         
         /* GetAppDTMInfo
-        * Parameters:
-        *   string          dbid: The DBID of an appliication.
-        */
+         * Parameters:
+         *   string          dbid: The DBID of an appliication.
+         */
         QBXML GetAppDTMInfo(std::string dbid);
+
+        /* CloneDatabase
+         * Parameters:
+         *   string        ticket : Specifies the auth ticket you have obtained from Authenticate().
+         *   string      apptoken : Specifies a valid application token.
+         *   string         udata : A string value that you want returned.It will not be handled by QuickBase but it will be returned in the response.
+         *   string          dbid : The DBID of an application.
+         *   string     newDBName : Specifies a name for the new application.
+         *   string     newDBDesc : Specifies the description for the new application.
+         *   bool        keepData : Set this parameter to 1 if you want to copy the application's data.
+         *   bool    excludeFiles : Specifies that you do not want to copy file attachments when you copy an application.
+         *   bool   usersAndRoles : Specify how users and roles are treated when copying the application. Set this parameter to 1 to copy users in their roles. Set to 0 to copy users and roles separately (that is, don't assign roles)
+         */
+        QBXML CloneDatabase(std::string ticket, std::string apptoken, std::string udata, std::string dbid, std::string newDBName, std::string newDBDesc, bool keepData, bool excludeFiles, bool usersAndRoles);
 
         /* Cleanup
          * Notes:
