@@ -38,7 +38,7 @@ class QBXML
         XMLResult GetLabel();            
         // API_EditRecord.
         XMLResult GetNumFieldsChanged(); 
-        // API_CreateTable.
+        // API_CreateTable, API_CloneDatabase.
         XMLResult GetNewDBID();
         // API_DoQuery.    
         XMLResult GetRecord();
@@ -54,6 +54,7 @@ class QBXML
         XMLResult GetUsers();
 
         std::vector<QBXML> GetFields();
+        std::vector<QBXML> GetRecords();
 
     private:
         XMLRead *_xmlData;

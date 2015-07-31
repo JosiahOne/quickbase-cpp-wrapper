@@ -124,6 +124,31 @@ std::vector<QBXML> QBXML::GetFields() {
     return results;
 }
 
+std::vector<QBXML> QBXML::GetRecords() {
+    std::vector<QBXML> results = {};
+    std::string originalData = _xmlData->GetRawXML();
+
+    bool flag = true;
+    while (flag) {
+        _xmlData->MoveAttributesIntoChildren("record");
+        XMLResult aRes = _GetResult("record");
+        if (aRes.valid) {
+            XMLRead *reducedRead = new XMLRead;
+            reducedRead->Load(aRes.text);
+            QBXML newXML(reducedRead);
+            results.push_back(newXML);
+            // Strip remainingData for repeat
+            _xmlData->Load(_RemoveSubstring(_xmlData->GetRawXML(), "<record>" + aRes.text + "</record>"));
+            std::cout << "-----------" << _xmlData->GetRawXML() << "-----------";
+        }
+        else {
+            flag = false;
+        }
+    }
+    _xmlData->Load(originalData);
+    return results;
+}
+
 XMLResult QBXML::_GetResult(std::string type) {
     XMLResult xmlRes;
     std::string result = _xmlData->GetFieldContents(type);

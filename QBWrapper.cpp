@@ -37,8 +37,8 @@ bool valid_utf8_file(const char* file_name)
 }
 
 QBXML QBWrapper::Authenticate(std::string username, std::string password, int hours, std::string udata) {
-    std::vector<std::string> paramVector = { "username", "password", "hours", "udata" };
-    std::vector<std::string> valueVector = { username, password, _IntToString(hours), udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "username", "password", "hours", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, username, password, _IntToString(hours), udata);
 
     return _DoGenericAPICall(paramVector, valueVector, "main", "API_Authenticate");
 }
@@ -48,14 +48,14 @@ QBXML QBWrapper::AddRecord(std::vector<std::string> fields, std::vector<std::str
         return NULL;
     }
     
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
-    std::vector<std::string> altParams = { "", "", "" };
-    std::vector<std::string> altValues = { "", "", "" };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
+    std::vector<std::string> altParams = _initCStringVecWith(3, "", "", "");
+    std::vector<std::string> altValues = _initCStringVecWith(3, "", "", "");
 
     paramData optionalData;
-    optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
-    optionalData.bValues = { disprec, ignoreError, msInUTC };
+    optionalData.bParams = _initCStringVecWith(3, "disprec", "ignoreError", "msInUTC");
+    optionalData.bValues = _initBoolVecWith(3, disprec, ignoreError, msInUTC);
     _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
@@ -81,16 +81,16 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, std::vector<std::string> fiel
         return NULL;
     }
 
-    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata};
-    std::vector<std::string> altParams = { "", "", "", "" };
-    std::vector<std::string> altValues = { "", "", "", "" };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "rid", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, _IntToString(rid), ticket, apptoken, udata);
+    std::vector<std::string> altParams = _initCStringVecWith(4, "", "", "", "");
+    std::vector<std::string> altValues = _initCStringVecWith(4, "", "", "", "");
 
     paramData optionalData;
-    optionalData.bParams = { "disprec", "ignoreError", "msInUTC" };
-    optionalData.bValues = { disprec, ignoreError, msInUTC };
-    optionalData.iParams = { "update_id" };
-    optionalData.iValues = { updateID };
+    optionalData.bParams = _initCStringVecWith(3, "disprec", "ignoreError", "msInUTC");
+    optionalData.bValues = _initBoolVecWith(3, disprec, ignoreError, msInUTC);
+    optionalData.iParams = _initCStringVecWith(1, "update_id");
+    optionalData.iValues = _initIntVecWith(1, updateID);
     _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     for (unsigned int i = 0; i < fields.size(); i++) {
@@ -112,25 +112,25 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, std::vector<std::string> fiel
 }
 
 QBXML QBWrapper::GetSchema(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initCStringVecWith(3, ticket, apptoken, udata);
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetSchema");
 }
 
 QBXML QBWrapper::GetDBInfo(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetDBInfo");
 }
 
 QBXML QBWrapper::AddField(bool addToForms, std::string apptoken, std::string label, std::string mode, std::string ticket, std::string type, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata" };
-    std::vector<std::string> valueVector = { _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(7, "add_to_forms", "apptoken", "label", "mode", "ticket", "type", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(7, _BoolToString(addToForms), apptoken, label, mode, ticket, type, udata);
 
     paramData optionalData;
-    optionalData.bParams = { "add_to_forms" };
-    optionalData.bValues = { addToForms };
+    optionalData.bParams = _initCStringVecWith(1, "add_to_forms");
+    optionalData.bValues = _initBoolVecWith(1, addToForms);
     _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     std::string result = _XMLDataPrelim("API_AddField", dbid, paramVector, valueVector);
@@ -145,8 +145,8 @@ QBXML QBWrapper::AddField(bool addToForms, std::string apptoken, std::string lab
 }
 
 QBXML QBWrapper::DeleteField(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "fid", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, _IntToString(fid), ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_DeleteField");
 }
@@ -156,8 +156,8 @@ QBXML QBWrapper::SetFieldProperties(std::vector<std::string>propertyParams, std:
         return NULL;
     }
     
-    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "fid", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, _IntToString(fid), ticket, apptoken, udata);
 
     for (unsigned int i = 0; i < propertyParams.size(); i++) {
         paramVector.push_back(propertyParams[i]);
@@ -176,8 +176,8 @@ QBXML QBWrapper::SetFieldProperties(std::vector<std::string>propertyParams, std:
 }
 
 QBXML QBWrapper::CreateTable(std::string tname, std::string pnoun, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "tname", "pnoun", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { tname, pnoun, ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(5, "tname", "pnoun", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(5, tname, pnoun, ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_CreateTable");
 }
@@ -186,22 +186,22 @@ QBXML QBWrapper::CreateTable(std::string tname, std::string pnoun, std::string t
    Returns -1 if there was an error
  */
 QBXML QBWrapper::GetNumRecords(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetNumRecords");
 }
 
 QBXML QBWrapper::GetRecordInfo(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "rid", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, _IntToString(rid), ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetRecordInfo");
 }
 
 QBXML QBWrapper::DeleteRecord(int rid, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "rid", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { _IntToString(rid), ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "rid", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4,_IntToString(rid), ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_DeleteRecord");
 }
@@ -256,12 +256,12 @@ QBXML QBWrapper::PurgeRecords(std::string query, int qid, std::string qname, std
 }
 
 QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::string clist, std::string slist, bool fmt, bool returnPercentage, std::string options, bool includeRids, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "clist", "slist", "options", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { clist, slist, options, ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(6, "clist", "slist", "options", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(6, clist, slist, options, ticket, apptoken, udata);
 
     paramData optionalData;
-    optionalData.bParams = { "fmt", "returnpercentage", "includeRids" };
-    optionalData.bValues = { fmt, returnPercentage, includeRids };
+    optionalData.bParams = _initCStringVecWith(3, "fmt", "returnpercentage", "includeRids");
+    optionalData.bValues = _initBoolVecWith(3, fmt, returnPercentage, includeRids);
     _AddOptionalParams(&paramVector, &valueVector, optionalData);
 
     if (query == "ALL") {
@@ -293,8 +293,8 @@ QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::str
 }
 
 std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid) {
-    std::vector<std::string> paramVector = { "fid", "ticket", "apptoken", "udata", "dbid", "rid" };
-    std::vector<std::string> valueVector = { _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid) };
+    std::vector<std::string> paramVector = _initCStringVecWith(6, "fid", "ticket", "apptoken", "udata", "dbid", "rid");
+    std::vector<std::string> valueVector = _initStringVecWith(6, _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid));
 
     QBXML qbxml = _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetRecordInfo");
     std::vector<QBXML> results = qbxml.GetFields();
@@ -309,42 +309,42 @@ std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string
 }
 
 QBXML QBWrapper::SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_SignOut");
 }
 
 QBXML QBWrapper::GetAncestorInfo(std::string ticket, std::string apptoken, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken" };
-    std::vector<std::string> valueVector = { ticket, apptoken };
+    std::vector<std::string> paramVector = _initCStringVecWith(2, "ticket", "apptoken");
+    std::vector<std::string> valueVector = _initStringVecWith(2, ticket, apptoken);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetAncestorInfo");
 }
 
 QBXML QBWrapper::UserRoles(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_UserRoles");
 }
 
 QBXML QBWrapper::RenameApp(std::string newappname, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = { "newappname", "ticket", "apptoken", "udata" };
-    std::vector<std::string> valueVector = { newappname, ticket, apptoken, udata };
+    std::vector<std::string> paramVector = _initCStringVecWith(4, "newappname", "ticket", "apptoken", "udata");
+    std::vector<std::string> valueVector = _initStringVecWith(4, newappname, ticket, apptoken, udata);
 
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_RenameApp");
 }
 
 QBXML QBWrapper::GetAppDTMInfo(std::string dbid) {
-    std::vector<std::string> paramVector = { "" };
-    std::vector<std::string> valueVector = { "" };
+    std::vector<std::string> paramVector = _initCStringVecWith(1, "");
+    std::vector<std::string> valueVector = _initCStringVecWith(1, "");
     
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetAppDTMInfo");
 }
 
 QBXML QBWrapper::CloneDatabase(std::string ticket, std::string apptoken, std::string udata, std::string dbid, std::string newDBName, std::string newDBDesc, bool keepData, bool excludeFiles, bool usersAndRoles) {
-    std::vector<std::string> paramVector = {  "ticket", "apptoken", "udata", "newdbname", "newdbdesc", "keepData", "excludefiles", "usersandroles" };
-    std::vector<std::string> valueVector = { ticket, apptoken, udata, newDBName, newDBDesc, _BoolToString(keepData), _BoolToString(excludeFiles), _BoolToString(usersAndRoles) };
+    std::vector<std::string> paramVector = _initCStringVecWith(8, "ticket", "apptoken", "udata", "newdbname", "newdbdesc", "keepData", "excludefiles", "usersandroles");
+    std::vector<std::string> valueVector = _initStringVecWith(8, ticket, apptoken, udata, newDBName, newDBDesc, _BoolToString(keepData), _BoolToString(excludeFiles), _BoolToString(usersAndRoles));
     
     return _DoGenericAPICall(paramVector, valueVector, dbid, "API_CloneDatabase");
 }
@@ -563,6 +563,54 @@ void QBWrapper::_AddOptionalParams(std::vector<std::string>*paramArray, std::vec
             valueArray->push_back(_FloatToString(data.fValues[i]));
         }
     }
+}
+
+std::vector<std::string> QBWrapper::_initStringVecWith(int numArgs, ...) {
+    va_list arguments;
+    std::vector<std::string> aVector;
+    va_start(arguments, numArgs);
+    for (int i = 0; i < numArgs; i++) {
+        aVector.push_back(va_arg(arguments, std::string));
+    }
+    va_end(arguments);
+
+    return aVector;
+}
+
+std::vector<std::string> QBWrapper::_initCStringVecWith(int numArgs, ...) {
+    va_list arguments;
+    std::vector<std::string> aVector;
+    va_start(arguments, numArgs);
+    for (int i = 0; i < numArgs; i++) {
+        aVector.push_back(va_arg(arguments, char*));
+    }
+    va_end(arguments);
+
+    return aVector;
+}
+
+std::vector<bool> QBWrapper::_initBoolVecWith(int numArgs, ...) {
+    va_list arguments;
+    std::vector<bool> aVector;
+    va_start(arguments, numArgs);
+    for (int i = 0; i < numArgs; i++) {
+        aVector.push_back(va_arg(arguments, bool));
+    }
+    va_end(arguments);
+
+    return aVector;
+}
+
+std::vector<int> QBWrapper::_initIntVecWith(int numArgs, ...) {
+    va_list arguments;
+    std::vector<int> aVector;
+    va_start(arguments, numArgs);
+    for (int i = 0; i < numArgs; i++) {
+        aVector.push_back(va_arg(arguments, int));
+    }
+    va_end(arguments);
+
+    return aVector;
 }
 
 void QBWrapper::Cleanup() {
