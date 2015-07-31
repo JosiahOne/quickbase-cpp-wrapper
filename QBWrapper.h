@@ -23,15 +23,15 @@ struct curlString {
 };
 
 struct paramData {
-    std::vector<std::string> bParams = {};
-    std::vector<std::string> iParams = {};
-    std::vector<std::string> sParams = {};
-    std::vector<std::string> fParams = {};
+    std::vector<std::string> bParams;
+    std::vector<std::string> iParams;
+    std::vector<std::string> sParams;
+    std::vector<std::string> fParams;
     
-    std::vector<bool> bValues = {};
-    std::vector<int> iValues = {};
-    std::vector<std::string> sValues = {};
-    std::vector<float> fValues = {};
+    std::vector<bool> bValues;
+    std::vector<int> iValues;
+    std::vector<std::string> sValues;
+    std::vector<float> fValues;
 };
 
 class QBWrapper {
