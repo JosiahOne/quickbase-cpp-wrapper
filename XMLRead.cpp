@@ -62,8 +62,8 @@ void XMLRead::MoveAttributesIntoChildren(std::string fieldName) {
 }
 
 std::string XMLRead::_GetStringBetween(std::string data, std::string startDelim, std::string endDelim) {
-    unsigned int first = data.find(startDelim);
-    unsigned int last = data.find(endDelim, first);
+    unsigned int first = (unsigned)data.find(startDelim);
+    unsigned int last = (unsigned)data.find(endDelim, first);
     if (first != std::string::npos && last != std::string::npos) {
         std::string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
         return strNew;
@@ -143,14 +143,14 @@ std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
 
 bool XMLRead::_CreateChild(std::string name, std::string content, std::string parentTagName) {
     std::cout << "Name = " << name << ", content = " << content << ", parentTagName = " << parentTagName << std::endl;
-    unsigned int loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length() + 2;
+    unsigned int loc = (unsigned)_xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length() + 2;
     _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
 
     return true;
 }
 
 void XMLRead::_DeleteAttributes(std::string fieldName) {
-    unsigned int loc = _xmlData.find("<" + fieldName) + fieldName.length();
+    unsigned int loc = (unsigned)_xmlData.find("<" + fieldName) + fieldName.length();
     std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     if (attributeContents.length() > 0) {
         std::cout << "ATT LENGTH = " << attributeContents.length() << "|";
