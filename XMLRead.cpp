@@ -103,7 +103,7 @@ bool XMLRead::_HasAttributes(std::string fieldName) {
 std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
     std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
     attribute anAttribute;
-    std::vector<attribute> attributeArray = {};
+    std::vector<attribute> attributeArray;
     bool collectingContents = false;
     int marksFound = 0;
     if (attributeContents != "") {

@@ -101,7 +101,7 @@ XMLResult QBXML::GetUsers() {
 }
 
 std::vector<QBXML> QBXML::GetFields() {
-    std::vector<QBXML> results = {};
+    std::vector<QBXML> results;
     std::string originalData = _xmlData->GetRawXML();
 
     bool flag = true;
@@ -125,7 +125,7 @@ std::vector<QBXML> QBXML::GetFields() {
 }
 
 std::vector<QBXML> QBXML::GetRecords() {
-    std::vector<QBXML> results = {};
+    std::vector<QBXML> results;
     std::string originalData = _xmlData->GetRawXML();
 
     bool flag = true;
