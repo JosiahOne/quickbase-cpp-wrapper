@@ -520,8 +520,8 @@ std::string QBWrapper::_SizetToString(size_t aSizeT) {
 }
 
 std::string QBWrapper::_GetStringBetween(std::string data, std::string startDelim, std::string endDelim) {
-    unsigned first = data.find(startDelim);
-    unsigned last = data.find(endDelim);
+    unsigned first = (unsigned)data.find(startDelim);
+    unsigned last = (unsigned)data.find(endDelim);
     if (first != std::string::npos && last != std::string::npos) {
         std::string strNew = data.substr(first + startDelim.length(), last - first);
         return strNew;
