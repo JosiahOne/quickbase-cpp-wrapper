@@ -62,8 +62,8 @@ void XMLRead::MoveAttributesIntoChildren(std::string fieldName) {
 }
 
 std::string XMLRead::_GetStringBetween(std::string data, std::string startDelim, std::string endDelim) {
-    unsigned int first = (unsigned)data.find(startDelim);
-    unsigned int last = (unsigned)data.find(endDelim, first);
+    size_t first = data.find(startDelim);
+    size_t last = data.find(endDelim, first);
     if (first != std::string::npos && last != std::string::npos) {
         std::string strNew = data.substr(first + startDelim.length(), last - startDelim.length() - first);
         return strNew;

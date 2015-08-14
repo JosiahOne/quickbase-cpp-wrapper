@@ -293,6 +293,7 @@ QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::str
 }
 
 std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid) {
+    
     std::vector<std::string> paramVector = _initCStringVecWith(6, "fid", "ticket", "apptoken", "udata", "dbid", "rid");
     std::vector<std::string> valueVector = _initStringVecWith(6, _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid));
 
