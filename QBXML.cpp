@@ -129,7 +129,7 @@ std::vector<QBXML> QBXML::GetRecords() {
     std::string originalData = _xmlData->GetRawXML();
 
     bool flag = true;
-    while (flag) {
+    while (flag && originalData != "") {
         _xmlData->MoveAttributesIntoChildren("record");
         XMLResult aRes = _GetResult("record");
         if (aRes.valid) {

@@ -256,7 +256,9 @@ QBXML QBWrapper::PurgeRecords(std::string query, int qid, std::string qname, std
 }
 
 QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::string clist, std::string slist, bool fmt, bool returnPercentage, std::string options, bool includeRids, std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
-    std::vector<std::string> paramVector = _initCStringVecWith(6, "clist", "slist", "options", "ticket", "apptoken", "udata");
+	std::string theDBID = dbid;
+	
+	std::vector<std::string> paramVector = _initCStringVecWith(6, "clist", "slist", "options", "ticket", "apptoken", "udata");
     std::vector<std::string> valueVector = _initStringVecWith(6, clist, slist, options, ticket, apptoken, udata);
 
     paramData optionalData;
@@ -281,9 +283,8 @@ QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::str
         valueVector.push_back(qname);
     }
 
-    std::string result = _XMLDataPrelim("API_DoQuery", dbid, paramVector, valueVector);
+    std::string result = _XMLDataPrelim("API_DoQuery", theDBID, paramVector, valueVector);
     XMLRead *xmlParser = new XMLRead;
-    xmlParser->Load(result);
     if (result != "" && result != "ERROR") {
         // We need to parse this XML data now.
         xmlParser->Load(result);
@@ -396,8 +397,12 @@ std::string QBWrapper::_XMLDataPrelim(std::string apiAction, std::string dbid, s
         std::cout << "(alt)params and (alt)values are not of equal size";
         abort();
     }
+
+	std::string aDBID = dbid;
+	std::string example = _appLocation;
+
     XMLGen *gen = new XMLGen;
-    gen->SetLocation(_appLocation + "/db/" + dbid);
+    gen->SetLocation(_appLocation + "/db/" + aDBID);
     gen->SetQBAction(apiAction);
     gen->AddParent("qdbapi");
 
