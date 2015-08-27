@@ -169,7 +169,7 @@ std::string QBXML::_RemoveSubstring(std::string mainString, std::string subStrin
     std::string t = mainString;
     std::string s = subString;
 
-    int i = t.find(s);
+    size_t i = t.find(s);
 
     if (i != std::string::npos) {
         t.erase(i, s.length());
