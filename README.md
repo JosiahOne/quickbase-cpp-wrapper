@@ -26,3 +26,29 @@ Note: If you modify something that you feel would be beneficial to more than jus
 ### Who do I talk to? ###
 
 * Repo owner or admin (Josiah Bruner)
+
+## Examples ##
+
+### Getting the ticket ###
+
+    #include <QBWrapper.h>
+    
+    int main()
+    {
+      QBWrapper *qbWrapper = new QBWrapper;
+      qbWrapper->SetAppLocation("https://hostname.quickbase.com");
+      std::string ticket = qbWrapper->Authenticate("username", "password", 25, "").GetTicket().text;
+    }
+    
+### Getting a record's field (fid = 15) contents ###
+
+    #include <QBWrapper.h>
+    
+    int main()
+    {
+      QBWrapper *qbWrapper = new QBWrapper;
+      qbWrapper->SetAppLocation("https://hostname.quickbase.com");
+      std::string ticket = qbWrapper->Authenticate("username", "password", 25, "").GetTicket().text;
+      
+      std::string fieldContents = qbWrapper->GetFieldContents(15, ticket, "", "", "dbid_here", 25);
+    }
