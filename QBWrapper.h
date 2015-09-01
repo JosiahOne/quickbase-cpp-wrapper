@@ -338,4 +338,6 @@ class QBWrapper {
         std::vector<std::string> _initCStringVecWith(int numArgs, ...);
         std::vector<bool> _initBoolVecWith(int numArgs, ...);
         std::vector<int> _initIntVecWith(int numArgs, ...);
+        int _BinarySearchFields(std::vector<QBXML> fields, int fidToFind, int min, int max);
+        int _LinearlySearchFields(std::vector<QBXML> fields, int fidToFind);
 };

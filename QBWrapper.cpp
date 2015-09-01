@@ -294,20 +294,47 @@ QBXML QBWrapper::DoQuery(std::string query, int qid, std::string qname, std::str
 }
 
 std::string QBWrapper::GetFieldContents(int fid, std::string ticket, std::string apptoken, std::string udata, std::string dbid, int rid) {
-    
     std::vector<std::string> paramVector = _initCStringVecWith(6, "fid", "ticket", "apptoken", "udata", "dbid", "rid");
     std::vector<std::string> valueVector = _initStringVecWith(6, _IntToString(fid), ticket, apptoken, udata, dbid, _IntToString(rid));
 
     QBXML qbxml = _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetRecordInfo");
     std::vector<QBXML> results = qbxml.GetFields();
 
-    for (unsigned i = 0; i < results.size(); i++) {
-        if (results[i].GetFID().text == _IntToString(fid)) {
-            return results[i].GetValue().text;
-        }
+    //int locatedIndex = _BinarySearchFields(results, fid, 0, results.size() - 1); Can't use until we can sort the return fields.
+    int locatedIndex = _LinearlySearchFields(results, fid);
+    if (locatedIndex != -1) {
+      return results[locatedIndex].GetValue().text;
     }
 
     return "ERROR";
+}
+
+// Returns -1 if not found. Else returns the midpoint index.
+int QBWrapper::_BinarySearchFields(std::vector<QBXML> fields, int fidToFind, int min, int max) {
+  if (max < min) {
+    return -1; // Not found
+  } else {
+    int mid = min + ((max - min) / 2);
+    int value = strtol(fields[mid].GetFID().text.c_str(), NULL, 10);
+
+    if (value > fidToFind) {
+      return _BinarySearchFields(fields, fidToFind, min, mid - 1);
+    } else if (value < fidToFind) {
+      return _BinarySearchFields(fields, fidToFind, mid + 1, max);
+    } else {
+      return mid;
+    }
+  }
+}
+
+int QBWrapper::_LinearlySearchFields(std::vector<QBXML> fields, int fidToFind) {
+  for (int i = 0; i < fields.size(); i++) {
+    if (strtol(fields[i].GetFID().text.c_str(), NULL, 10) == fidToFind) {
+      return i;
+    }
+  }
+
+  return -1; // Not Found
 }
 
 QBXML QBWrapper::SignOut(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
