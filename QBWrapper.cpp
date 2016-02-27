@@ -328,7 +328,7 @@ int QBWrapper::_BinarySearchFields(std::vector<QBXML> fields, int fidToFind, int
 }
 
 int QBWrapper::_LinearlySearchFields(std::vector<QBXML> fields, int fidToFind) {
-  for (int i = 0; i < fields.size(); i++) {
+  for (unsigned int i = 0; i < fields.size(); i++) {
     if (strtol(fields[i].GetFID().text.c_str(), NULL, 10) == fidToFind) {
       return i;
     }
