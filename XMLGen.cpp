@@ -51,15 +51,33 @@ void XMLGen::AddFieldWithParam(std::string name, std::string data, std::string p
     _outStream = _outStream + '<' + name + ' ' + pName + "='" + pData + "'>" + data + "</" + name + ">\n";
 }
 
-bool XMLGen::WriteOut() {
+inline bool file_exists(const std::string& name) {
+  std::ifstream f(name.c_str());
+  if (f.good()) {
+    f.close();
+    return true;
+  }
+  else {
+    f.close();
+    return false;
+  }
+}
+
+std::string XMLGen::WriteOut() {
     if (_outStream != "") {
-        std::string fileName = "outputDataStream.xml";
+        std::string suffix = "";
+
+        while (file_exists("outputDataStream" + suffix + ".xml")) {
+          suffix += "a";
+        }
+
+        std::string fileName = "outputDataStream" + suffix + ".xml";
         remove(fileName.c_str());
         std::ofstream outFile;
         outFile.open(fileName.c_str());
         outFile << _outStream;
         outFile.close();
-        return true;
+        return fileName;
     }
-    return false;
+    return "ERROR";
 }

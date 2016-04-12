@@ -449,10 +449,10 @@ std::string QBWrapper::_XMLDataPrelim(std::string apiAction, std::string dbid, s
         }
     }
     gen->CloseParent("qdbapi");
-    gen->WriteOut();
+    std::string fileName = gen->WriteOut();
     delete gen;
 
-    std::string result = _PostWithFile("outputDataStream.xml", apiAction, dbid);
+    std::string result = _PostWithFile(fileName, apiAction, dbid);
     return result;
 }
 
@@ -515,6 +515,7 @@ std::string QBWrapper::_PostWithFile(std::string file, std::string apiName, std:
     }
     if (returnData.ptr) {
         std::cout << std::string(returnData.ptr);
+        remove(file.c_str());
         return std::string(returnData.ptr);
     }
     else {
