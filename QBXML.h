@@ -52,6 +52,8 @@ class QBXML
         XMLResult GetOldEstancestorAppId();
         // API_UserRoles
         XMLResult GetUsers();
+        // API_GetSchema
+        std::vector<std::string> GetChildDBIDs();
 
         std::vector<QBXML> GetFields();
         std::vector<QBXML> GetRecords();

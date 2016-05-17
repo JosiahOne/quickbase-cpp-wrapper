@@ -100,12 +100,29 @@ XMLResult QBXML::GetUsers() {
   return _GetResult("users");
 }
 
+std::vector<std::string> QBXML::GetChildDBIDs()
+{
+  std::string children = _GetResult("chdbids").text;
+  std::vector<std::string> dbids;
+
+  while (children.find("\">") != -1 && children.find("</") != -1) {
+    unsigned first = children.find("\">");
+    unsigned last = children.find("</");
+    std::string result = children.substr(first + 2, last - first - 2);
+    dbids.push_back(result);
+    children.erase(first - 1, last - first + 3);
+  }
+
+  return dbids;
+}
+
 std::vector<QBXML> QBXML::GetFields() {
   std::vector<QBXML> results;
   std::string originalData = _xmlData->GetRawXML();
-
+  
   bool flag = true;
   while (flag) {
+    _xmlData->MoveAttributesIntoChildren("field");
     XMLResult aRes = _GetResult("field");
     if (aRes.valid) {
       XMLRead *reducedRead = new XMLRead;
@@ -114,7 +131,6 @@ std::vector<QBXML> QBXML::GetFields() {
       results.push_back(newXML);
       // Strip remainingData for repeat
       _xmlData->Load(_RemoveSubstring(_xmlData->GetRawXML(), "<field>" + aRes.text + "</field>"));
-      std::cout << "-----------" << _xmlData->GetRawXML() << "-----------";
     }
     else {
       flag = false;
@@ -139,7 +155,6 @@ std::vector<QBXML> QBXML::GetRecords() {
       results.push_back(newXML);
       // Strip remainingData for repeat
       _xmlData->Load(_RemoveSubstring(_xmlData->GetRawXML(), "<record>" + aRes.text + "</record>"));
-      std::cout << "-----------" << _xmlData->GetRawXML() << "-----------";
     }
     else {
       flag = false;

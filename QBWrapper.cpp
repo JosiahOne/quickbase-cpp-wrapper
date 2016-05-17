@@ -17,11 +17,9 @@ void QBWrapper::SetAppLocation(std::string location) {
 
 void fix_utf8_string(std::string& str)
 {
-  std::cout << str;
   std::string temp;
   utf8::replace_invalid(str.begin(), str.end(), back_inserter(temp));
   str = temp;
-  std::cout << std::endl << str;
 }
 
 bool valid_utf8_file(const char* file_name)
@@ -474,8 +472,6 @@ std::string QBWrapper::_PostWithFile(std::string file, std::string apiName, std:
       abort();
     }
     char *str3 = _strdup(str2);
-    std::cout << std::endl << "\n===================\n" << str3 << "\n===================\n";
-    std::cout << "API NAME: " << apiName << "\n DBID: " << dbid << std::endl;
     CURL *curl;
     CURLcode res;
     curl_slist *list = NULL;
@@ -488,7 +484,6 @@ std::string QBWrapper::_PostWithFile(std::string file, std::string apiName, std:
       std::string data = _appLocation + "/db/" + dbid.c_str() + "?act=" + apiName.c_str();
       const char *otherData = data.c_str();
 
-      std::cout << "DATA: " << otherData << std::endl;
 
       list = curl_slist_append(list, "Content-Type: application/xml");
 
@@ -513,7 +508,6 @@ std::string QBWrapper::_PostWithFile(std::string file, std::string apiName, std:
     curl_slist_free_all(list);
   }
   if (returnData.ptr) {
-    std::cout << std::string(returnData.ptr);
     remove(file.c_str());
     return std::string(returnData.ptr);
   }

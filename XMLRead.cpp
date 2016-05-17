@@ -53,7 +53,7 @@ void XMLRead::MoveAttributesIntoChildren(std::string fieldName) {
 
       _DeleteAttributes(fieldName);
 
-      for (unsigned int i = 0; i < attributes.capacity(); i++) {
+      for (unsigned int i = 0; i < attributes.size(); i++) {
         _CreateChild(attributes[i].name, attributes[i].contents, fieldName);
       }
 
