@@ -113,7 +113,7 @@ QBXML QBWrapper::EditRecord(int rid, int updateID, std::vector<std::string> fiel
 
 QBXML QBWrapper::GetSchema(std::string ticket, std::string apptoken, std::string udata, std::string dbid) {
   std::vector<std::string> paramVector = _initCStringVecWith(3, "ticket", "apptoken", "udata");
-  std::vector<std::string> valueVector = _initCStringVecWith(3, ticket, apptoken, udata);
+  std::vector<std::string> valueVector = _initStringVecWith(3, ticket, apptoken, udata);
   return _DoGenericAPICall(paramVector, valueVector, dbid, "API_GetSchema");
 }
 
