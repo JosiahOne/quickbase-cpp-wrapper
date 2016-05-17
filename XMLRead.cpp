@@ -30,8 +30,6 @@ std::string XMLRead::GetFieldContents(std::string fieldName) {
 
   if (_VerifyXML(_xmlData)) {
     std::string result = _GetStringBetween(_xmlData, _MakeTag(fieldName, true), _MakeTag(fieldName, false));
-    std::cout << "TICKET = " << result << std::endl;
-    std::cout << "XMLData = \n" << _xmlData << std::endl;
     if (result == "") {
       return "ERROR";
     }
@@ -116,7 +114,6 @@ std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
             marksFound++;
           }
           else {
-            std::cout << "***** FOUND *****";
             collectingContents = false;
             marksFound = 0;
             attributeArray.push_back(anAttribute);
@@ -142,7 +139,6 @@ std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
 }
 
 bool XMLRead::_CreateChild(std::string name, std::string content, std::string parentTagName) {
-  std::cout << "Name = " << name << ", content = " << content << ", parentTagName = " << parentTagName << std::endl;
   size_t loc = _xmlData.find(_MakeTag(parentTagName, true)) + parentTagName.length() + 2;
   _xmlData.insert(loc, _MakeTag(name, true) + content + _MakeTag(name, false));
 
@@ -153,9 +149,6 @@ void XMLRead::_DeleteAttributes(std::string fieldName) {
   size_t loc = _xmlData.find("<" + fieldName) + fieldName.length();
   std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
   if (attributeContents.length() > 0) {
-    std::cout << "ATT LENGTH = " << attributeContents.length() << "|";
     _xmlData.erase(loc + 1, attributeContents.length());
   }
-
-  std::cout << std::endl << std::endl << _xmlData << std::endl << std::endl;
 }
