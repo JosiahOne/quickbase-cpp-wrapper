@@ -100,6 +100,16 @@ XMLResult QBXML::GetUsers() {
   return _GetResult("users");
 }
 
+XMLResult QBXML::GetID()
+{
+  return _GetResult("id");
+}
+
+XMLResult QBXML::GetFieldType()
+{
+  return _GetResult("field_type");
+}
+
 std::vector<std::string> QBXML::GetChildDBIDs()
 {
   std::string children = _GetResult("chdbids").text;

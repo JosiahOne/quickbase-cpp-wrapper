@@ -53,6 +53,8 @@ class QBXML
         // API_UserRoles
         XMLResult GetUsers();
         // API_GetSchema
+        XMLResult GetID();
+        XMLResult GetFieldType();
         std::vector<std::string> GetChildDBIDs();
 
         std::vector<QBXML> GetFields();

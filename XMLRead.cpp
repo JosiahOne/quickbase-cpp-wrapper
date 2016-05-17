@@ -90,7 +90,7 @@ bool XMLRead::_VerifyXML(std::string data) {
 }
 
 bool XMLRead::_HasAttributes(std::string fieldName) {
-  std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+  std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName + " ", ">");
   if (attributeContents != "") {
     return true;
   }
@@ -99,7 +99,7 @@ bool XMLRead::_HasAttributes(std::string fieldName) {
 }
 
 std::vector<attribute> XMLRead::_GetAttributes(std::string fieldName) {
-  std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName, ">");
+  std::string attributeContents = _GetStringBetween(_xmlData, "<" + fieldName + " ", ">");
   attribute anAttribute;
   std::vector<attribute> attributeArray;
   bool collectingContents = false;
